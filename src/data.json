@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "18.01.2026 00:28",
+        "last_updated": "18.01.2026 00:57",
         "season_active": true
     },
     "players": [
@@ -127,6 +127,23 @@
             "name": "Murhpy",
             "nickname": "Murhpy",
             "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
+            "kills": 0,
+            "deaths": 0,
+            "wins": 0,
+            "mvps": 0,
+            "damage": 0,
+            "headshots": 0,
+            "rounds": 0,
+            "fav_weapon": "-",
+            "fav_weapon_kills": 0,
+            "kda": 0,
+            "hs_rate": 0,
+            "score": 0.0
+        },
+        {
+            "name": "Gr1N",
+            "nickname": "Gr1N",
+            "avatar": "https://avatars.steamstatic.com/62b9d15b7353687c9aa424ee49538e854e9ef6f6_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,

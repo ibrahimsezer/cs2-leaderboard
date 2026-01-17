@@ -574,5 +574,53 @@
             "molotov": 60,
             "taser": 11
         }
+    },
+    "76561199110371277": {
+        "stats": {
+            "kills": 11191,
+            "deaths": 11325,
+            "wins": 259,
+            "mvps": 1739,
+            "damage": 1684566,
+            "headshots": 5563,
+            "shots_fired": 210224,
+            "shots_hit": 7208,
+            "rounds": 12454
+        },
+        "weapons": {
+            "knife": 51,
+            "hegrenade": 83,
+            "glock": 428,
+            "deagle": 604,
+            "elite": 28,
+            "fiveseven": 92,
+            "xm1014": 38,
+            "mac10": 60,
+            "ump45": 9,
+            "p90": 76,
+            "awp": 1676,
+            "ak47": 3803,
+            "aug": 21,
+            "famas": 71,
+            "g3sg1": 3,
+            "m249": 3,
+            "hkp2000": 572,
+            "p250": 106,
+            "sg556": 14,
+            "scar20": 4,
+            "ssg08": 237,
+            "mp7": 40,
+            "mp9": 168,
+            "nova": 2,
+            "negev": 6,
+            "sawedoff": 0,
+            "bizon": 227,
+            "tec9": 12,
+            "mag7": 13,
+            "m4a1": 2554,
+            "galilar": 184,
+            "molotov": 5,
+            "taser": 1
+        }
     }
 }

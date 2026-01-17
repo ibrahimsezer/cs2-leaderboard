@@ -1,11 +1,12 @@
 {
     "meta": {
-        "last_updated": "17.01.2026 23:45",
+        "last_updated": "18.01.2026 00:24",
         "season_active": true
     },
     "players": [
         {
             "name": "Ahmet",
+            "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
             "kills": 38,
             "deaths": 29,
             "wins": 1,
@@ -21,6 +22,7 @@
         },
         {
             "name": "Sezar",
+            "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
             "kills": 59,
             "deaths": 35,
             "wins": 2,
@@ -36,6 +38,7 @@
         },
         {
             "name": "EL EX v2",
+            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
             "kills": 47,
             "deaths": 45,
             "wins": 1,
@@ -51,6 +54,7 @@
         },
         {
             "name": "iboRR",
+            "avatar": "https://avatars.steamstatic.com/27468c98ecbbf3371f4326d6fad5d5bf4e9b285d_full.jpg",
             "kills": 22,
             "deaths": 34,
             "wins": 1,
@@ -66,6 +70,7 @@
         },
         {
             "name": "Asmork",
+            "avatar": "https://avatars.steamstatic.com/99cf86235f151c26ebb123f30431e6c6b1951c10_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -81,6 +86,7 @@
         },
         {
             "name": "EL EX v1",
+            "avatar": "https://avatars.steamstatic.com/9b13e236241c60849077e6beaa4a54b96a33a122_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -96,6 +102,7 @@
         },
         {
             "name": "EL EX v3",
+            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -111,6 +118,7 @@
         },
         {
             "name": "Murhpy",
+            "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -126,6 +134,7 @@
         },
         {
             "name": "NightWish",
+            "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -141,6 +150,7 @@
         },
         {
             "name": "DJKavun v4",
+            "avatar": "https://avatars.steamstatic.com/de3101aa5b584686b9045297c1632942146bb30d_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -156,6 +166,7 @@
         },
         {
             "name": "Symbren",
+            "avatar": "https://avatars.steamstatic.com/7cd984c01a88baeafd1892d0ca39ba41ad3d1e53_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -171,6 +182,7 @@
         },
         {
             "name": "Dixe",
+            "avatar": "https://avatars.steamstatic.com/5c77178bc823239ac7ef6eb7b5a3d50ad49af9d8_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,

@@ -89,11 +89,6 @@ function Table({ players }) {
                     </thead>
                     <tbody className="divide-y divide-slate-700/50">
                         {sortedPlayers.map((player, index) => {
-                            // Calculate actual rank based on verified score if needed, but here we just list them
-                            // Or better, find the index in the original sorted list to show "True Rank"? 
-                            // For simplicity, we'll just show the visual index in the current sorted view, usually meaningful enough.
-                            // IF sorting by score, 1, 2, 3...
-
                             const isTop3 = index < 3 && sortConfig.key === 'score' && sortConfig.direction === 'desc';
 
                             return (
@@ -104,14 +99,23 @@ function Table({ players }) {
                                     <td className="p-4 text-center font-mono font-bold text-slate-500 group-hover:text-slate-300">
                                         {index + 1}
                                     </td>
+
+                                    {/* --- AVATAR & NAME SÜTUNU (GÜNCELLENDİ) --- */}
                                     <td className="p-4 flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold bg-slate-700 border border-slate-600 group-hover:border-yellow-500/50 transition-colors`}>
-                                            {player.name.charAt(0).toUpperCase()}
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center overflow-hidden bg-slate-700 border border-slate-600 group-hover:border-yellow-500/50 transition-colors`}>
+                                            {player.avatar ? (
+                                                <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <span className="text-xs font-bold text-slate-300">
+                                                    {player.name.charAt(0).toUpperCase()}
+                                                </span>
+                                            )}
                                         </div>
                                         <span className={`font-semibold text-slate-200 group-hover:text-white transition-colors`}>
                                             {player.name}
                                         </span>
                                     </td>
+
                                     <td className="p-4 text-right font-black text-lg text-yellow-500 tabular-nums shadow-yellow-500/10 drop-shadow-sm">
                                         {player.score}
                                     </td>

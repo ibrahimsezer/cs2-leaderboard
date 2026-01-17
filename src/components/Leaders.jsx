@@ -20,14 +20,10 @@ const CrownIcon = ({ className }) => (
 );
 
 function PodiumStep({ player, rank }) {
-    // Styles based on rank
     const isFirst = rank === 1;
     const isSecond = rank === 2;
     const isThird = rank === 3;
 
-    // Podium Height & Color config
-    // 1st place taller + brighter gradient
-    // 2nd and 3rd shorter + darker gradient
     let containerClasses = "";
     let podiumHeight = "";
     let iconColor = "";
@@ -36,7 +32,7 @@ function PodiumStep({ player, rank }) {
 
     if (isFirst) {
         containerClasses = "order-2 md:-mt-12 z-10 w-full md:w-1/3";
-        podiumHeight = "h-80 md:h-96"; // Taller box
+        podiumHeight = "h-80 md:h-96";
         iconColor = "text-yellow-400";
         glowColor = "shadow-[0_0_50px_rgba(234,179,8,0.3)]";
         rankIcon = <CrownIcon className="w-8 h-8 text-yellow-500 absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce" />;
@@ -47,7 +43,7 @@ function PodiumStep({ player, rank }) {
         glowColor = "shadow-[0_0_30px_rgba(148,163,184,0.1)]";
     } else if (isThird) {
         containerClasses = "order-3 w-full md:w-1/3 mt-4 md:mt-0";
-        podiumHeight = "h-64 md:h-72"; // Same as 2nd basically, maybe slightly different look if desired
+        podiumHeight = "h-64 md:h-72";
         iconColor = "text-orange-400";
         glowColor = "shadow-[0_0_30px_rgba(251,146,60,0.1)]";
     }
@@ -55,52 +51,48 @@ function PodiumStep({ player, rank }) {
     return (
         <div className={`flex flex-col items-center ${containerClasses} transition-all duration-300 hover:scale-[1.02]`}>
 
-            {/* Avatar Section (Floating above the podium) */}
+            {/* Avatar Section */}
             <div className="relative mb-4 group cursor-pointer">
-                {/* Crown for #1 */}
                 {isFirst && rankIcon}
 
-                {/* Avatar Container */}
                 <div className={`w-28 h-28 md:w-32 md:h-32 rounded-3xl bg-slate-800 border-4 border-slate-700/50 shadow-2xl flex items-center justify-center overflow-hidden relative z-10 ${glowColor}`}>
-                    {/* Placeholder Image Logic - User will replace this or image src */}
-                    <div className="w-full h-full bg-slate-800 flex flex-col items-center justify-center text-slate-500">
-                        <span className="text-4xl font-bold">{player.name.charAt(0).toUpperCase()}</span>
-                        <span className="text-[10px] mt-1 uppercase">Avatar</span>
-                    </div>
-                    {/* Real Image Tag Example (Uncomment when ready)
-                 <img src={player.avatarUrl} alt={player.name} className="w-full h-full object-cover" />
-                 */}
+                    {player.avatar ? (
+                        <img
+                            src={player.avatar}
+                            alt={player.name}
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-slate-800 flex flex-col items-center justify-center text-slate-500">
+                            <span className="text-4xl font-bold">{player.name.charAt(0).toUpperCase()}</span>
+                            <span className="text-[10px] mt-1 uppercase">Avatar</span>
+                        </div>
+                    )}
                 </div>
 
-                {/* Rank Badge visible on avatar corner? Or just implied by position */}
                 <div className={`absolute -bottom-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-slate-900 border-2 border-slate-600 z-20 ${iconColor}`}>
                     #{rank}
                 </div>
             </div>
 
-            {/* Player Name */}
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2 text-center tracking-tight">
                 {player.name}
             </h3>
 
-            {/* The "Box" / Podium Base */}
             <div className={`
-            relative w-full rounded-t-3xl border-t border-x border-white/10 
-            bg-gradient-to-b from-slate-800/80 via-slate-900/90 to-slate-950/90 
-            backdrop-blur-md flex flex-col items-center justify-start pt-8 pb-4
-            ${podiumHeight}
-            ${isFirst ? 'from-indigo-900/40 via-slate-900/90' : ''}
-            shadow-2xl overflow-hidden
-        `}>
-                {/* Top Gloss/Light effect */}
+                relative w-full rounded-t-3xl border-t border-x border-white/10 
+                bg-gradient-to-b from-slate-800/80 via-slate-900/90 to-slate-950/90 
+                backdrop-blur-md flex flex-col items-center justify-start pt-8 pb-4
+                ${podiumHeight}
+                ${isFirst ? 'from-indigo-900/40 via-slate-900/90' : ''}
+                shadow-2xl overflow-hidden
+            `}>
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-                {/* Trophy Icon Container */}
                 <div className={`mb-4 p-3 rounded-2xl bg-slate-950/50 border border-white/5 shadow-inner`}>
                     <TrophyIcon className={`w-8 h-8 ${iconColor}`} />
                 </div>
 
-                {/* Smaller secondary stat (e.g. Wins or Title) */}
                 <div className="text-slate-400 text-sm font-medium mb-6 uppercase tracking-wider flex flex-col items-center">
                     <span className="text-xs opacity-60">Status</span>
                     <span className={iconColor === 'text-yellow-400' ? 'text-yellow-200' : 'text-slate-300'}>
@@ -108,7 +100,6 @@ function PodiumStep({ player, rank }) {
                     </span>
                 </div>
 
-                {/* Main Score / "Prize" look */}
                 <div className="flex flex-col items-center gap-1 mt-auto mb-12">
                     <div className="flex items-center gap-2">
                         <DiamondIcon className={`w-6 h-6 ${isFirst ? 'text-blue-400' : 'text-blue-500/70'}`} />
@@ -119,7 +110,6 @@ function PodiumStep({ player, rank }) {
                     <span className="text-blue-400/60 text-xs font-bold uppercase tracking-[0.2em]">Score</span>
                 </div>
 
-                {/* Bottom fading detail or styling */}
                 {isFirst && (
                     <div className="absolute bottom-6 flex flex-col items-center animate-pulse">
                         <span className="text-[10px] text-slate-500 uppercase">Season 1</span>
@@ -133,22 +123,11 @@ function PodiumStep({ player, rank }) {
 function Leaders({ players }) {
     if (!players || players.length < 3) return null;
 
-    // Sorting Top 3
     const sorted = [...players].sort((a, b) => b.score - a.score).slice(0, 3);
-
-    // Podium Order in Array: [Rank 2, Rank 1, Rank 3] visual order handled by Flex Order classes or manual placement
-    // Actually in the Component Logic above:
-    // Rank 1 has `order-2` (Center)
-    // Rank 2 has `order-1` (Left)
-    // Rank 3 has `order-3` (Right)
-    // We can just map through them and let the component handle the positioning based on rank.
 
     return (
         <div className="w-full max-w-5xl mx-auto pt-10 pb-0 px-4">
             <div className="flex flex-col md:flex-row items-end justify-center gap-4 md:gap-6">
-                {/* Pass Rank explicitly because loop index might not match visual rank if we map straight */}
-                {/* We want to render them so flex handles order. Let's just render the sorted array and pass (index + 1) as rank */}
-
                 {sorted.map((player, index) => (
                     <PodiumStep key={player.name} player={player} rank={index + 1} />
                 ))}

@@ -10,14 +10,13 @@ dotenv.load_dotenv()
 
 # --- AYARLAR ---
 API_KEY = os.getenv("API_KEY")
-PLAYERS_FILE = "scripts/players.json"  # Okunacak kaynak
-BASELINE_FILE = "scripts/baseline.json"  # Okunacak/Yazılacak kaynak
-OUTPUT_FILE = "src/data.json"  # React'in okuyacağı hedef dosya
+PLAYERS_FILE = "scripts/players.json"
+BASELINE_FILE = "scripts/baseline.json"
+OUTPUT_FILE = "src/data.json"
 
 # Sezonu sıfırlamak için True yapıp bir kez çalıştırın, sonra False yapın.
 RESET_SEASON = False
 
-# Debug dosyasından çıkarılan TÜM silahlar
 WEAPONS = [
     "knife",
     "hegrenade",
@@ -56,14 +55,13 @@ WEAPONS = [
 
 
 def get_stat_value(stats_list, stat_name):
-    """Stat listesinden değer çeker, yoksa 0 döner."""
     if not stats_list:
         return 0
     return next((item["value"] for item in stats_list if item["name"] == stat_name), 0)
 
 
 def fetch_user_stats(steam_id):
-    """Steam API'den ham veriyi çeker."""
+    """Steam API'den istatistik verisini çeker."""
     timestamp = int(time.time())
     url = f"http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key={API_KEY}&steamid={steam_id}&_={timestamp}"
     try:
@@ -73,8 +71,34 @@ def fetch_user_stats(steam_id):
             if "playerstats" in data and "stats" in data["playerstats"]:
                 return data["playerstats"]["stats"]
     except Exception as e:
-        print(f"Hata ({steam_id}): {e}")
+        print(f"Stats Hatası ({steam_id}): {e}")
     return None
+
+
+def fetch_player_profiles(steam_ids_list):
+    """
+    Verilen Steam ID listesi için profil bilgilerini (Avatar) çeker.
+    """
+    if not steam_ids_list:
+        return {}
+
+    # ID'leri virgülle birleştir
+    ids_string = ",".join(steam_ids_list)
+    url = f"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={API_KEY}&steamids={ids_string}"
+
+    profiles_map = {}
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            players = data.get("response", {}).get("players", [])
+            for p in players:
+                # avatarfull: 184x184px (En yüksek kalite)
+                profiles_map[p["steamid"]] = p["avatarfull"]
+    except Exception as e:
+        print(f"Profil fotoları çekilirken hata: {e}")
+
+    return profiles_map
 
 
 def load_json(filepath):
@@ -90,9 +114,6 @@ def save_json(filepath, data):
 
 
 def calculate_score(stats):
-    """
-    Formül: Puan = (MVP * 3) + (Hasar/100) - (Death * 0.5) + (HS * 0.2)
-    """
     score = (
         (stats["mvps"] * 3.0)
         + (stats["damage"] / 100.0)
@@ -110,8 +131,13 @@ def main():
         print("Hata: players.json bulunamadı.")
         return
 
-    baseline_data = load_json(BASELINE_FILE)
+    # 1. Profil Fotoğraflarını Çek
+    print("📸 Profil fotoğrafları güncelleniyor...")
+    all_steam_ids = list(players.values())
+    avatars = fetch_player_profiles(all_steam_ids)
 
+    # 2. Baseline Yükle
+    baseline_data = load_json(BASELINE_FILE)
     if RESET_SEASON:
         print("⚠️ SEZON SIFIRLANIYOR...")
         baseline_data = {}
@@ -119,12 +145,13 @@ def main():
     current_season_stats = []
     baseline_updated = False
 
+    # 3. Oyuncuları Döngüye Al
     for name, steam_id in players.items():
         print(f"İşleniyor: {name}...")
         raw_stats = fetch_user_stats(steam_id)
 
         if raw_stats:
-            # 1. Temel Verileri Parse Et
+            # Temel Veriler
             current_vals = {
                 "kills": get_stat_value(raw_stats, "total_kills"),
                 "deaths": get_stat_value(raw_stats, "total_deaths"),
@@ -137,13 +164,12 @@ def main():
                 "rounds": get_stat_value(raw_stats, "total_rounds_played"),
             }
 
-            # 2. Silah Verilerini Parse Et (Baseline için gerekli)
+            # Silah Verileri
             current_weapon_vals = {}
             for w in WEAPONS:
                 current_weapon_vals[w] = get_stat_value(raw_stats, f"total_kills_{w}")
 
-            # 3. Baseline Kontrolü
-            # Eğer oyuncu yoksa veya baseline yapısı eskiyse (silah verisi yoksa) güncelle
+            # Baseline Kontrol
             if (
                 steam_id not in baseline_data
                 or "weapons" not in baseline_data[steam_id]
@@ -155,12 +181,13 @@ def main():
                 }
                 baseline_updated = True
 
-            # 4. Sezonluk Farkı Hesapla (Delta)
+            # Delta (Fark) Hesapla
             base_stats = baseline_data[steam_id]["stats"]
             base_weapons = baseline_data[steam_id]["weapons"]
 
             season_stats = {
                 "name": name,
+                "avatar": avatars.get(steam_id, ""),  # <-- FOTOĞRAF EKLENDİ
                 "kills": current_vals["kills"] - base_stats.get("kills", 0),
                 "deaths": current_vals["deaths"] - base_stats.get("deaths", 0),
                 "wins": current_vals["wins"] - base_stats.get("wins", 0),
@@ -170,37 +197,29 @@ def main():
                 "rounds": current_vals["rounds"] - base_stats.get("rounds", 0),
             }
 
-            # Negatif değer koruması
+            # Negatif koruması
             for k, v in season_stats.items():
                 if isinstance(v, (int, float)) and v < 0:
                     season_stats[k] = 0
 
-            # 5. Sezonluk Favori Silahı Bul
-            # (Bu sezon en çok kill alınan silah)
+            # Favori Silah
             fav_weapon_name = "N/A"
             max_season_kills = -1
-
             for w in WEAPONS:
                 curr_w = current_weapon_vals.get(w, 0)
                 base_w = base_weapons.get(w, 0)
-
-                # Sadece bu sezon alınan kill sayısı
                 season_w_kills = curr_w - base_w
-
                 if season_w_kills > max_season_kills:
                     max_season_kills = season_w_kills
                     fav_weapon_name = w.upper()
 
-            # Eğer hiç kill alınmadıysa veya data yoksa
             if max_season_kills <= 0:
                 fav_weapon_name = "-"
 
             season_stats["fav_weapon"] = fav_weapon_name
-            season_stats["fav_weapon_kills"] = (
-                max_season_kills  # İstersen frontend'de kullanabilirsin
-            )
+            season_stats["fav_weapon_kills"] = max_season_kills
 
-            # 6. Oranlar ve Skor
+            # Oranlar
             season_stats["kda"] = (
                 round(season_stats["kills"] / season_stats["deaths"], 2)
                 if season_stats["deaths"] > 0
@@ -221,10 +240,8 @@ def main():
         save_json(BASELINE_FILE, baseline_data)
         print("💾 Baseline güncellendi.")
 
-    # Puan sıralaması
     current_season_stats.sort(key=lambda x: x["score"], reverse=True)
 
-    # Metadata ile kaydet
     final_output = {
         "meta": {
             "last_updated": datetime.now().strftime("%d.%m.%Y %H:%M"),

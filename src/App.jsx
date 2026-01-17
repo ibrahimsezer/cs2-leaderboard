@@ -23,7 +23,7 @@ function App() {
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/bg-hero.png"
+          src="./public/bg-hero.png"
           alt="Background"
           className="w-full h-[600px] object-cover opacity-20 mask-image-gradient"
           style={{ maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }}

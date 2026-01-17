@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 import dotenv
+import time
 
 # .env dosyasını yükle
 dotenv.load_dotenv()
@@ -63,7 +64,8 @@ def get_stat_value(stats_list, stat_name):
 
 def fetch_user_stats(steam_id):
     """Steam API'den ham veriyi çeker."""
-    url = f"http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key={API_KEY}&steamid={steam_id}"
+    timestamp = int(time.time())
+    url = f"http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key={API_KEY}&steamid={steam_id}&_={timestamp}"
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:

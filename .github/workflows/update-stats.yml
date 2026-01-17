@@ -1,0 +1,47 @@
+name: Update CS2 Stats
+
+on:
+  schedule:
+    # Her gün Türkiye saatiyle 03:00 civarı çalışır (UTC 00:00)
+    - cron: '0 0 * * *'
+  # Manuel tetiklemek istersen "Run workflow" butonu çıkar
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu Çek (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Python Kurulumu
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Bağımlılıkları Yükle
+        run: |
+          pip install requests python-dotenv
+
+      - name: Scripti Çalıştır
+        env:
+          # GitHub Secrets'tan API Key'i alıp script'e iletiyoruz
+          API_KEY: ${{ secrets.STEAM_API_KEY }}
+        run: |
+          # Scripti projenin ana dizininden çalıştırıyoruz
+          python scripts/data-parse.py
+
+      - name: Değişiklikleri Commit ve Push Et
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Değişen veri dosyalarını sahneye al (Stage)
+          git add src/data.json scripts/baseline.json
+          
+          # Eğer değişiklik varsa commit at ve pushla, yoksa hata verme
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update CS2 stats 🤖" && git push)

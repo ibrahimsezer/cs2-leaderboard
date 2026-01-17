@@ -14,7 +14,6 @@ PLAYERS_FILE = "scripts/players.json"
 BASELINE_FILE = "scripts/baseline.json"
 OUTPUT_FILE = "src/data.json"
 
-# Sezonu sıfırlamak için True yapıp bir kez çalıştırın, sonra False yapın.
 RESET_SEASON = False
 
 WEAPONS = [
@@ -77,12 +76,11 @@ def fetch_user_stats(steam_id):
 
 def fetch_player_profiles(steam_ids_list):
     """
-    Verilen Steam ID listesi için profil bilgilerini (Avatar) çeker.
+    Verilen Steam ID listesi için profil bilgilerini (Avatar ve İsim) çeker.
     """
     if not steam_ids_list:
         return {}
 
-    # ID'leri virgülle birleştir
     ids_string = ",".join(steam_ids_list)
     url = f"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={API_KEY}&steamids={ids_string}"
 
@@ -93,10 +91,13 @@ def fetch_player_profiles(steam_ids_list):
             data = response.json()
             players = data.get("response", {}).get("players", [])
             for p in players:
-                # avatarfull: 184x184px (En yüksek kalite)
-                profiles_map[p["steamid"]] = p["avatarfull"]
+                # Hem avatarı hem de Steam ismini (personaname) alıyoruz
+                profiles_map[p["steamid"]] = {
+                    "avatar": p["avatarfull"],
+                    "real_name": p["personaname"],
+                }
     except Exception as e:
-        print(f"Profil fotoları çekilirken hata: {e}")
+        print(f"Profil bilgileri çekilirken hata: {e}")
 
     return profiles_map
 
@@ -131,10 +132,10 @@ def main():
         print("Hata: players.json bulunamadı.")
         return
 
-    # 1. Profil Fotoğraflarını Çek
-    print("📸 Profil fotoğrafları güncelleniyor...")
+    # 1. Profil Bilgilerini (FOTO + İSİM) Çek
+    print("📸 Profil bilgileri (İsim & Foto) güncelleniyor...")
     all_steam_ids = list(players.values())
-    avatars = fetch_player_profiles(all_steam_ids)
+    profiles_info = fetch_player_profiles(all_steam_ids)
 
     # 2. Baseline Yükle
     baseline_data = load_json(BASELINE_FILE)
@@ -146,8 +147,17 @@ def main():
     baseline_updated = False
 
     # 3. Oyuncuları Döngüye Al
-    for name, steam_id in players.items():
-        print(f"İşleniyor: {name}...")
+    # 'nickname' players.json'daki anahtar (örn: "Ahmet"), 'steam_id' ise ID'dir.
+    for nickname, steam_id in players.items():
+        # Profil bilgilerini al
+        player_profile = profiles_info.get(steam_id, {})
+
+        # Eğer Steam'den isim çekilebildiyse onu kullan, yoksa players.json'daki nickname'i kullan
+        display_name = player_profile.get("real_name", nickname)
+        avatar_url = player_profile.get("avatar", "")
+
+        print(f"İşleniyor: {display_name} ({nickname})...")
+
         raw_stats = fetch_user_stats(steam_id)
 
         if raw_stats:
@@ -169,12 +179,12 @@ def main():
             for w in WEAPONS:
                 current_weapon_vals[w] = get_stat_value(raw_stats, f"total_kills_{w}")
 
-            # Baseline Kontrol
+            # Baseline Kontrol (Burada loglarda nickname kullanıyoruz ki karışmasın)
             if (
                 steam_id not in baseline_data
                 or "weapons" not in baseline_data[steam_id]
             ):
-                print(f"   -> {name} için yeni baseline oluşturuluyor.")
+                print(f"   -> {nickname} için yeni baseline oluşturuluyor.")
                 baseline_data[steam_id] = {
                     "stats": current_vals,
                     "weapons": current_weapon_vals,
@@ -186,8 +196,9 @@ def main():
             base_weapons = baseline_data[steam_id]["weapons"]
 
             season_stats = {
-                "name": name,
-                "avatar": avatars.get(steam_id, ""),  # <-- FOTOĞRAF EKLENDİ
+                "name": display_name,  # <-- ARTIK STEAM İSMİ
+                "nickname": nickname,  # <-- ESKİ TAKMA AD (Yedek olarak tutalım)
+                "avatar": avatar_url,  # <-- PROFİL FOTOSU
                 "kills": current_vals["kills"] - base_stats.get("kills", 0),
                 "deaths": current_vals["deaths"] - base_stats.get("deaths", 0),
                 "wins": current_vals["wins"] - base_stats.get("wins", 0),
@@ -234,7 +245,7 @@ def main():
 
             current_season_stats.append(season_stats)
         else:
-            print(f"   -> Veri alınamadı!")
+            print(f"   -> Veri alınamadı ({nickname})!")
 
     if baseline_updated or RESET_SEASON:
         save_json(BASELINE_FILE, baseline_data)

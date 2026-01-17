@@ -1,47 +1,80 @@
-name: Update CS2 Stats
+name: Update Stats & Deploy to Pages
 
 on:
   schedule:
-    # Her gün Türkiye saatiyle 03:00 civarı çalışır (UTC 00:00)
-    - cron: '0 0 * * *'
-  # Manuel tetiklemek istersen "Run workflow" butonu çıkar
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Her gece çalışır
+  workflow_dispatch:      # Manuel tetikleme
+  push:
+    branches: ["main"]    # Kod değişikliği yaparsan da tetiklensin
 
 permissions:
   contents: write
+  pages: write      # GitHub Pages'e yazma izni
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  update-stats:
+  # 1. GÖREV: Verileri Güncelle ve Build Al
+  build-and-update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Depoyu Çek (Checkout)
+      - name: Depoyu Çek
         uses: actions/checkout@v4
 
+      # --- PYTHON KISMI (Veri Çekme) ---
       - name: Python Kurulumu
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Bağımlılıkları Yükle
-        run: |
-          pip install requests python-dotenv
+      - name: Python Paketlerini Yükle
+        run: pip install requests python-dotenv
 
-      - name: Scripti Çalıştır
+      - name: İstatistik Scriptini Çalıştır
         env:
-          # GitHub Secrets'tan API Key'i alıp script'e iletiyoruz
           API_KEY: ${{ secrets.STEAM_API_KEY }}
-        run: |
-          # Scripti projenin ana dizininden çalıştırıyoruz
-          python scripts/data-parse.py
+        run: python scripts/data-parse.py
 
-      - name: Değişiklikleri Commit ve Push Et
+      # --- REACT KISMI (Build) ---
+      - name: Node.js Kurulumu
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: NPM Paketlerini Yükle
+        run: npm ci
+
+      - name: React Projesini Derle (Build)
+        run: npm run build
+
+      # --- COMMIT KISMI (Verileri Repoya Kaydet) ---
+      # Bu adım data.json'ı repoda da güncel tutar, böylece geçmişi görürsün.
+      - name: Güncel Veriyi Commit ve Push Et
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          # Değişen veri dosyalarını sahneye al (Stage)
           git add src/data.json scripts/baseline.json
-          
-          # Eğer değişiklik varsa commit at ve pushla, yoksa hata verme
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update CS2 stats 🤖" && git push)
+          # Değişiklik yoksa hata vermeden devam et, varsa pushla
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update stats [skip ci]" && git push)
+
+      # --- ARTIFACT OLUŞTURMA ---
+      # Build edilen 'dist' klasörünü bir sonraki adıma aktarır
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  # 2. GÖREV: Yayına Al (Deploy)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-update
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

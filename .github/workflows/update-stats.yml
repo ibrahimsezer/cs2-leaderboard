@@ -2,6 +2,8 @@ name: Update Stats & Deploy to Pages
 
 on:
   schedule:
+    #- cron: '0 */12 * * *'
+    #- cron: '0 */6 * * *'
     - cron: '0 0 * * *' # Her gece çalışır
   workflow_dispatch:      # Manuel tetikleme
   push:

@@ -1,5 +1,5 @@
 import React from 'react';
-import leaderboardData from '../scripts/data.json'; // Python scriptinin çıktısı
+import leaderboardData from './data.json'; // Python scriptinin çıktısı
 
 function App() {
   const { meta, players } = leaderboardData;

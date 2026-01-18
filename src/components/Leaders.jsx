@@ -1,6 +1,6 @@
 import React from 'react';
 
-// SVG Icons
+// --- SVG ICONS ---
 const TrophyIcon = ({ className }) => (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
         <path d="M18.825 2H5.175A2.181 2.181 0 0 0 3 4.175V5a6.012 6.012 0 0 0 4.14 5.7c.304 3.018 2.378 5.496 5.172 6.136L9.894 19H7.5a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 0-.5-.5h-2.394l-2.418-2.164C15.447 16.196 17.522 13.718 17.826 10.7 20.25 9.948 21 7.152 21 5v-.825A2.181 2.181 0 0 0 18.825 2zM5.25 5h-1a.5.5 0 0 1-.5-.5v-.325A.681.681 0 0 1 4.425 3.5h.825c.138 0 .25.112.25.25V5zm4.836 9.873A4.502 4.502 0 0 1 6.75 10.5v-7h10.5v7a4.502 4.502 0 0 1-3.336 4.373A1.503 1.503 0 0 0 12.002 16h-.004a1.503 1.503 0 0 0-1.912-1.127zM18.75 5v-1.25c0-.138.112-.25.25-.25h.825a.681.681 0 0 1 .675.675v.325a.5.5 0 0 1-.5.5h-1z" />
@@ -19,122 +19,126 @@ const CrownIcon = ({ className }) => (
     </svg>
 );
 
+
+
+
 function PodiumStep({ player, rank }) {
     const isFirst = rank === 1;
     const isSecond = rank === 2;
     const isThird = rank === 3;
 
-    let containerClasses = "";
-    let podiumHeight = "";
-    let iconColor = "";
-    let glowColor = "";
+    let containerClass = "";
+    let boxClass = "";
+    let titleClass = "";
+    let scoreClass = "";
+    let avatarBorder = "";
+    let rankBadgeClass = "";
+    let statusText = "";
+    let trophyColor = "";
     let rankIcon = null;
 
     if (isFirst) {
-        containerClasses = "order-2 md:-mt-12 z-10 w-full md:w-1/3";
-        podiumHeight = "h-80 md:h-96";
-        iconColor = "text-yellow-400";
-        glowColor = "shadow-[0_0_50px_rgba(234,179,8,0.3)]";
+        // Champion - Center, Taller
+        containerClass = "order-2 -mt-12 z-20";
+        // REDUCED HEIGHT: 520px -> 420px
+        boxClass = "h-[420px] w-[340px] bg-gradient-to-b from-[#1e293b] to-[#0f172a] shadow-[0_0_60px_-15px_rgba(234,179,8,0.2)] border-t border-white/10";
+        titleClass = "text-white text-3xl font-bold mt-4 mb-4";
+        scoreClass = "text-white text-5xl";
+        avatarBorder = "border-[#eab308] shadow-[0_0_30px_rgba(234,179,8,0.4)]";
+        rankBadgeClass = "bg-[#eab308] text-black";
+        statusText = "CHAMPION";
+        trophyColor = "text-[#eab308]";
         rankIcon = <CrownIcon className="w-8 h-8 text-yellow-500 absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce" />;
     } else if (isSecond) {
-        containerClasses = "order-1 w-full md:w-1/3 mt-4 md:mt-0";
-        podiumHeight = "h-64 md:h-72";
-        iconColor = "text-slate-300";
-        glowColor = "shadow-[0_0_30px_rgba(148,163,184,0.1)]";
+        // Challenger - Left
+        containerClass = "order-1 mt-8 z-10";
+        // REDUCED HEIGHT: 450px -> 360px
+        boxClass = "h-[360px] w-[300px] bg-[#111827] shadow-[0_0_40px_-10px_rgba(15,23,42,0.5)] border-t border-white/5 opacity-90";
+        titleClass = "text-slate-200 text-2xl font-bold mt-4 mb-4";
+        scoreClass = "text-slate-200 text-4xl";
+        avatarBorder = "border-slate-500 shadow-[0_0_20px_rgba(148,163,184,0.2)]";
+        rankBadgeClass = "bg-slate-500 text-white";
+        statusText = "CHALLENGER";
+        trophyColor = "text-slate-400";
     } else if (isThird) {
-        containerClasses = "order-3 w-full md:w-1/3 mt-4 md:mt-0";
-        podiumHeight = "h-64 md:h-72";
-        iconColor = "text-orange-400";
-        glowColor = "shadow-[0_0_30px_rgba(251,146,60,0.1)]";
+        // Contender - Right
+        containerClass = "order-3 mt-8 z-10";
+        // REDUCED HEIGHT: 450px -> 360px
+        boxClass = "h-[360px] w-[300px] bg-[#111827] shadow-[0_0_40px_-10px_rgba(15,23,42,0.5)] border-t border-white/5 opacity-80";
+        titleClass = "text-slate-300 text-2xl font-bold mt-4 mb-4";
+        scoreClass = "text-slate-300 text-4xl";
+        avatarBorder = "border-[#d97706] shadow-[0_0_20px_rgba(217,119,6,0.2)]";
+        rankBadgeClass = "bg-[#d97706] text-white";
+        statusText = "CONTENDER";
+        trophyColor = "text-[#d97706]";
     }
 
     return (
-        <div className={`flex flex-col items-center ${containerClasses} transition-all duration-300 hover:scale-[1.02]`}>
+        <div className={`flex flex-col items-center w-full md:w-1/3 transition-all duration-300 hover:scale-[1.02] ${containerClass}`}>
 
             {/* Avatar Section */}
-            <div className="relative mb-4 group cursor-pointer">
+            <div className="relative mb-2 group cursor-pointer">
                 {isFirst && rankIcon}
-
-                <div className={`w-28 h-28 md:w-32 md:h-32 rounded-3xl bg-slate-800 border-4 border-slate-700/50 shadow-2xl flex items-center justify-center overflow-hidden relative z-10 ${glowColor}`}>
+                <div className={`w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-slate-800 border-4 border-slate-700/50 shadow-2xl flex items-center justify-center overflow-hidden relative z-10 ${avatarBorder}`}>
                     {player.avatar ? (
-                        <img
-                            src={player.avatar}
-                            alt={player.name}
-                            className="w-full h-full object-cover"
-                        />
+                        <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
                     ) : (
-                        <div className="w-full h-full bg-slate-800 flex flex-col items-center justify-center text-slate-500">
-                            <span className="text-4xl font-bold">{player.name.charAt(0).toUpperCase()}</span>
-                            <span className="text-[10px] mt-1 uppercase">Avatar</span>
-                        </div>
+                        <span className="text-3xl font-bold text-slate-500">{player.name.charAt(0).toUpperCase()}</span>
                     )}
-                </div>
-
-                <div className={`absolute -bottom-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm bg-slate-900 border-2 border-slate-600 z-20 ${iconColor}`}>
-                    #{rank}
                 </div>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 text-center tracking-tight">
-                {player.name}
-            </h3>
+            <h3 className={titleClass}>{player.name}</h3>
 
-            <div className={`
-                relative w-full rounded-t-3xl border-t border-x border-white/10 
-                bg-gradient-to-b from-slate-800/80 via-slate-900/90 to-slate-950/90 
-                backdrop-blur-md flex flex-col items-center justify-start pt-8 pb-4
-                ${podiumHeight}
-                ${isFirst ? 'from-indigo-900/40 via-slate-900/90' : ''}
-                shadow-2xl overflow-hidden
-            `}>
+            <div className={`relative rounded-3xl backdrop-blur-md flex flex-col items-center justify-start pt-6 pb-2 ${boxClass} overflow-hidden`}>
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-                <div className={`mb-4 p-3 rounded-2xl bg-slate-950/50 border border-white/5 shadow-inner`}>
-                    <TrophyIcon className={`w-8 h-8 ${iconColor}`} />
+                <div className={`mb-2 p-2 rounded-2xl bg-slate-950/50 border border-white/5 shadow-inner`}>
+                    <TrophyIcon className={`w-6 h-6 ${trophyColor}`} />
                 </div>
 
-                <div className="text-slate-400 text-sm font-medium mb-6 uppercase tracking-wider flex flex-col items-center">
-                    <span className="text-xs opacity-60">Status</span>
-                    <span className={iconColor === 'text-yellow-400' ? 'text-yellow-200' : 'text-slate-300'}>
-                        {isFirst ? 'Champion' : isSecond ? 'Challenger' : 'Contender'}
+                <div className="text-slate-400 text-sm font-medium mb-1 uppercase tracking-wider flex flex-col items-center">
+                    <span className="text-[10px] opacity-60">Status</span>
+                    <span className={isFirst ? 'text-yellow-200' : 'text-slate-300'}>
+                        {statusText}
                     </span>
                 </div>
 
-                <div className="flex flex-col items-center gap-1 mt-auto mb-8">
+                {/* Score Section */}
+                <div className="flex flex-col items-center gap-1 mt-4 mb-4">
                     <div className="flex items-center gap-2">
-                        <DiamondIcon className={`w-6 h-6 ${isFirst ? 'text-blue-400' : 'text-blue-500/70'}`} />
-                        <span className={`text-3xl md:text-4xl font-black tracking-tighter ${isFirst ? 'text-white' : 'text-slate-200'}`}>
+                        <DiamondIcon className={`w-5 h-5 ${isFirst ? 'text-blue-400' : 'text-blue-500/70'}`} />
+                        <span className={`${scoreClass} font-black tracking-tighter`}>
                             {player.score.toLocaleString()}
                         </span>
                     </div>
-                    <span className="text-blue-400/60 text-xs font-bold uppercase tracking-[0.2em] mb-4">Score</span>
+                </div>
 
-                    {/* --- Detailed Stats Grid --- */}
-                    <div className="grid grid-cols-3 gap-4 w-full px-4 border-t border-white/5 pt-4">
-                        <div className="flex flex-col items-center group/stat">
-                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
-                                {player.kills}
-                            </span>
-                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Kills</span>
-                        </div>
-                        <div className="flex flex-col items-center group/stat">
-                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
-                                {(player.damage / 1000).toFixed(1)}k
-                            </span>
-                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Dmg</span>
-                        </div>
-                        <div className="flex flex-col items-center group/stat">
-                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
-                                %{player.hs_rate}
-                            </span>
-                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">HS%</span>
-                        </div>
+                {/* Detailed Stats Grid - Footer */}
+                <div className="grid grid-cols-3 gap-2 w-full px-4 border-t border-white/5 pt-8 mt-auto mb-8">
+                    <div className="flex flex-col items-center group/stat">
+                        <span className={`text-base font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                            {player.kills}
+                        </span>
+                        <span className="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Kills</span>
+                    </div>
+                    <div className="flex flex-col items-center group/stat">
+                        <span className={`text-base font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                            {(player.damage / 1000).toFixed(1)}k
+                        </span>
+                        <span className="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Dmg</span>
+                    </div>
+                    <div className="flex flex-col items-center group/stat">
+                        <span className={`text-base font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                            %{player.hs_rate}
+                        </span>
+                        <span className="text-[9px] text-slate-500 uppercase font-bold tracking-wider">HS%</span>
                     </div>
                 </div>
 
                 {isFirst && (
-                    <div className="absolute bottom-6 flex flex-col items-center animate-pulse">
-                        <span className="text-[10px] text-slate-500 uppercase">Season 1</span>
+                    <div className="absolute bottom-1 flex flex-col items-center animate-pulse">
+                        <span className="text-[9px] text-slate-600 uppercase tracking-widest font-bold">Season 1</span>
                     </div>
                 )}
             </div>
@@ -142,18 +146,25 @@ function PodiumStep({ player, rank }) {
     );
 }
 
+import CategoryLeaders from './CategoryLeaders';
+
 function Leaders({ players }) {
     if (!players || players.length < 3) return null;
 
     const sorted = [...players].sort((a, b) => b.score - a.score).slice(0, 3);
 
     return (
-        <div className="w-full max-w-5xl mx-auto pt-10 pb-0 px-4">
-            <div className="flex flex-col md:flex-row items-end justify-center gap-4 md:gap-6">
-                {sorted.map((player, index) => (
-                    <PodiumStep key={player.name} player={player} rank={index + 1} />
-                ))}
+        <div className="w-full max-w-6xl mx-auto pt-10 pb-4 px-4">
+
+            {/* Main Podium */}
+            <div className="flex flex-col md:flex-row items-end justify-center gap-6 mb-16">
+                <PodiumStep key={sorted[1].name} player={sorted[1]} rank={2} />
+                <PodiumStep key={sorted[0].name} player={sorted[0]} rank={1} />
+                <PodiumStep key={sorted[2].name} player={sorted[2]} rank={3} />
             </div>
+
+            {/* Mini Leaderboards Grid (Modularized) */}
+            <CategoryLeaders players={players} />
         </div>
     );
 }

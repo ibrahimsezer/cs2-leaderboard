@@ -1,9 +1,43 @@
 {
     "meta": {
-        "last_updated": "18.01.2026 21:43",
+        "last_updated": "19.01.2026 01:28",
         "season_active": true
     },
     "players": [
+        {
+            "name": "Sezar",
+            "nickname": "Sezar",
+            "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
+            "kills": 206,
+            "deaths": 97,
+            "wins": 3,
+            "mvps": 9,
+            "damage": 27650,
+            "headshots": 142,
+            "rounds": 88,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 170,
+            "kda": 2.12,
+            "hs_rate": 68.9,
+            "score": 266.9
+        },
+        {
+            "name": "Ahmet",
+            "nickname": "Ahmet",
+            "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
+            "kills": 146,
+            "deaths": 104,
+            "wins": 2,
+            "mvps": 14,
+            "damage": 20707,
+            "headshots": 116,
+            "rounds": 97,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 104,
+            "kda": 1.4,
+            "hs_rate": 79.5,
+            "score": 173.5
+        },
         {
             "name": "Gr1N",
             "nickname": "Gr1N",
@@ -19,24 +53,7 @@
             "fav_weapon_kills": 21,
             "kda": 1.72,
             "hs_rate": 24.0,
-            "score": 71.8
-        },
-        {
-            "name": "Ahmet",
-            "nickname": "Ahmet",
-            "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
-            "kills": 74,
-            "deaths": 64,
-            "wins": 2,
-            "mvps": 12,
-            "damage": 11815,
-            "headshots": 50,
-            "rounds": 88,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 37,
-            "kda": 1.16,
-            "hs_rate": 67.6,
-            "score": 56.9
+            "score": 143.5
         },
         {
             "name": "★★★★★",
@@ -53,24 +70,7 @@
             "fav_weapon_kills": 59,
             "kda": 1.17,
             "hs_rate": 46.4,
-            "score": 50.0
-        },
-        {
-            "name": "Sezar",
-            "nickname": "Sezar",
-            "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 74,
-            "deaths": 51,
-            "wins": 2,
-            "mvps": 9,
-            "damage": 9633,
-            "headshots": 30,
-            "rounds": 81,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 41,
-            "kda": 1.45,
-            "hs_rate": 40.5,
-            "score": 48.4
+            "score": 99.9
         },
         {
             "name": "iboRR",
@@ -87,7 +87,7 @@
             "fav_weapon_kills": 10,
             "kda": 0.69,
             "hs_rate": 33.3,
-            "score": 14.2
+            "score": 28.5
         },
         {
             "name": "Asmork",
@@ -212,18 +212,18 @@
             "name": "NightWish",
             "nickname": "NightWish",
             "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
-            "kills": 31,
+            "kills": 81,
             "deaths": 84,
             "wins": 1,
-            "mvps": 3,
-            "damage": 4251,
-            "headshots": 17,
-            "rounds": 48,
+            "mvps": 6,
+            "damage": 13251,
+            "headshots": 27,
+            "rounds": 38,
             "fav_weapon": "XM1014",
-            "fav_weapon_kills": 17,
-            "kda": 0.37,
+            "fav_weapon_kills": 27,
+            "kda": 1.37,
             "hs_rate": 54.8,
-            "score": -30.3
+            "score": 45.6
         }
     ]
 }

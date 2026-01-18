@@ -130,7 +130,7 @@ def calculate_score(stats):
         + (stats["headshots"] * 0.2)
         - (stats["deaths"] * 1)
     )
-    normalized_score = (raw_score / total_rounds) * 50
+    normalized_score = (raw_score / total_rounds) * 100
     return round(normalized_score, 1)
 
 

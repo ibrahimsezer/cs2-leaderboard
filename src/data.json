@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "19.01.2026 01:28",
+        "last_updated": "18.01.2026 22:32",
         "season_active": true
     },
     "players": [
@@ -212,18 +212,18 @@
             "name": "NightWish",
             "nickname": "NightWish",
             "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
-            "kills": 81,
+            "kills": 31,
             "deaths": 84,
             "wins": 1,
-            "mvps": 6,
-            "damage": 13251,
-            "headshots": 27,
-            "rounds": 38,
+            "mvps": 3,
+            "damage": 4251,
+            "headshots": 17,
+            "rounds": 48,
             "fav_weapon": "XM1014",
-            "fav_weapon_kills": 27,
-            "kda": 1.37,
+            "fav_weapon_kills": 17,
+            "kda": 0.37,
             "hs_rate": 54.8,
-            "score": 45.6
+            "score": -60.6
         }
     ]
 }

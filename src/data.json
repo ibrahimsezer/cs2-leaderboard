@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "19.01.2026 01:28",
+        "last_updated": "19.01.2026 01:33",
         "season_active": true
     },
     "players": [
@@ -88,6 +88,23 @@
             "kda": 0.69,
             "hs_rate": 33.3,
             "score": 28.5
+        },
+        {
+            "name": "NightWish",
+            "nickname": "NightWish",
+            "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
+            "kills": 31,
+            "deaths": 84,
+            "wins": 1,
+            "mvps": 3,
+            "damage": 4251,
+            "headshots": 17,
+            "rounds": 48,
+            "fav_weapon": "XM1014",
+            "fav_weapon_kills": 17,
+            "kda": 0.37,
+            "hs_rate": 54.8,
+            "score": 0.1
         },
         {
             "name": "Asmork",
@@ -207,23 +224,6 @@
             "kda": 0,
             "hs_rate": 0,
             "score": 0.0
-        },
-        {
-            "name": "NightWish",
-            "nickname": "NightWish",
-            "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
-            "kills": 81,
-            "deaths": 84,
-            "wins": 1,
-            "mvps": 6,
-            "damage": 13251,
-            "headshots": 27,
-            "rounds": 38,
-            "fav_weapon": "XM1014",
-            "fav_weapon_kills": 27,
-            "kda": 1.37,
-            "hs_rate": 54.8,
-            "score": 45.6
         }
     ]
 }

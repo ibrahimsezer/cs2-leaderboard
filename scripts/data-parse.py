@@ -131,6 +131,8 @@ def calculate_score(stats):
         - (stats["deaths"] * 1)
     )
     normalized_score = (raw_score / total_rounds) * 100
+    if normalized_score < 0:
+        return 0.1
     return round(normalized_score, 1)
 
 

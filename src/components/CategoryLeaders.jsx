@@ -20,47 +20,52 @@ const SwordIcon = ({ className }) => (
 );
 
 // --- MINI LEADERBOARD CARD ---
-function MiniLeaderboardCard({ title, icon, players, statKey, formatValue, colorClass }) {
+function MiniLeaderboardCard({ title, icon, players, statKey, formatValue }) {
     const topThree = [...players].sort((a, b) => b[statKey] - a[statKey]).slice(0, 3);
 
     return (
-        <div className="bg-slate-900/50 border border-slate-700/50 rounded-2xl p-5 hover:bg-slate-800/50 transition-colors">
+        <div className="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 hover:bg-neutral-900/80 transition-colors group">
             <div className="flex items-center gap-3 mb-4">
-                <div className={`p-2 rounded-lg bg-slate-800 ${colorClass}`}>
+                <div className={`p-2 rounded-lg bg-neutral-800 text-white group-hover:bg-white group-hover:text-black transition-colors`}>
                     {icon}
                 </div>
-                <h4 className="text-sm font-bold text-slate-200 uppercase tracking-widest">{title}</h4>
+                <h4 className="text-sm font-bold text-neutral-200 uppercase tracking-widest">{title}</h4>
             </div>
 
             <div className="flex flex-col gap-3">
-                {topThree.map((player, idx) => (
-                    <div key={player.name} className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/30 transition-colors">
-                        <div className="flex items-center gap-3">
-                            <span className={`text-xs font-black w-4 ${idx === 0 ? 'text-yellow-500' : idx === 1 ? 'text-slate-400' : 'text-orange-700'}`}>
-                                #{idx + 1}
-                            </span>
+                {topThree.map((player, idx) => {
+                    const rankColor = idx === 0 ? 'text-cyan-400' : idx === 1 ? 'text-purple-400' : 'text-orange-400';
+                    const borderColor = idx === 0 ? 'border-cyan-400' : idx === 1 ? 'border-purple-400' : 'border-orange-400';
 
-                            {/* Avatar Mini */}
-                            <div className="w-8 h-8 rounded-full bg-slate-800 overflow-hidden border border-slate-600">
-                                {player.avatar ? (
-                                    <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-500">
-                                        {player.name.charAt(0)}
-                                    </div>
-                                )}
+                    return (
+                        <div key={player.name} className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <div className="flex items-center gap-3">
+                                <span className={`text-xs font-black w-4 ${rankColor}`}>
+                                    #{idx + 1}
+                                </span>
+
+                                {/* Avatar Mini */}
+                                <div className={`w-8 h-8 rounded-full bg-neutral-800 overflow-hidden border ${borderColor}`}>
+                                    {player.avatar ? (
+                                        <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center text-xs font-bold text-neutral-500">
+                                            {player.name.charAt(0)}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <span className={`text-sm font-bold truncate w-24 ${idx === 0 ? 'text-white' : 'text-neutral-400'}`}>
+                                    {player.name}
+                                </span>
                             </div>
 
-                            <span className="text-sm font-bold text-slate-300 truncate w-24">
-                                {player.name}
+                            <span className={`font-mono font-bold text-sm ${rankColor}`}>
+                                {formatValue ? formatValue(player[statKey]) : player[statKey]}
                             </span>
                         </div>
-
-                        <span className={`font-mono font-bold text-sm ${colorClass}`}>
-                            {formatValue ? formatValue(player[statKey]) : player[statKey]}
-                        </span>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );
@@ -72,35 +77,32 @@ function CategoryLeaders({ players }) {
 
     return (
         <div className="w-full">
-            <h3 className="text-xl font-bold text-slate-300 mb-6 flex items-center gap-2">
-                <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-6 bg-white rounded-full"></span>
                 Category Leaders
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <MiniLeaderboardCard
                     title="Damage Dealers"
-                    icon={<FireIcon className="w-5 h-5 text-red-500" />}
+                    icon={<FireIcon className="w-5 h-5" />}
                     players={players}
                     statKey="damage"
                     formatValue={(v) => v.toLocaleString()}
-                    colorClass="text-red-400"
                 />
                 <MiniLeaderboardCard
                     title="Sharpshooters"
-                    icon={<CrosshairIcon className="w-5 h-5 text-blue-500" />}
+                    icon={<CrosshairIcon className="w-5 h-5" />}
                     players={players}
                     statKey="hs_rate"
                     formatValue={(v) => `%${v}`}
-                    colorClass="text-blue-400"
                 />
                 <MiniLeaderboardCard
                     title="Top Fraggers"
-                    icon={<SwordIcon className="w-5 h-5 text-green-500" />}
+                    icon={<SwordIcon className="w-5 h-5" />}
                     players={players}
                     statKey="kills"
                     formatValue={(v) => v}
-                    colorClass="text-green-400"
                 />
             </div>
         </div>

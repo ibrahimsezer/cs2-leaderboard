@@ -34,17 +34,17 @@ function Table({ players }) {
     };
 
     return (
-        <div className="w-full backdrop-blur-md bg-slate-900/60 rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden">
+        <div className="w-full backdrop-blur-md bg-black/60 rounded-xl border border-white/10 shadow-2xl overflow-hidden">
             {/* Header Actions */}
-            <div className="p-4 border-b border-slate-700/50 flex flex-col md:flex-row justify-between items-center gap-4">
-                <h2 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-                    <span className="w-2 h-6 bg-yellow-500 rounded-full"></span>
+            <div className="p-4 border-b border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                    <span className="w-2 h-6 bg-white rounded-full"></span>
                     Player Rankings
                 </h2>
                 <input
                     type="text"
                     placeholder="Search player..."
-                    className="bg-slate-800/80 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full md:w-64 p-2.5 placeholder-slate-500 transition-all hover:bg-slate-800"
+                    className="bg-neutral-900/80 border border-neutral-800 text-neutral-200 text-sm rounded-lg focus:ring-white focus:border-white block w-full md:w-64 p-2.5 placeholder-neutral-500 transition-all hover:bg-neutral-800"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -53,56 +53,60 @@ function Table({ players }) {
             <div className="overflow-x-auto px-2">
                 <table className="w-full text-left border-separate border-spacing-y-2">
                     <thead>
-                        <tr className="bg-slate-800/80 text-slate-400 text-xs uppercase tracking-wider">
-                            <th className="p-4 text-center w-16 cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('name')}>
+                        <tr className="bg-neutral-900/80 text-neutral-500 text-xs uppercase tracking-wider">
+                            <th className="p-4 text-center w-16 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('name')}>
                                 Rank
                             </th>
-                            <th className="p-4 cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('name')}>
+                            <th className="p-4 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('name')}>
                                 Player {getSortIcon('name')}
                             </th>
-                            <th className="p-4 text-right text-yellow-500 cursor-pointer hover:text-yellow-300 transition-colors" onClick={() => requestSort('score')}>
+                            <th className="p-4 text-right text-white cursor-pointer hover:text-neutral-300 transition-colors" onClick={() => requestSort('score')}>
                                 Score {getSortIcon('score')}
                             </th>
-                            <th className="p-4 text-right cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('kills')}>
+                            <th className="p-4 text-right cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('kills')}>
                                 Kills {getSortIcon('kills')}
                             </th>
-                            <th className="p-4 text-right cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('damage')}>
+                            <th className="p-4 text-right cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('damage')}>
                                 Dmg {getSortIcon('damage')}
                             </th>
-                            <th className="p-4 text-right cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('hs_rate')}>
+                            <th className="p-4 text-right cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('hs_rate')}>
                                 HS% {getSortIcon('hs_rate')}
                             </th>
-                            <th className="p-4 text-right text-green-400 cursor-pointer hover:text-green-300 transition-colors" onClick={() => requestSort('wins')}>
+                            <th className="p-4 text-right text-neutral-400 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('wins')}>
                                 Wins {getSortIcon('wins')}
                             </th>
-                            <th className="p-4 text-right text-blue-400 cursor-pointer hover:text-blue-300 transition-colors" onClick={() => requestSort('mvps')}>
+                            <th className="p-4 text-right text-neutral-400 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('mvps')}>
                                 MVPs {getSortIcon('mvps')}
                             </th>
-                            <th className="p-4 text-right text-red-400 cursor-pointer hover:text-red-300 transition-colors" onClick={() => requestSort('deaths')}>
+                            <th className="p-4 text-right text-neutral-400 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('deaths')}>
                                 Deaths {getSortIcon('deaths')}
                             </th>
-                            <th className="p-4 text-right cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('rounds')}>
+                            <th className="p-4 text-right cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('rounds')}>
                                 Rounds {getSortIcon('rounds')}
                             </th>
                             <th className="p-4 text-center">Weapon</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-700/50">
+                    <tbody className="divide-y divide-white/5">
                         {sortedPlayers.map((player, index) => {
-                            // Rank Styling Logic
-                            let rowStyle = "bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80";
-                            let rankTextStyle = "text-slate-500 font-mono font-bold";
+                            // Rank Styling Logic - Accent Colors
+                            let rowStyle = "bg-neutral-900/40 border border-white/5 hover:bg-neutral-800/80";
+                            let rankTextStyle = "text-neutral-500 font-mono font-bold";
+                            let scoreColor = "text-white";
                             let rankDisplay = index + 1;
 
-                            if (index === 0) { // Gold
-                                rowStyle = "bg-gradient-to-r from-yellow-500/10 to-slate-900/50 border-2 border-yellow-500/60 shadow-[0_0_20px_rgba(234,179,8,0.15)] scale-[1.01] z-10 relative";
-                                rankTextStyle = "text-yellow-400 font-black text-3xl italic drop-shadow-sm";
-                            } else if (index === 1) { // Silver
-                                rowStyle = "bg-gradient-to-r from-slate-400/10 to-slate-900/50 border-2 border-slate-400/50 shadow-lg";
-                                rankTextStyle = "text-slate-300 font-bold text-2xl italic";
-                            } else if (index === 2) { // Bronze
-                                rowStyle = "bg-gradient-to-r from-orange-700/10 to-slate-900/50 border-2 border-orange-700/50 shadow-lg";
-                                rankTextStyle = "text-orange-500 font-bold text-2xl italic";
+                            if (index === 0) { // Rank 1: Cyan
+                                rowStyle = "bg-gradient-to-r from-cyan-900/20 to-black/80 border-l-4 border-l-cyan-500 border-y border-r border-white/5 shadow-[0_0_20px_rgba(34,211,238,0.05)] scale-[1.01] z-10 relative";
+                                rankTextStyle = "text-cyan-400 font-black text-3xl italic drop-shadow-sm";
+                                scoreColor = "text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]";
+                            } else if (index === 1) { // Rank 2: Purple
+                                rowStyle = "bg-gradient-to-r from-purple-900/20 to-black/50 border-l-4 border-l-purple-500 border-y border-r border-white/5";
+                                rankTextStyle = "text-purple-400 font-bold text-2xl italic";
+                                scoreColor = "text-purple-400";
+                            } else if (index === 2) { // Rank 3: Orange
+                                rowStyle = "bg-gradient-to-r from-orange-900/20 to-black/50 border-l-4 border-l-orange-500 border-y border-r border-white/5";
+                                rankTextStyle = "text-orange-400 font-bold text-2xl italic";
+                                scoreColor = "text-orange-400";
                             }
 
                             return (
@@ -114,33 +118,33 @@ function Table({ players }) {
                                         <span className={rankTextStyle}>#{rankDisplay}</span>
                                     </td>
 
-                                    {/* --- AVATAR & NAME SÜTUNU (GÜNCELLENDİ) --- */}
+                                    {/* --- AVATAR & NAME COLUMN --- */}
                                     <td className="p-4 flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center overflow-hidden bg-slate-700 border border-slate-600 group-hover:border-yellow-500/50 transition-colors`}>
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center overflow-hidden bg-neutral-800 border border-neutral-700 group-hover:border-white/50 transition-colors`}>
                                             {player.avatar ? (
                                                 <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
                                             ) : (
-                                                <span className="text-xs font-bold text-slate-300">
+                                                <span className="text-xs font-bold text-neutral-400">
                                                     {player.name.charAt(0).toUpperCase()}
                                                 </span>
                                             )}
                                         </div>
-                                        <span className={`font-semibold text-slate-200 group-hover:text-white transition-colors`}>
+                                        <span className={`font-semibold text-neutral-200 group-hover:text-white transition-colors`}>
                                             {player.name}
                                         </span>
                                     </td>
 
-                                    <td className="p-4 text-right font-black text-lg text-yellow-500 tabular-nums shadow-yellow-500/10 drop-shadow-sm">
+                                    <td className={`p-4 text-right font-black text-lg tabular-nums ${scoreColor}`}>
                                         {player.score}
                                     </td>
-                                    <td className="p-4 text-right font-mono text-slate-300 tabular-nums">{player.kills}</td>
-                                    <td className="p-4 text-right font-mono text-slate-300 tabular-nums">{player.damage.toLocaleString()}</td>
-                                    <td className="p-4 text-right font-mono text-slate-300 tabular-nums">{player.hs_rate}%</td>
-                                    <td className="p-4 text-right font-mono text-green-400 font-bold tabular-nums">{player.wins}</td>
-                                    <td className="p-4 text-right font-mono text-blue-400 tabular-nums">{player.mvps}</td>
-                                    <td className="p-4 text-right font-mono text-red-400 tabular-nums">{player.deaths}</td>
-                                    <td className="p-4 text-right font-mono text-slate-500 tabular-nums">{player.rounds}</td>
-                                    <td className="p-4 text-center text-xs font-mono text-slate-400 group-hover:text-yellow-400 transition-colors rounded-r-xl">
+                                    <td className="p-4 text-right font-mono text-neutral-400 tabular-nums">{player.kills}</td>
+                                    <td className="p-4 text-right font-mono text-neutral-400 tabular-nums">{player.damage.toLocaleString()}</td>
+                                    <td className="p-4 text-right font-mono text-neutral-400 tabular-nums">{player.hs_rate}%</td>
+                                    <td className="p-4 text-right font-mono text-neutral-400 font-bold tabular-nums">{player.wins}</td>
+                                    <td className="p-4 text-right font-mono text-neutral-500 tabular-nums">{player.mvps}</td>
+                                    <td className="p-4 text-right font-mono text-neutral-500 tabular-nums">{player.deaths}</td>
+                                    <td className="p-4 text-right font-mono text-neutral-600 tabular-nums">{player.rounds}</td>
+                                    <td className="p-4 text-center text-xs font-mono text-neutral-500 group-hover:text-white transition-colors rounded-r-xl">
                                         {player.fav_weapon}
                                     </td>
                                 </tr>

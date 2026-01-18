@@ -1,9 +1,26 @@
 {
     "meta": {
-        "last_updated": "17.01.2026 22:30",
+        "last_updated": "18.01.2026 13:59",
         "season_active": true
     },
     "players": [
+        {
+            "name": "★★★★★",
+            "nickname": "EL EX v2",
+            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
+            "kills": 71,
+            "deaths": 59,
+            "wins": 1,
+            "mvps": 6,
+            "damage": 9000,
+            "headshots": 36,
+            "rounds": 57,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 36,
+            "kda": 1.2,
+            "hs_rate": 50.7,
+            "score": 85.7
+        },
         {
             "name": "Ahmet",
             "nickname": "Ahmet",
@@ -37,23 +54,6 @@
             "kda": 1.69,
             "hs_rate": 39.0,
             "score": 78.6
-        },
-        {
-            "name": "★★★★★",
-            "nickname": "EL EX v2",
-            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
-            "kills": 47,
-            "deaths": 45,
-            "wins": 1,
-            "mvps": 6,
-            "damage": 5946,
-            "headshots": 21,
-            "rounds": 57,
-            "fav_weapon": "M4A1",
-            "fav_weapon_kills": 18,
-            "kda": 1.04,
-            "hs_rate": 44.7,
-            "score": 59.2
         },
         {
             "name": "iboRR",

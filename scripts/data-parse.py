@@ -115,13 +115,23 @@ def save_json(filepath, data):
 
 
 def calculate_score(stats):
-    score = (
+    """
+    Yeni Formül: (Ham Puan / Round Sayısı) * 100
+    Bu sayede 'Verimlilik' esas alınır.
+    """
+    total_rounds = stats.get("rounds", 0)
+
+    # Sıfıra bölünme hatasını önle (Yeni oyuncularda round 0 olabilir)
+    if total_rounds < 5:  # En az 5 round oynamış olsun ki istatistik otursun
+        return 0.0
+    raw_score = (
         (stats["mvps"] * 3.0)
         + (stats["damage"] / 100.0)
         + (stats["headshots"] * 0.2)
         - (stats["deaths"] * 1)
     )
-    return round(score, 1)
+    normalized_score = (raw_score / total_rounds) * 50
+    return round(normalized_score, 1)
 
 
 def main():

@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "19.01.2026 01:35",
+        "last_updated": "19.01.2026 01:56",
         "season_active": true
     },
     "players": [
@@ -8,35 +8,35 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 206,
-            "deaths": 97,
+            "kills": 256,
+            "deaths": 144,
             "wins": 3,
             "mvps": 9,
-            "damage": 27650,
-            "headshots": 142,
-            "rounds": 88,
+            "damage": 33633,
+            "headshots": 180,
+            "rounds": 89,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 170,
-            "kda": 2.12,
-            "hs_rate": 68.9,
-            "score": 266.9
+            "fav_weapon_kills": 219,
+            "kda": 1.78,
+            "hs_rate": 70.3,
+            "score": 286.9
         },
         {
             "name": "Ahmet",
             "nickname": "Ahmet",
             "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
-            "kills": 146,
+            "kills": 149,
             "deaths": 104,
             "wins": 2,
             "mvps": 14,
-            "damage": 20707,
-            "headshots": 116,
+            "damage": 21061,
+            "headshots": 119,
             "rounds": 97,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 104,
-            "kda": 1.4,
-            "hs_rate": 79.5,
-            "score": 173.5
+            "fav_weapon_kills": 107,
+            "kda": 1.43,
+            "hs_rate": 79.9,
+            "score": 177.7
         },
         {
             "name": "Gr1N",

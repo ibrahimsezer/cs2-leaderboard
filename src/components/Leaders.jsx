@@ -100,14 +100,36 @@ function PodiumStep({ player, rank }) {
                     </span>
                 </div>
 
-                <div className="flex flex-col items-center gap-1 mt-auto mb-12">
+                <div className="flex flex-col items-center gap-1 mt-auto mb-8">
                     <div className="flex items-center gap-2">
                         <DiamondIcon className={`w-6 h-6 ${isFirst ? 'text-blue-400' : 'text-blue-500/70'}`} />
                         <span className={`text-3xl md:text-4xl font-black tracking-tighter ${isFirst ? 'text-white' : 'text-slate-200'}`}>
                             {player.score.toLocaleString()}
                         </span>
                     </div>
-                    <span className="text-blue-400/60 text-xs font-bold uppercase tracking-[0.2em]">Score</span>
+                    <span className="text-blue-400/60 text-xs font-bold uppercase tracking-[0.2em] mb-4">Score</span>
+
+                    {/* --- Detailed Stats Grid --- */}
+                    <div className="grid grid-cols-3 gap-4 w-full px-4 border-t border-white/5 pt-4">
+                        <div className="flex flex-col items-center group/stat">
+                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                                {player.kills}
+                            </span>
+                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Kills</span>
+                        </div>
+                        <div className="flex flex-col items-center group/stat">
+                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                                {(player.damage / 1000).toFixed(1)}k
+                            </span>
+                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Dmg</span>
+                        </div>
+                        <div className="flex flex-col items-center group/stat">
+                            <span className={`text-lg font-bold text-slate-300 transition-colors duration-300 group-hover:text-${isFirst ? 'yellow-400' : isSecond ? 'slate-100' : 'orange-400'}`}>
+                                %{player.hs_rate}
+                            </span>
+                            <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">HS%</span>
+                        </div>
+                    </div>
                 </div>
 
                 {isFirst && (

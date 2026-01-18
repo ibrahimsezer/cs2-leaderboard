@@ -50,8 +50,8 @@ function Table({ players }) {
                 />
             </div>
 
-            <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+            <div className="overflow-x-auto px-2">
+                <table className="w-full text-left border-separate border-spacing-y-2">
                     <thead>
                         <tr className="bg-slate-800/80 text-slate-400 text-xs uppercase tracking-wider">
                             <th className="p-4 text-center w-16 cursor-pointer hover:text-slate-200 transition-colors" onClick={() => requestSort('name')}>
@@ -89,15 +89,29 @@ function Table({ players }) {
                     </thead>
                     <tbody className="divide-y divide-slate-700/50">
                         {sortedPlayers.map((player, index) => {
-                            const isTop3 = index < 3 && sortConfig.key === 'score' && sortConfig.direction === 'desc';
+                            // Rank Styling Logic
+                            let rowStyle = "bg-slate-800/40 border border-slate-700/50 hover:bg-slate-800/80";
+                            let rankTextStyle = "text-slate-500 font-mono font-bold";
+                            let rankDisplay = index + 1;
+
+                            if (index === 0) { // Gold
+                                rowStyle = "bg-gradient-to-r from-yellow-500/10 to-slate-900/50 border-2 border-yellow-500/60 shadow-[0_0_20px_rgba(234,179,8,0.15)] scale-[1.01] z-10 relative";
+                                rankTextStyle = "text-yellow-400 font-black text-3xl italic drop-shadow-sm";
+                            } else if (index === 1) { // Silver
+                                rowStyle = "bg-gradient-to-r from-slate-400/10 to-slate-900/50 border-2 border-slate-400/50 shadow-lg";
+                                rankTextStyle = "text-slate-300 font-bold text-2xl italic";
+                            } else if (index === 2) { // Bronze
+                                rowStyle = "bg-gradient-to-r from-orange-700/10 to-slate-900/50 border-2 border-orange-700/50 shadow-lg";
+                                rankTextStyle = "text-orange-500 font-bold text-2xl italic";
+                            }
 
                             return (
                                 <tr
                                     key={player.name}
-                                    className={`group hover:bg-slate-700/30 transition-all duration-200 ${isTop3 ? 'bg-gradient-to-r from-slate-800/40 to-slate-800/10' : ''}`}
+                                    className={`transition-all duration-300 group rounded-xl ${rowStyle}`}
                                 >
-                                    <td className="p-4 text-center font-mono font-bold text-slate-500 group-hover:text-slate-300">
-                                        {index + 1}
+                                    <td className="p-4 text-center rounded-l-xl">
+                                        <span className={rankTextStyle}>#{rankDisplay}</span>
                                     </td>
 
                                     {/* --- AVATAR & NAME SÜTUNU (GÜNCELLENDİ) --- */}
@@ -126,7 +140,7 @@ function Table({ players }) {
                                     <td className="p-4 text-right font-mono text-blue-400 tabular-nums">{player.mvps}</td>
                                     <td className="p-4 text-right font-mono text-red-400 tabular-nums">{player.deaths}</td>
                                     <td className="p-4 text-right font-mono text-slate-500 tabular-nums">{player.rounds}</td>
-                                    <td className="p-4 text-center text-xs font-mono text-slate-400 group-hover:text-yellow-400 transition-colors">
+                                    <td className="p-4 text-center text-xs font-mono text-slate-400 group-hover:text-yellow-400 transition-colors rounded-r-xl">
                                         {player.fav_weapon}
                                     </td>
                                 </tr>

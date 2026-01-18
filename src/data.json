@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "18.01.2026 21:25",
+        "last_updated": "18.01.2026 21:43",
         "season_active": true
     },
     "players": [
@@ -127,40 +127,23 @@
             "name": "Exselansis",
             "nickname": "EL EX v3",
             "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
-            "kills": 0,
-            "deaths": 0,
+            "kills": 30,
+            "deaths": 19,
             "wins": 0,
-            "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "kda": 0,
-            "hs_rate": 0,
+            "mvps": 1,
+            "damage": 4050,
+            "headshots": 9,
+            "rounds": 1,
+            "fav_weapon": "DEAGLE",
+            "fav_weapon_kills": 2,
+            "kda": 1.58,
+            "hs_rate": 30.0,
             "score": 0.0
         },
         {
             "name": "Murhpy",
             "nickname": "Murhpy",
             "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
-            "kills": 0,
-            "deaths": 0,
-            "wins": 0,
-            "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "kda": 0,
-            "hs_rate": 0,
-            "score": 0.0
-        },
-        {
-            "name": "NightWish",
-            "nickname": "NightWish",
-            "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,
@@ -224,6 +207,23 @@
             "kda": 0,
             "hs_rate": 0,
             "score": 0.0
+        },
+        {
+            "name": "NightWish",
+            "nickname": "NightWish",
+            "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
+            "kills": 31,
+            "deaths": 84,
+            "wins": 1,
+            "mvps": 3,
+            "damage": 4251,
+            "headshots": 17,
+            "rounds": 48,
+            "fav_weapon": "XM1014",
+            "fav_weapon_kills": 17,
+            "kda": 0.37,
+            "hs_rate": 54.8,
+            "score": -30.3
         }
     ]
 }

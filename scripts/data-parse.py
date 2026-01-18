@@ -119,7 +119,7 @@ def calculate_score(stats):
         (stats["mvps"] * 3.0)
         + (stats["damage"] / 100.0)
         + (stats["headshots"] * 0.2)
-        - (stats["deaths"] * 0.5)
+        - (stats["deaths"] * 1)
     )
     return round(score, 1)
 

@@ -1,26 +1,9 @@
 {
     "meta": {
-        "last_updated": "18.01.2026 13:59",
+        "last_updated": "18.01.2026 14:05",
         "season_active": true
     },
     "players": [
-        {
-            "name": "★★★★★",
-            "nickname": "EL EX v2",
-            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
-            "kills": 71,
-            "deaths": 59,
-            "wins": 1,
-            "mvps": 6,
-            "damage": 9000,
-            "headshots": 36,
-            "rounds": 57,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 36,
-            "kda": 1.2,
-            "hs_rate": 50.7,
-            "score": 85.7
-        },
         {
             "name": "Ahmet",
             "nickname": "Ahmet",
@@ -36,7 +19,7 @@
             "fav_weapon_kills": 22,
             "kda": 1.31,
             "hs_rate": 81.6,
-            "score": 80.1
+            "score": 65.6
         },
         {
             "name": "Sezar",
@@ -53,7 +36,24 @@
             "fav_weapon_kills": 32,
             "kda": 1.69,
             "hs_rate": 39.0,
-            "score": 78.6
+            "score": 61.1
+        },
+        {
+            "name": "★★★★★",
+            "nickname": "EL EX v2",
+            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
+            "kills": 71,
+            "deaths": 59,
+            "wins": 1,
+            "mvps": 6,
+            "damage": 9000,
+            "headshots": 36,
+            "rounds": 57,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 36,
+            "kda": 1.2,
+            "hs_rate": 50.7,
+            "score": 56.2
         },
         {
             "name": "iboRR",
@@ -70,7 +70,7 @@
             "fav_weapon_kills": 5,
             "kda": 0.65,
             "hs_rate": 40.9,
-            "score": 34.3
+            "score": 17.3
         },
         {
             "name": "Asmork",

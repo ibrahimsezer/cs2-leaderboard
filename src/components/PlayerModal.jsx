@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import { X, Target, MapPin, Zap, Shield, Trophy, Activity, Ghost, UserX, LayoutGrid, Download, Loader } from 'lucide-react';
+import HistoryChart from './HistoryChart';
 
 function PlayerModal({ player, onClose }) {
     const modalRef = useRef(null);
@@ -195,6 +196,11 @@ function PlayerModal({ player, onClose }) {
                                 <p className="text-[10px] text-neutral-500 uppercase font-bold">Rounds</p>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Trend Chart */}
+                    <div className="mb-8 animate-fade-in-up delay-200">
+                        <HistoryChart history={player.history} />
                     </div>
 
                     {/* Badges Section */}

@@ -15,6 +15,7 @@ BASELINE_FILE = "scripts/baseline.json"
 OUTPUT_FILE = "src/data.json"
 
 RESET_SEASON = False
+HISTORY_LIMIT = 30
 
 WEAPONS = [
     "knife",
@@ -159,6 +160,15 @@ def main():
     print("📸 Profil bilgileri (İsim & Foto) güncelleniyor...")
     all_steam_ids = list(players.values())
     profiles_info = fetch_player_profiles(all_steam_ids)
+
+    # 1.5 Geçmiş Verileri Yükle (History)
+    print("📜 Geçmiş veriler yükleniyor...")
+    existing_data = load_json(OUTPUT_FILE)
+    existing_histories = {}
+    if "players" in existing_data:
+        for p in existing_data["players"]:
+            if "nickname" in p:
+                existing_histories[p["nickname"]] = p.get("history", [])
 
     # 2. Baseline Yükle
     baseline_data = load_json(BASELINE_FILE)
@@ -318,6 +328,31 @@ def main():
                 else 0
             )
             season_stats["score"] = calculate_score(season_stats)
+
+            # --- HISTORY TRACKING ---
+            today_str = datetime.now().strftime("%Y-%m-%d")
+            player_history = existing_histories.get(nickname, [])
+
+            new_history_entry = {
+                "date": today_str,
+                "score": season_stats["score"],
+                "kda": season_stats["kda"],
+                "kills": season_stats["kills"],
+                "rounds": season_stats["rounds"],
+            }
+
+            # Check if last entry is today
+            if player_history and player_history[-1]["date"] == today_str:
+                player_history[-1] = new_history_entry  # Update today's entry
+            else:
+                player_history.append(new_history_entry)  # Add new day
+
+            # Limit history size
+            if len(player_history) > HISTORY_LIMIT:
+                player_history = player_history[-HISTORY_LIMIT:]
+
+            season_stats["history"] = player_history
+            # ------------------------
 
             current_season_stats.append(season_stats)
         else:

@@ -27,7 +27,7 @@ function App() {
         <img
           src={`${import.meta.env.BASE_URL}bg-hero.png`}
           alt="Background"
-          className="w-full h-full object-cover opacity-20 mask-image-gradient grayscale"
+          className="w-full h-full object-cover opacity-40 mask-image-gradient"
           style={{ maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/80 to-black"></div>

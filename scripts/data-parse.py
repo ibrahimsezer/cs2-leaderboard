@@ -13,6 +13,7 @@ API_KEY = os.getenv("API_KEY")
 PLAYERS_FILE = "scripts/players.json"
 BASELINE_FILE = "scripts/baseline.json"
 OUTPUT_FILE = "src/data.json"
+HOF_FILE = "src/hall_of_fame.json"
 
 RESET_SEASON = False
 HISTORY_LIMIT = 30
@@ -151,10 +152,103 @@ def calculate_score(stats):
 def main():
     print("🚀 CS2 İstatistik Takip Sistemi Başlatılıyor...")
 
+    global RESET_SEASON
+
     players = load_json(PLAYERS_FILE)
     if not players:
         print("Hata: players.json bulunamadı.")
         return
+
+    # 1. Mevcut Veriyi Yükle (Meta ve Geçmiş için)
+    existing_data = load_json(OUTPUT_FILE)
+    meta = existing_data.get("meta", {})
+
+    # --- SEZON KONTROLÜ (AYLIK) ---
+    today = datetime.now()
+    season_start_str = meta.get("season_start", "01.01.2026")
+    try:
+        season_start_date = datetime.strptime(season_start_str, "%d.%m.%Y")
+    except ValueError:
+        season_start_date = datetime(2026, 1, 1)
+
+    new_season_start_str = season_start_str
+
+    # Eğer ay değiştiyse (Ve güncel tarih daha ileriyse)
+    if (today.year > season_start_date.year) or (
+        today.year == season_start_date.year and today.month > season_start_date.month
+    ):
+        print(
+            "📅 YENİ AY ALGILANDI! Sezon sonlandırılıyor ve Hall of Fame güncelleniyor..."
+        )
+
+        current_players = existing_data.get("players", [])
+        if current_players:
+            # Sıralama zaten score'a göre yapılmış olmalı ama garanti olsun
+            current_players.sort(key=lambda x: x.get("score", 0), reverse=True)
+            winner = current_players[0]
+
+            season_month_name = season_start_date.strftime("%B")  # January, February...
+            hof_entry = {
+                "season_id": f"season-{season_start_date.strftime('%Y-%m')}",
+                "season_name": f"{season_month_name} {season_start_date.year}",
+                "year": str(season_start_date.year),
+                "winner": {
+                    "name": winner["name"],
+                    "avatar": winner["avatar"],
+                    "stats": {
+                        "rating": winner["score"],
+                        "kda": winner["kda"],
+                        "impact": 100,  # Basit placeholder
+                    },
+                },
+                "highlights": [],
+            }
+
+            # Highlights: Most Kills
+            most_kills = max(current_players, key=lambda x: x.get("kills", 0))
+            if most_kills:
+                hof_entry["highlights"].append(
+                    {
+                        "title": "Most Kills",
+                        "player": most_kills["name"],
+                        "value": str(most_kills["kills"]),
+                    }
+                )
+
+            # Highlights: AWP King
+            awp_king = max(
+                current_players, key=lambda x: x.get("weapons", {}).get("awp", 0)
+            )
+            awp_kills = awp_king.get("weapons", {}).get("awp", 0)
+            if awp_kills > 0:
+                hof_entry["highlights"].append(
+                    {
+                        "title": "AWP King",
+                        "player": awp_king["name"],
+                        "value": str(awp_kills),
+                    }
+                )
+
+            # 3. HoF Kaydet
+            hof_data = load_json(HOF_FILE)
+            if not isinstance(hof_data, list):
+                hof_data = []
+
+            # Duplicate kontrolü (Aynı ID varsa ekleme)
+            if not any(h["season_id"] == hof_entry["season_id"] for h in hof_data):
+                hof_data.append(hof_entry)
+                save_json(HOF_FILE, hof_data)
+                print(f"🏆 {winner['name']} Hall of Fame'e eklendi!")
+            else:
+                print("ℹ️ Bu sezon zaten arşivlenmiş.")
+
+            # 4. Sezonu Sıfırla
+            RESET_SEASON = True
+            # Yeni sezon başlangıcını bu ayın 1'i yap
+            new_season_start_str = today.replace(day=1).strftime("%d.%m.%Y")
+            print(f"🔄 Sezon başlangıcı güncelleniyor: {new_season_start_str}")
+
+    # ------------------------------
 
     # 1. Profil Bilgilerini (FOTO + İSİM) Çek
     print("📸 Profil bilgileri (İsim & Foto) güncelleniyor...")
@@ -163,7 +257,7 @@ def main():
 
     # 1.5 Geçmiş Verileri Yükle (History)
     print("📜 Geçmiş veriler yükleniyor...")
-    existing_data = load_json(OUTPUT_FILE)
+    # existing_data zaten yüklendi
     existing_histories = {}
     if "players" in existing_data:
         for p in existing_data["players"]:
@@ -173,7 +267,7 @@ def main():
     # 2. Baseline Yükle
     baseline_data = load_json(BASELINE_FILE)
     if RESET_SEASON:
-        print("⚠️ SEZON SIFIRLANIYOR...")
+        print("⚠️ SEZON SIFIRLANIYOR... (Baseline Reset)")
         baseline_data = {}
 
     current_season_stats = []
@@ -374,6 +468,7 @@ def main():
     final_output = {
         "meta": {
             "last_updated": datetime.now().strftime("%d.%m.%Y %H:%M"),
+            "season_start": new_season_start_str,
             "season_active": not RESET_SEASON,
         },
         "players": current_season_stats,

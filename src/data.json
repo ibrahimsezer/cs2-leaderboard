@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "19.01.2026 14:51",
+        "last_updated": "19.01.2026 18:22",
         "season_active": true
     },
     "players": [
@@ -25,10 +25,30 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 219,
+            "weapon_stats": {
+                "glock": 7,
+                "elite": 3,
+                "ak47": 219,
+                "famas": 1,
+                "hkp2000": 3,
+                "sawedoff": 1,
+                "tec9": 1,
+                "mag7": 1,
+                "m4a1": 18,
+                "galilar": 1,
+                "molotov": 1
+            },
             "fav_map": "-",
             "kda": 1.78,
             "hs_rate": 70.3,
-            "score": 286.9
+            "score": 286.9,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 286.9,
+                    "kda": 1.78
+                }
+            ]
         },
         {
             "name": "Ahmet",
@@ -51,10 +71,30 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 107,
+            "weapon_stats": {
+                "hegrenade": 1,
+                "glock": 6,
+                "deagle": 6,
+                "xm1014": 1,
+                "p90": 2,
+                "awp": 5,
+                "ak47": 107,
+                "hkp2000": 3,
+                "ssg08": 6,
+                "m4a1": 11,
+                "galilar": 1
+            },
             "fav_map": "-",
             "kda": 1.43,
             "hs_rate": 79.9,
-            "score": 177.7
+            "score": 177.7,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 177.7,
+                    "kda": 1.43
+                }
+            ]
         },
         {
             "name": "Gr1N",
@@ -77,10 +117,26 @@
             "broken_windows": 0,
             "fav_weapon": "AWP",
             "fav_weapon_kills": 21,
+            "weapon_stats": {
+                "hegrenade": 1,
+                "awp": 21,
+                "ak47": 13,
+                "p250": 2,
+                "mp9": 1,
+                "m4a1": 8,
+                "galilar": 4
+            },
             "fav_map": "-",
             "kda": 1.72,
             "hs_rate": 24.0,
-            "score": 143.5
+            "score": 143.5,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 143.5,
+                    "kda": 1.72
+                }
+            ]
         },
         {
             "name": "★★★★★",
@@ -103,10 +159,29 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 59,
+            "weapon_stats": {
+                "glock": 6,
+                "xm1014": 2,
+                "mac10": 1,
+                "p90": 2,
+                "ak47": 59,
+                "hkp2000": 3,
+                "p250": 2,
+                "mp7": 2,
+                "mp9": 3,
+                "m4a1": 32
+            },
             "fav_map": "-",
             "kda": 1.17,
             "hs_rate": 46.4,
-            "score": 99.9
+            "score": 99.9,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 99.9,
+                    "kda": 1.17
+                }
+            ]
         },
         {
             "name": "iboRR",
@@ -129,10 +204,33 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 10,
+            "weapon_stats": {
+                "hegrenade": 1,
+                "glock": 6,
+                "mac10": 3,
+                "ump45": 2,
+                "p90": 5,
+                "awp": 1,
+                "ak47": 10,
+                "hkp2000": 2,
+                "sg556": 2,
+                "mp7": 9,
+                "nova": 1,
+                "m4a1": 6,
+                "galilar": 1,
+                "molotov": 2
+            },
             "fav_map": "-",
             "kda": 0.69,
             "hs_rate": 33.3,
-            "score": 28.5
+            "score": 28.5,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 28.5,
+                    "kda": 0.69
+                }
+            ]
         },
         {
             "name": "NightWish",
@@ -155,10 +253,28 @@
             "broken_windows": 0,
             "fav_weapon": "XM1014",
             "fav_weapon_kills": 17,
+            "weapon_stats": {
+                "deagle": 1,
+                "xm1014": 17,
+                "awp": 1,
+                "ak47": 5,
+                "aug": 1,
+                "g3sg1": 1,
+                "sg556": 3,
+                "m4a1": 1,
+                "galilar": 1
+            },
             "fav_map": "-",
             "kda": 0.37,
             "hs_rate": 54.8,
-            "score": 0.1
+            "score": 0.1,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.1,
+                    "kda": 0.37
+                }
+            ]
         },
         {
             "name": "Asmork",
@@ -181,10 +297,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         },
         {
             "name": "EL EX",
@@ -207,10 +331,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         },
         {
             "name": "Exselansis",
@@ -233,10 +365,35 @@
             "broken_windows": 0,
             "fav_weapon": "DEAGLE",
             "fav_weapon_kills": 2,
+            "weapon_stats": {
+                "knife": 1,
+                "deagle": 2,
+                "elite": 2,
+                "mac10": 2,
+                "awp": 1,
+                "aug": 2,
+                "famas": 2,
+                "m249": 2,
+                "hkp2000": 2,
+                "mp7": 2,
+                "nova": 2,
+                "sawedoff": 2,
+                "bizon": 2,
+                "tec9": 2,
+                "m4a1": 2,
+                "galilar": 2
+            },
             "fav_map": "-",
             "kda": 1.58,
             "hs_rate": 30.0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 1.58
+                }
+            ]
         },
         {
             "name": "Murhpy",
@@ -259,10 +416,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         },
         {
             "name": "DJkavun v4",
@@ -285,10 +450,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         },
         {
             "name": "Symbren",
@@ -311,10 +484,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         },
         {
             "name": "Dixe",
@@ -337,10 +518,18 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
+            "weapon_stats": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
-            "score": 0.0
+            "score": 0.0,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0
+                }
+            ]
         }
     ]
 }

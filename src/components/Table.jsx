@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Swords } from 'lucide-react';
+import VersusModal from './VersusModal';
 
 // --- ICONS (Simple SVGs) ---
 const SortIcon = ({ className }) => (
@@ -10,6 +12,11 @@ const SortIcon = ({ className }) => (
 function Table({ players, onPlayerSelect }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortConfig, setSortConfig] = useState({ key: 'score', direction: 'desc' });
+
+    // Versus Mode State
+    const [isVersusMode, setIsVersusMode] = useState(false);
+    const [versusSelection, setVersusSelection] = useState([]); // [player1, player2]
+    const [showVersusModal, setShowVersusModal] = useState(false);
 
     // Filter
     const filteredPlayers = players.filter(player =>
@@ -42,14 +49,55 @@ function Table({ players, onPlayerSelect }) {
         );
     };
 
+    // --- VERSUS LOGIC ---
+    const handleVersusToggle = (player) => {
+        if (versusSelection.includes(player)) {
+            setVersusSelection(prev => prev.filter(p => p !== player));
+        } else {
+            if (versusSelection.length < 2) {
+                const newSelection = [...versusSelection, player];
+                setVersusSelection(newSelection);
+                if (newSelection.length === 2) {
+                    setTimeout(() => setShowVersusModal(true), 300);
+                }
+            }
+        }
+    };
+
+    const closeVersusData = () => {
+        setShowVersusModal(false);
+        setVersusSelection([]);
+        setIsVersusMode(false);
+    };
+
     return (
-        <div className="w-full backdrop-blur-md bg-black/60 rounded-xl border border-white/10 shadow-2xl overflow-hidden relative">
+        <div className="w-full backdrop-blur-md bg-black/60 rounded-xl border border-white/10 shadow-2xl overflow-hidden relative transition-all duration-500">
             {/* Header Actions */}
             <div className="p-4 border-b border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-6 bg-white rounded-full"></span>
-                    Player Rankings
-                </h2>
+                <div className="flex items-center gap-4">
+                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                        <span className="w-2 h-6 bg-white rounded-full"></span>
+                        Player Rankings
+                    </h2>
+
+                    {/* Versus Toggle Button */}
+                    <button
+                        onClick={() => {
+                            setIsVersusMode(!isVersusMode);
+                            setVersusSelection([]);
+                        }}
+                        className={`
+                            flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all
+                            ${isVersusMode
+                                ? 'bg-rose-500 text-white shadow-[0_0_15px_rgba(244,63,94,0.4)] animate-pulse'
+                                : 'bg-neutral-800 text-neutral-400 hover:bg-white/10 hover:text-white'}
+                        `}
+                    >
+                        <Swords className="w-4 h-4" />
+                        {isVersusMode ? `Select Players (${versusSelection.length}/2)` : 'Versus Mode'}
+                    </button>
+                </div>
+
                 <input
                     type="text"
                     placeholder="Search player..."
@@ -63,6 +111,7 @@ function Table({ players, onPlayerSelect }) {
                 <table className="w-full text-left border-separate border-spacing-y-2">
                     <thead>
                         <tr className="bg-neutral-900/80 text-neutral-500 text-xs uppercase tracking-wider">
+                            {isVersusMode && <th className="p-4 w-10">VS</th>}
                             <th className="p-4 text-center w-16 cursor-pointer hover:text-white transition-colors" onClick={() => requestSort('name')}>
                                 Rank
                             </th>
@@ -118,6 +167,16 @@ function Table({ players, onPlayerSelect }) {
                                 scoreColor = "text-orange-400";
                             }
 
+                            // Versus Selection Style
+                            const isSelected = versusSelection.includes(player);
+                            if (isSelected) {
+                                rowStyle += " ring-2 ring-rose-500 bg-rose-500/10";
+                            }
+                            const isDimmed = isVersusMode && versusSelection.length === 2 && !isSelected;
+                            if (isDimmed) {
+                                rowStyle += " opacity-30 grayscale";
+                            }
+
                             // Rating Logic
                             const getRating = (score) => {
                                 if (score >= 100) return <span title="Legendary" className="text-red-500 text-sm ml-2 filter drop-shadow hover:scale-125 transition-transform cursor-help">🔥</span>;
@@ -130,9 +189,17 @@ function Table({ players, onPlayerSelect }) {
                                 <tr
                                     key={player.name}
                                     className={`transition-all duration-300 group rounded-xl cursor-pointer ${rowStyle}`}
-                                    onClick={() => onPlayerSelect(player)}
+                                    onClick={() => isVersusMode ? handleVersusToggle(player) : onPlayerSelect(player)}
                                 >
-                                    <td className="p-4 text-center rounded-l-xl">
+                                    {isVersusMode && (
+                                        <td className="p-4 text-center rounded-l-xl">
+                                            <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${isSelected ? 'border-rose-500 bg-rose-500' : 'border-neutral-600 group-hover:border-white'}`}>
+                                                {isSelected && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                                            </div>
+                                        </td>
+                                    )}
+
+                                    <td className={`p-4 text-center ${!isVersusMode && 'rounded-l-xl'}`}>
                                         <span className={rankTextStyle}>#{rankDisplay}</span>
                                     </td>
 
@@ -174,6 +241,15 @@ function Table({ players, onPlayerSelect }) {
                     </tbody>
                 </table>
             </div>
+
+            {/* --- VERSUS MODAL --- */}
+            {showVersusModal && (
+                <VersusModal
+                    player1={versusSelection[0]}
+                    player2={versusSelection[1]}
+                    onClose={closeVersusData}
+                />
+            )}
         </div>
     );
 }

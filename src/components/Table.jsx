@@ -1,40 +1,51 @@
 import React, { useState } from 'react';
+import PlayerModal from './PlayerModal';
+
+// --- ICONS (Simple SVGs) ---
+const SortIcon = ({ className }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+    </svg>
+);
 
 function Table({ players }) {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
     const [sortConfig, setSortConfig] = useState({ key: 'score', direction: 'desc' });
+    const [selectedPlayer, setSelectedPlayer] = useState(null);
 
-    // 1. Search Filter
-    const filteredPlayers = players.filter((player) =>
+    // Filter
+    const filteredPlayers = players.filter(player =>
         player.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // 2. Sorting
+    // Sort
     const sortedPlayers = [...filteredPlayers].sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
-            return sortConfig.direction === 'asc' ? -1 : 1;
+            return sortConfig.direction === 'ascending' ? -1 : 1;
         }
         if (a[sortConfig.key] > b[sortConfig.key]) {
-            return sortConfig.direction === 'asc' ? 1 : -1;
+            return sortConfig.direction === 'ascending' ? 1 : -1;
         }
         return 0;
     });
 
     const requestSort = (key) => {
-        let direction = 'desc';
-        if (sortConfig.key === key && sortConfig.direction === 'desc') {
-            direction = 'asc';
+        let direction = 'descending';
+        if (sortConfig.key === key && sortConfig.direction === 'descending') {
+            direction = 'ascending';
         }
         setSortConfig({ key, direction });
     };
 
     const getSortIcon = (key) => {
-        if (sortConfig.key !== key) return <span className="text-slate-600 ml-1">↕</span>;
-        return sortConfig.direction === 'asc' ? <span className="text-yellow-500 ml-1">↑</span> : <span className="text-yellow-500 ml-1">↓</span>;
+        if (sortConfig.key !== key) return <SortIcon className="w-3 h-3 text-neutral-600 inline ml-1 opacity-0 group-hover:opacity-50 transition-opacity" />;
+        return (
+            <SortIcon className={`w-3 h-3 ml-1 inline transition-transform ${sortConfig.direction === 'ascending' ? 'rotate-180 text-white' : 'text-neutral-400'}`} />
+        );
     };
 
     return (
-        <div className="w-full backdrop-blur-md bg-black/60 rounded-xl border border-white/10 shadow-2xl overflow-hidden">
+        <div className="w-full backdrop-blur-md bg-black/60 rounded-xl border border-white/10 shadow-2xl overflow-hidden relative">
             {/* Header Actions */}
             <div className="p-4 border-b border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
@@ -120,7 +131,8 @@ function Table({ players }) {
                             return (
                                 <tr
                                     key={player.name}
-                                    className={`transition-all duration-300 group rounded-xl ${rowStyle}`}
+                                    className={`transition-all duration-300 group rounded-xl cursor-pointer ${rowStyle}`}
+                                    onClick={() => setSelectedPlayer(player)}
                                 >
                                     <td className="p-4 text-center rounded-l-xl">
                                         <span className={rankTextStyle}>#{rankDisplay}</span>
@@ -161,17 +173,12 @@ function Table({ players }) {
                                 </tr>
                             );
                         })}
-
-                        {sortedPlayers.length === 0 && (
-                            <tr>
-                                <td colSpan="11" className="p-8 text-center text-slate-500">
-                                    No players found matching "{searchTerm}"
-                                </td>
-                            </tr>
-                        )}
                     </tbody>
                 </table>
             </div>
+
+            {/* --- PLAYER MODAL --- */}
+            <PlayerModal player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
         </div>
     );
 }

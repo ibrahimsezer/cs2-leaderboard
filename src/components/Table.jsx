@@ -109,6 +109,14 @@ function Table({ players }) {
                                 scoreColor = "text-orange-400";
                             }
 
+                            // Rating Logic
+                            const getRating = (score) => {
+                                if (score >= 100) return <span title="Legendary" className="text-red-500 text-sm ml-2 filter drop-shadow hover:scale-125 transition-transform cursor-help">🔥</span>;
+                                if (score >= 80) return <span title="Good" className="text-green-500 text-xs ml-2 hover:scale-125 transition-transform cursor-help">🟢</span>;
+                                if (score >= 50) return <span title="Average" className="text-yellow-500 text-xs ml-2 hover:scale-125 transition-transform cursor-help">🟡</span>;
+                                return <span title="Needs Improvement" className="text-neutral-500 text-xs ml-2 grayscale opacity-50 hover:scale-125 transition-transform cursor-help">⚪</span>;
+                            };
+
                             return (
                                 <tr
                                     key={player.name}
@@ -135,7 +143,10 @@ function Table({ players }) {
                                     </td>
 
                                     <td className={`p-4 text-right font-black text-lg tabular-nums ${scoreColor}`}>
-                                        {player.score}
+                                        <div className="flex items-center justify-end">
+                                            {player.score}
+                                            {getRating(player.score)}
+                                        </div>
                                     </td>
                                     <td className="p-4 text-right font-mono text-neutral-400 tabular-nums">{player.kills}</td>
                                     <td className="p-4 text-right font-mono text-neutral-400 tabular-nums">{player.damage.toLocaleString()}</td>

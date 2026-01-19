@@ -1,122 +1,28 @@
-import { useState, useMemo } from 'react';
-import leaderboardData from './data.json';
-import Table from './components/Table';
-import Leaders from './components/Leaders';
-import PlayerModal from './components/PlayerModal';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Home from './components/Home';
+import HallOfFame from './components/HallOfFame';
+
+// Scroll to top on route change component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
-  const { meta, players } = leaderboardData;
-  const [selectedPlayer, setSelectedPlayer] = useState(null);
-
-  // Calculate Aggregated Stats for a "Server Stats" banner
-  const serverStats = useMemo(() => {
-    return players.reduce((acc, curr) => ({
-      totalKills: acc.totalKills + curr.kills,
-      totalDeaths: acc.totalDeaths + curr.deaths,
-      totalWins: acc.totalWins + curr.wins,
-      totalMvps: acc.totalMvps + curr.mvps,
-      totalDamage: acc.totalDamage + curr.damage
-    }), { totalKills: 0, totalDeaths: 0, totalWins: 0, totalMvps: 0, totalDamage: 0 });
-  }, [players]);
-
   return (
-    <div className="min-h-screen bg-black text-white font-sans relative overflow-x-hidden selection:bg-white/20">
-
-      {/* Background Image Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={`${import.meta.env.BASE_URL}bg-hero.png`}
-          alt="Background"
-          className="w-full h-full object-cover opacity-40 mask-image-gradient"
-          style={{ maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/80 to-black"></div>
-      </div>
-
-      <div className="relative z-10 px-4 py-8 md:p-10">
-
-        {/* --- HEADER --- */}
-        <header className="max-w-7xl mx-auto mb-12 flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-6">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-neutral-200 to-neutral-600 tracking-tighter drop-shadow-sm">
-              CS2 LEADERBOARD
-            </h1>
-            <div className="flex items-center gap-3">
-              <span className="px-3 py-1 bg-white/10 text-white text-xs font-bold rounded uppercase tracking-wider border border-white/10">
-                Season 1
-              </span>
-              <p className="text-neutral-400 font-medium">
-                Community Competitive Statistics
-              </p>
-            </div>
-          </div>
-          <div className="text-right mt-6 md:mt-0 flex flex-col items-end">
-            <div className="text-xs text-neutral-500 uppercase font-bold tracking-widest mb-1">Last Data Sync</div>
-            <div className="flex items-center gap-2 bg-neutral-900/80 px-4 py-2 rounded-lg border border-white/10">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              <span className="text-sm font-mono text-neutral-300">{meta.last_updated}</span>
-            </div>
-          </div>
-        </header>
-
-        {/* --- LEADERS COMPONENT (Top 3) --- */}
-        <section className="mb-16 animate-fade-in-up">
-          <Leaders players={players} onPlayerSelect={setSelectedPlayer} />
-        </section>
-
-        {/* --- SERVER STATS BANNER (New Feature) --- */}
-        <section className="max-w-6xl mx-auto mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-neutral-900/40 border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-900/80 transition-colors cursor-default group">
-              <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-white transition-colors">Total Kills</span>
-              <span className="text-3xl font-black text-white font-mono">{serverStats.totalKills.toLocaleString()}</span>
-            </div>
-            <div className="bg-neutral-900/40 border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-900/80 transition-colors cursor-default group">
-              <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-white transition-colors">Total Damage</span>
-              <span className="text-3xl font-black text-white font-mono">{(serverStats.totalDamage / 1000).toFixed(1)}k</span>
-            </div>
-            <div className="bg-neutral-900/40 border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-900/80 transition-colors cursor-default group">
-              <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-white transition-colors">Total Wins</span>
-              <span className="text-3xl font-black text-white font-mono">{serverStats.totalWins}</span>
-            </div>
-            <div className="bg-neutral-900/40 border border-white/5 p-6 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-900/80 transition-colors cursor-default group">
-              <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-white transition-colors">Total MVPs</span>
-              <span className="text-3xl font-black text-white font-mono">{serverStats.totalMvps}</span>
-            </div>
-          </div>
-        </section>
-
-        {/* --- TABLE COMPONENT --- */}
-        <main className="max-w-6xl mx-auto mb-20 animate-fade-in-up delay-200">
-          <Table players={players} onPlayerSelect={setSelectedPlayer} />
-        </main>
-
-        <footer className="max-w-6xl mx-auto text-center text-neutral-600 text-sm border-neutral-900 pt-8 pb-8">
-          {/* Bottom Section */}
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8 pt-8 border-t border-gray-600">
-            <div className="w-full lg:w-auto">
-              <p className="text-gray-500">© {new Date().getFullYear()} CS2 Leaderboard - <a href="https://ibrahimsezer.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-[#00D2A8] transition-colors">İbrahim Sezer</a>. All rights reserved.</p>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-4">
-              <a href="https://www.linkedin.com/in/ibrahim-sezer/" className="bg-white text-black p-2 rounded-full hover:bg-[#00D2A8] transition-colors">
-                <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><title>Linkedin</title><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zM5.379 4.768h1.74c.147 0 .288.004.424.01a.376.376 0 01.303.152.684.684 0 01.11.364c.007.149.01.31.01.484v12.093c0 .176.004.37.01.587.006.216-.024.377-.091.485-.054.094-.174.17-.363.222a.754.754 0 01-.304.02 2.533 2.533 0 00-.323-.02H5.702c-.149 0-.286-.006-.415-.02a.572.572 0 01-.314-.12.48.48 0 01-.12-.304 4.164 4.164 0 01-.02-.424V6.203c0-.188-.004-.41-.01-.667-.007-.255.024-.437.09-.545a.595.595 0 01.264-.202c.04 0 .078-.004.11-.01a.536.536 0 01.092-.011zm10.527 3.687c.201-.008.386-.001.548.019.565.032 1.053.144 1.464.338.539.257.963.634 1.273 1.133.095.148.168.307.222.475.055.169.11.34.164.515.026.108.042.21.05.304.005.094.023.19.05.284 0 .08.007.134.02.16.027.19.04.385.04.587v5.661c0 .257-.004.503-.01.738-.008.237-.105.39-.294.456a.91.91 0 01-.283.04h-1.415c-.163 0-.307-.01-.435-.03a.418.418 0 01-.293-.173.613.613 0 01-.09-.313 8.825 8.825 0 01-.01-.416v-4.426c0-.5-.02-.961-.06-1.386-.042-.424-.163-.785-.365-1.082a1.427 1.427 0 00-.668-.51c-.186-.095-.488-.156-.827-.156-.397 0-.74.083-.912.207-.139.057-.26.124-.362.197-.433.31-.688.762-.77 1.354-.08.594-.123 1.261-.123 2.002v4.125c0 .121-.02.223-.06.304a.42.42 0 01-.323.262c-.149.027-.33.04-.545.04H10.88c-.15 0-.297-.006-.446-.02-.148-.013-.256-.06-.323-.142-.095-.12-.139-.294-.131-.525.006-.23.009-.446.009-.647V9.6c0-.147.004-.282.01-.403a.507.507 0 01.112-.305.24.24 0 01.132-.09c.06-.02.124-.037.191-.05h.102c.068-.014.138-.022.212-.022h1.06c.109 0 .214.005.316.012.1.006.19.023.271.05.095.04.16.1.193.181.03.072.03.147.054.24.056.23.118.486.291.508.08.01.159-.025.224-.09.031-.022.114-.11.14-.144.095-.114.28-.278.388-.346.078-.058.142-.1.202-.136.192-.134.483-.261.832-.36.014-.006.028-.012.042-.016.112-.036.225-.062.342-.077l.159-.029c.224-.038.442-.06.643-.068Z" /></svg>
-              </a>
-              <a href="https://github.com/ibrahimsezer" className="bg-white text-black p-2 rounded-full hover:bg-[#00D2A8] transition-colors">
-                <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
-              </a>
-              <a href="https://ibrahimsezer.github.io" className="bg-white text-black p-2 rounded-full hover:bg-[#00D2A8] transition-colors">
-                <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><title>GitHub Pages</title><path d="M14.088 13.126h-.296V9.858h.998c.815 0 1.094.47 1.094.98s-.28.98-1.094.98h-.701v1.308zm0-1.582h.74a.642.642 0 0 0 .733-.705.642.642 0 0 0-.732-.706h-.741zm2.881-.37a1.913 1.913 0 0 0-.653.11v-.262a1.756 1.756 0 0 1 .653-.118c.654 0 .824.297.824.732v1.49h-.17l-.066-.174a1.143 1.143 0 0 1-.657.218.663.663 0 0 1-.763-.702c0-.37.205-.645.776-.68l.575-.035v-.122c0-.318-.113-.457-.519-.457zm-.078.85c-.31.03-.445.192-.445.445 0 .196.048.431.462.431a1.056 1.056 0 0 0 .58-.174v-.758zm1.86.493a.252.252 0 0 0-.083.16c0 .11.053.158.166.17l.74.088c.41.044.598.205.598.584 0 .532-.532.74-1.133.74-.61 0-.976-.178-.976-.657a.609.609 0 0 1 .449-.575v-.005a.321.321 0 0 1-.14-.287.392.392 0 0 1 .166-.297.746.746 0 0 1-.349-.714c0-.449.192-.82.85-.82a1.36 1.36 0 0 1 .349.044h.74v.165l-.365.105a.908.908 0 0 1 .126.505c0 .449-.192.82-.85.82a1.397 1.397 0 0 1-.288-.027zm.127.588c-.288.065-.532.2-.532.48 0 .322.244.413.693.413.435 0 .845-.109.845-.48 0-.221-.105-.309-.37-.34zm.727-1.381c0-.288-.056-.554-.566-.554-.51 0-.567.266-.567.554 0 .288.057.553.567.553.51 0 .566-.266.566-.554zm1.637-.82c.74 0 .828.506.828 1.133v.14h-1.438c.018.379.118.723.61.723a1.665 1.665 0 0 0 .719-.122v.261a1.765 1.765 0 0 1-.719.131c-.736 0-.915-.505-.915-1.133s.179-1.133.915-1.133zm-.61 1.024h1.133c0-.387-.022-.753-.523-.753-.506 0-.597.36-.61.753zm2.601-.052c.619.057.767.266.767.623 0 .336-.213.671-.876.671a2.147 2.147 0 0 1-.649-.109V12.8a1.924 1.924 0 0 0 .654.1c.453 0 .575-.192.575-.397 0-.2-.061-.34-.492-.374-.632-.057-.763-.28-.763-.58 0-.31.2-.645.815-.645a1.627 1.627 0 0 1 .627.11v.26a1.799 1.799 0 0 0-.631-.1c-.432 0-.523.162-.523.376 0 .19.078.29.496.326zm-20.787-.659H1.38a.05.05 0 0 0-.05.05v.522a.05.05 0 0 0 .05.05h.416v.649a1.267 1.267 0 0 1-.351.032c-.305 0-.731-.112-.731-1.048s.443-1.06.86-1.06a1.69 1.69 0 0 1 .614.094.05.05 0 0 0 .06-.05l.12-.504a.047.047 0 0 0-.02-.039 1.715 1.715 0 0 0-.903-.165C.73 9.748 0 10.05 0 11.508s.837 1.675 1.542 1.675a1.736 1.736 0 0 0 .938-.25.043.043 0 0 0 .016-.038v-1.628a.05.05 0 0 0-.05-.05zm5.545-1.294a.05.05 0 0 0-.05-.05H7.34a.05.05 0 0 0-.05.05v1.161h-.936V9.923a.05.05 0 0 0-.05-.05h-.6a.05.05 0 0 0-.05.05v3.145a.05.05 0 0 0 .05.05h.6a.05.05 0 0 0 .05-.05v-1.345h.937l-.002 1.345a.05.05 0 0 0 .05.05h.603a.05.05 0 0 0 .05-.05zm-4.389.412a.388.388 0 1 0-.387.392.39.39 0 0 0 .387-.392zm-.042 2.068v-1.451a.05.05 0 0 0-.05-.05h-.6a.057.057 0 0 0-.051.056v2.08c0 .06.038.079.087.079h.54c.06 0 .074-.03.074-.08zm6.764-1.497h-.597a.05.05 0 0 0-.05.05v1.542a.673.673 0 0 1-.367.11c-.215 0-.272-.097-.272-.307v-1.344a.05.05 0 0 0-.05-.05h-.604a.05.05 0 0 0-.05.05v1.446c0 .626.348.779.828.779a1.398 1.398 0 0 0 .71-.217 1.274 1.274 0 0 0 .022.128.052.052 0 0 0 .044.027l.385-.002a.05.05 0 0 0 .05-.05v-2.112a.05.05 0 0 0-.05-.05zm1.662-.07a1.121 1.121 0 0 0-.569.15V9.923a.05.05 0 0 0-.05-.05h-.602a.05.05 0 0 0-.05.05v3.145a.05.05 0 0 0 .05.05h.418a.05.05 0 0 0 .044-.027.973.973 0 0 0 .025-.144 1.08 1.08 0 0 0 .713.233c.548 0 .862-.278.862-1.248s-.502-1.095-.841-1.095zm-.235 1.771a.716.716 0 0 1-.347-.1v-.996a.793.793 0 0 1 .308-.1c.215-.019.422.046.422.558 0 .54-.094.647-.383.639zm-6.475-1.706h-.45l-.002-.595c0-.023-.011-.034-.037-.034h-.615c-.024 0-.036.01-.036.033v.615l-.33.08a.05.05 0 0 0-.035.048v.387a.05.05 0 0 0 .05.05h.315v.93c0 .692.484.76.812.76a1.375 1.375 0 0 0 .357-.06.046.046 0 0 0 .028-.044l.001-.426a.05.05 0 0 0-.05-.05c-.026 0-.094.01-.163.01-.221 0-.296-.102-.296-.236v-.884h.451a.05.05 0 0 0 .05-.05v-.484a.05.05 0 0 0-.05-.05z" /></svg>
-              </a>
-            </div>
-          </div>
-        </footer>
-
-        {/* --- GLOBAL PLAYER MODAL --- */}
-        <PlayerModal player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
-      </div>
-    </div>
+    <Router basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hall-of-fame" element={<HallOfFame />} />
+      </Routes>
+    </Router>
   );
 }
 

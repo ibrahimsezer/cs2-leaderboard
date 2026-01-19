@@ -1,0 +1,28 @@
+[
+    {
+        "season_id": "beta-0",
+        "season_name": "Season 0 (Beta)",
+        "year": "2025",
+        "winner": {
+            "name": "Sezar",
+            "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
+            "stats": {
+                "rating": 215.4,
+                "kda": 1.65,
+                "impact": 95
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Sezar",
+                "value": "2450"
+            },
+            {
+                "title": "AWP King",
+                "player": "Ahmet",
+                "value": "450"
+            }
+        ]
+    }
+]

@@ -64,6 +64,10 @@ Unlike standard static tables, this leaderboard offers a strictly premium user e
     <img src="src/assets/screenshots/categoryleaders.png" alt="Category Leaders" width="45%"/>
 </div>
 
+### 🏛️ Hall of Fame
+
+<img src="src/assets/screenshots/halloffame.png" alt="Hall of Fame" width="800" style="border-radius: 10px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.5);"/>
+
 </div>
 
 ## 🔫 Weapon Stats Tracking

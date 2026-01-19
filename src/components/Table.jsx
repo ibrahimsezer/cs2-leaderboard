@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PlayerModal from './PlayerModal';
 
 // --- ICONS (Simple SVGs) ---
 const SortIcon = ({ className }) => (
@@ -8,10 +7,9 @@ const SortIcon = ({ className }) => (
     </svg>
 );
 
-function Table({ players }) {
+function Table({ players, onPlayerSelect }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortConfig, setSortConfig] = useState({ key: 'score', direction: 'desc' });
-    const [selectedPlayer, setSelectedPlayer] = useState(null);
 
     // Filter
     const filteredPlayers = players.filter(player =>
@@ -132,7 +130,7 @@ function Table({ players }) {
                                 <tr
                                     key={player.name}
                                     className={`transition-all duration-300 group rounded-xl cursor-pointer ${rowStyle}`}
-                                    onClick={() => setSelectedPlayer(player)}
+                                    onClick={() => onPlayerSelect(player)}
                                 >
                                     <td className="p-4 text-center rounded-l-xl">
                                         <span className={rankTextStyle}>#{rankDisplay}</span>
@@ -176,9 +174,6 @@ function Table({ players }) {
                     </tbody>
                 </table>
             </div>
-
-            {/* --- PLAYER MODAL --- */}
-            <PlayerModal player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
         </div>
     );
 }

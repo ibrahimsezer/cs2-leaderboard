@@ -22,7 +22,7 @@ const CrownIcon = ({ className }) => (
 
 
 
-function PodiumStep({ player, rank }) {
+function PodiumStep({ player, rank, onClick }) {
     const isFirst = rank === 1;
     const isSecond = rank === 2;
     const isThird = rank === 3;
@@ -71,10 +71,13 @@ function PodiumStep({ player, rank }) {
     }
 
     return (
-        <div className={`flex flex-col items-center w-full md:w-1/3 transition-all duration-300 hover:scale-[1.02] ${containerClass}`}>
+        <div
+            onClick={onClick}
+            className={`flex flex-col items-center w-full md:w-1/3 transition-all duration-300 hover:scale-[1.02] cursor-pointer rounded-3xl ${containerClass}`}
+        >
 
             {/* Avatar Section */}
-            <div className="relative mb-2 group cursor-pointer">
+            <div className="relative mb-2 group">
                 {isFirst && rankIcon}
                 <div className={`w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-neutral-800 border-4 border-neutral-800 shadow-2xl flex items-center justify-center overflow-hidden relative z-10 ${avatarBorder}`}>
                     {player.avatar ? (
@@ -148,7 +151,7 @@ function PodiumStep({ player, rank }) {
 
 import CategoryLeaders from './CategoryLeaders';
 
-function Leaders({ players }) {
+function Leaders({ players, onPlayerSelect }) {
     if (!players || players.length < 3) return null;
 
     const sorted = [...players].sort((a, b) => b.score - a.score).slice(0, 3);
@@ -158,13 +161,13 @@ function Leaders({ players }) {
 
             {/* Main Podium */}
             <div className="flex flex-col md:flex-row items-end justify-center gap-6 mb-16">
-                <PodiumStep key={sorted[1].name} player={sorted[1]} rank={2} />
-                <PodiumStep key={sorted[0].name} player={sorted[0]} rank={1} />
-                <PodiumStep key={sorted[2].name} player={sorted[2]} rank={3} />
+                <PodiumStep key={sorted[1].name} player={sorted[1]} rank={2} onClick={() => onPlayerSelect(sorted[1])} />
+                <PodiumStep key={sorted[0].name} player={sorted[0]} rank={1} onClick={() => onPlayerSelect(sorted[0])} />
+                <PodiumStep key={sorted[2].name} player={sorted[2]} rank={3} onClick={() => onPlayerSelect(sorted[2])} />
             </div>
 
             {/* Mini Leaderboards Grid (Modularized) */}
-            <CategoryLeaders players={players} />
+            <CategoryLeaders players={players} onPlayerSelect={onPlayerSelect} />
         </div>
     );
 }

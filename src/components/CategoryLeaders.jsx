@@ -20,7 +20,7 @@ const SwordIcon = ({ className }) => (
 );
 
 // --- MINI LEADERBOARD CARD ---
-function MiniLeaderboardCard({ title, icon, players, statKey, formatValue }) {
+function MiniLeaderboardCard({ title, icon, players, statKey, formatValue, onPlayerSelect }) {
     const topThree = [...players].sort((a, b) => b[statKey] - a[statKey]).slice(0, 3);
 
     return (
@@ -38,7 +38,11 @@ function MiniLeaderboardCard({ title, icon, players, statKey, formatValue }) {
                     const borderColor = idx === 0 ? 'border-cyan-400' : idx === 1 ? 'border-purple-400' : 'border-orange-400';
 
                     return (
-                        <div key={player.name} className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div
+                            key={player.name}
+                            onClick={() => onPlayerSelect(player)}
+                            className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 transition-colors cursor-pointer active:scale-95 duration-150"
+                        >
                             <div className="flex items-center gap-3">
                                 <span className={`text-xs font-black w-4 ${rankColor}`}>
                                     #{idx + 1}
@@ -72,7 +76,7 @@ function MiniLeaderboardCard({ title, icon, players, statKey, formatValue }) {
 }
 
 // --- MAIN COMPONENT ---
-function CategoryLeaders({ players }) {
+function CategoryLeaders({ players, onPlayerSelect }) {
     if (!players) return null;
 
     return (
@@ -89,6 +93,7 @@ function CategoryLeaders({ players }) {
                     players={players}
                     statKey="damage"
                     formatValue={(v) => v.toLocaleString()}
+                    onPlayerSelect={onPlayerSelect}
                 />
                 <MiniLeaderboardCard
                     title="Sharpshooters"
@@ -96,6 +101,7 @@ function CategoryLeaders({ players }) {
                     players={players}
                     statKey="hs_rate"
                     formatValue={(v) => `%${v}`}
+                    onPlayerSelect={onPlayerSelect}
                 />
                 <MiniLeaderboardCard
                     title="Top Fraggers"
@@ -103,6 +109,7 @@ function CategoryLeaders({ players }) {
                     players={players}
                     statKey="kills"
                     formatValue={(v) => v}
+                    onPlayerSelect={onPlayerSelect}
                 />
             </div>
         </div>

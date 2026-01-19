@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import leaderboardData from './data.json';
 import Table from './components/Table';
 import Leaders from './components/Leaders';
+import PlayerModal from './components/PlayerModal';
 
 function App() {
   const { meta, players } = leaderboardData;
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
 
   // Calculate Aggregated Stats for a "Server Stats" banner
   const serverStats = useMemo(() => {
@@ -59,7 +61,7 @@ function App() {
 
         {/* --- LEADERS COMPONENT (Top 3) --- */}
         <section className="mb-16 animate-fade-in-up">
-          <Leaders players={players} />
+          <Leaders players={players} onPlayerSelect={setSelectedPlayer} />
         </section>
 
         {/* --- SERVER STATS BANNER (New Feature) --- */}
@@ -86,7 +88,7 @@ function App() {
 
         {/* --- TABLE COMPONENT --- */}
         <main className="max-w-6xl mx-auto mb-20 animate-fade-in-up delay-200">
-          <Table players={players} />
+          <Table players={players} onPlayerSelect={setSelectedPlayer} />
         </main>
 
         <footer className="max-w-6xl mx-auto text-center text-neutral-600 text-sm border-t border-neutral-900 pt-8 pb-8">
@@ -97,6 +99,9 @@ function App() {
             <span>CS2 Community Leaderboard</span>
           </p>
         </footer>
+
+        {/* --- GLOBAL PLAYER MODAL --- */}
+        <PlayerModal player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
       </div>
     </div>
   );

@@ -31,9 +31,9 @@ function PlayerModal({ player, onClose }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop */}
+            {/* Backdrop - Optimized: Removed blur for performance */}
             <div
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+                className="absolute inset-0 bg-black/90 transition-opacity"
                 onClick={onClose}
             ></div>
 

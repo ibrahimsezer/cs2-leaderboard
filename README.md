@@ -1,9 +1,5 @@
 # 🏆 CS2 Community Leaderboard
 
-<div align="center">
-
-![Project Banner](src/assets/screenshots/leaderboard.png)
-
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -11,9 +7,7 @@
 
 **A modern, aesthetic, and automated leaderboard tracking system for Counter-Strike 2 communities.**
 
-[Features](#-features) • [Installation](#-installation) • [How It Works](#-how-it-works) • [Showcase](#-showcase)
-
-</div>
+[About The Project](#-about-the-project) • [Features](#-features) • [Showcase](#-showcase) • [Installation & Setup](#-installation--setup)
 
 ---
 
@@ -37,54 +31,34 @@ Unlike standard static tables, this leaderboard offers a strictly premium user e
 
 ## 📸 Showcase
 
-<div align="center">
-
 ### 🏆 The Podium
 
-<img src="src/assets/screenshots/leaderboard.png" alt="Main Leaderboard" width="800" style="border-radius: 10px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.5);"/>
+![Main Leaderboard](src/assets/screenshots/leaderboard.png)
 
 ### 👤 Player Profile & Weapon Mastery
 
-<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-    <img src="src/assets/screenshots/playermodal.png" alt="Player Profile 1" width="45%"/>
-    <img src="src/assets/screenshots/playermodal2.png" alt="Player Profile 2" width="45%"/>
-</div>
+![Player Profile 1](src/assets/screenshots/playermodal.png)
+![Player Profile 2](src/assets/screenshots/playermodal2.png)
 
 ### ⚔️ Versus Mode & Analytics
 
-<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-    <img src="src/assets/screenshots/versus.png" alt="Versus Mode" width="45%"/>
-    <img src="src/assets/screenshots/versus2.png" alt="Versus Comparison" width="45%"/>
-</div>
+![Versus Mode](src/assets/screenshots/versus.png)
+![Versus Comparison](src/assets/screenshots/versus2.png)
 
 ### 📋 Rankings & Categories
 
-<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-    <img src="src/assets/screenshots/ranklist.png" alt="Rank List" width="45%"/>
-    <img src="src/assets/screenshots/categoryleaders.png" alt="Category Leaders" width="45%"/>
-</div>
+![Rank List](src/assets/screenshots/ranklist.png)
+![Category Leaders](src/assets/screenshots/categoryleaders.png)
 
 ### 🏛️ Hall of Fame
 
-<img src="src/assets/screenshots/halloffame.png" alt="Hall of Fame" width="800" style="border-radius: 10px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.5);"/>
-
-</div>
+![Hall of Fame](src/assets/screenshots/halloffame.png)
 
 ## 🔫 Weapon Stats Tracking
 
 We track mastery for all major CS2 weapons. Who is the AWP King? Who sprays the best with the AK-47?
 
-<div align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="public/equipments/ak47.svg" width="50" title="AK-47" />
-  <img src="public/equipments/m4a1.svg" width="50" title="M4A1-S" />
-  <img src="public/equipments/awp.svg" width="50" title="AWP" />
-  <img src="public/equipments/deagle.svg" width="50" title="Desert Eagle" />
-  <img src="public/equipments/glock.svg" width="50" title="Glock-18" />
-  <img src="public/equipments/mac10.svg" width="50" title="MAC-10" />
-  <img src="public/equipments/mp9.svg" width="50" title="MP9" />
-  <img src="public/equipments/ssg08.svg" width="50" title="SSG 08" />
-  <!-- ... and many more supported weapons -->
-</div>
+![AK-47](public/equipments/ak47.svg) ![M4A1-S](public/equipments/m4a1.svg) ![AWP](public/equipments/awp.svg) ![Desert Eagle](public/equipments/deagle.svg) ![Glock-18](public/equipments/glock.svg) ![MAC-10](public/equipments/mac10.svg) ![MP9](public/equipments/mp9.svg) ![SSG 08](public/equipments/ssg08.svg)
 
 ## 🛠️ How It Works
 
@@ -153,7 +127,3 @@ npm run dev
 ```
 
 Open `http://localhost:5173` in your browser.
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.

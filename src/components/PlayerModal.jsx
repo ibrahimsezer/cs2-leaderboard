@@ -3,6 +3,7 @@ import html2canvas from 'html2canvas';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import { X, Target, MapPin, Zap, Shield, Trophy, Activity, Ghost, UserX, LayoutGrid, Download, Loader } from 'lucide-react';
 import HistoryChart from './HistoryChart';
+import WeaponChart from './WeaponChart';
 
 function PlayerModal({ player, onClose }) {
     const modalRef = useRef(null);
@@ -133,6 +134,12 @@ function PlayerModal({ player, onClose }) {
                                     <p className="text-lg font-mono font-bold text-green-400">${(player.money_earned || 0).toLocaleString()}</p>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* Weapon Distribution */}
+                        <div className="bg-neutral-800/50 rounded-xl border border-white/5 overflow-hidden relative min-h-[224px]">
+                            <div className="absolute top-3 left-4 text-xs font-bold text-neutral-500 uppercase z-10">Weapon Mastery</div>
+                            <WeaponChart weapons={player.weapons} />
                         </div>
 
                         {/* Favorite Map */}

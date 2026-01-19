@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "19.01.2026 18:22",
+        "last_updated": "19.01.2026 20:08",
         "season_active": true
     },
     "players": [
@@ -25,7 +25,7 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 219,
-            "weapon_stats": {
+            "weapons": {
                 "glock": 7,
                 "elite": 3,
                 "ak47": 219,
@@ -46,7 +46,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 286.9,
-                    "kda": 1.78
+                    "kda": 1.78,
+                    "kills": 256,
+                    "rounds": 89
                 }
             ]
         },
@@ -71,7 +73,7 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 107,
-            "weapon_stats": {
+            "weapons": {
                 "hegrenade": 1,
                 "glock": 6,
                 "deagle": 6,
@@ -92,7 +94,65 @@
                 {
                     "date": "2026-01-19",
                     "score": 177.7,
-                    "kda": 1.43
+                    "kda": 1.43,
+                    "kills": 149,
+                    "rounds": 97
+                }
+            ]
+        },
+        {
+            "name": "Exselansis",
+            "nickname": "EL EX v3",
+            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
+            "kills": 45,
+            "deaths": 38,
+            "wins": 0,
+            "mvps": 3,
+            "damage": 6781,
+            "headshots": 17,
+            "rounds": 25,
+            "shots_fired": 790,
+            "shots_hit": 0,
+            "bombs_planted": 1,
+            "bombs_defused": 0,
+            "knife_kills": 0,
+            "blind_kills": 2,
+            "money_earned": 71350,
+            "broken_windows": 0,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 9,
+            "weapons": {
+                "knife": 1,
+                "glock": 1,
+                "deagle": 2,
+                "elite": 2,
+                "xm1014": 1,
+                "mac10": 2,
+                "awp": 1,
+                "ak47": 9,
+                "aug": 2,
+                "famas": 2,
+                "m249": 2,
+                "hkp2000": 5,
+                "mp7": 2,
+                "nova": 2,
+                "sawedoff": 2,
+                "bizon": 2,
+                "tec9": 2,
+                "m4a1": 3,
+                "galilar": 2
+            },
+            "fav_map": "Dust2",
+            "kda": 1.18,
+            "hs_rate": 37.8,
+            "score": 168.8,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 168.8,
+                    "kda": 1.18,
+                    "kills": 45,
+                    "rounds": 25
                 }
             ]
         },
@@ -117,7 +177,7 @@
             "broken_windows": 0,
             "fav_weapon": "AWP",
             "fav_weapon_kills": 21,
-            "weapon_stats": {
+            "weapons": {
                 "hegrenade": 1,
                 "awp": 21,
                 "ak47": 13,
@@ -134,7 +194,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 143.5,
-                    "kda": 1.72
+                    "kda": 1.72,
+                    "kills": 50,
+                    "rounds": 43
                 }
             ]
         },
@@ -159,7 +221,7 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 59,
-            "weapon_stats": {
+            "weapons": {
                 "glock": 6,
                 "xm1014": 2,
                 "mac10": 1,
@@ -179,7 +241,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 99.9,
-                    "kda": 1.17
+                    "kda": 1.17,
+                    "kills": 112,
+                    "rounds": 103
                 }
             ]
         },
@@ -204,7 +268,7 @@
             "broken_windows": 0,
             "fav_weapon": "AK47",
             "fav_weapon_kills": 10,
-            "weapon_stats": {
+            "weapons": {
                 "hegrenade": 1,
                 "glock": 6,
                 "mac10": 3,
@@ -228,7 +292,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 28.5,
-                    "kda": 0.69
+                    "kda": 0.69,
+                    "kills": 51,
+                    "rounds": 89
                 }
             ]
         },
@@ -253,7 +319,7 @@
             "broken_windows": 0,
             "fav_weapon": "XM1014",
             "fav_weapon_kills": 17,
-            "weapon_stats": {
+            "weapons": {
                 "deagle": 1,
                 "xm1014": 17,
                 "awp": 1,
@@ -272,7 +338,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.1,
-                    "kda": 0.37
+                    "kda": 0.37,
+                    "kills": 31,
+                    "rounds": 48
                 }
             ]
         },
@@ -297,7 +365,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -306,7 +374,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -331,7 +401,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -340,58 +410,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
-                }
-            ]
-        },
-        {
-            "name": "Exselansis",
-            "nickname": "EL EX v3",
-            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
-            "kills": 30,
-            "deaths": 19,
-            "wins": 0,
-            "mvps": 1,
-            "damage": 4050,
-            "headshots": 9,
-            "rounds": 1,
-            "shots_fired": 455,
-            "shots_hit": 0,
-            "bombs_planted": 0,
-            "bombs_defused": 0,
-            "knife_kills": 0,
-            "blind_kills": 0,
-            "money_earned": 0,
-            "broken_windows": 0,
-            "fav_weapon": "DEAGLE",
-            "fav_weapon_kills": 2,
-            "weapon_stats": {
-                "knife": 1,
-                "deagle": 2,
-                "elite": 2,
-                "mac10": 2,
-                "awp": 1,
-                "aug": 2,
-                "famas": 2,
-                "m249": 2,
-                "hkp2000": 2,
-                "mp7": 2,
-                "nova": 2,
-                "sawedoff": 2,
-                "bizon": 2,
-                "tec9": 2,
-                "m4a1": 2,
-                "galilar": 2
-            },
-            "fav_map": "-",
-            "kda": 1.58,
-            "hs_rate": 30.0,
-            "score": 0.0,
-            "history": [
-                {
-                    "date": "2026-01-19",
-                    "score": 0.0,
-                    "kda": 1.58
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -416,7 +437,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -425,7 +446,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -450,7 +473,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -459,7 +482,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -484,7 +509,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -493,7 +518,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -518,7 +545,7 @@
             "broken_windows": 0,
             "fav_weapon": "-",
             "fav_weapon_kills": 0,
-            "weapon_stats": {},
+            "weapons": {},
             "fav_map": "-",
             "kda": 0,
             "hs_rate": 0,
@@ -527,7 +554,9 @@
                 {
                     "date": "2026-01-19",
                     "score": 0.0,
-                    "kda": 0
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         }

@@ -284,13 +284,19 @@ def main():
                 if isinstance(v, (int, float)) and v < 0:
                     season_stats[k] = 0
 
-            # Favori Silah
+            # Silah Analizi (Detailed Breakdown & Favorite)
             fav_weapon_name = "N/A"
             max_season_kills = -1
+            season_weapons = {}
+
             for w in WEAPONS:
                 curr_w = current_weapon_vals.get(w, 0)
                 base_w = base_weapons.get(w, 0)
-                season_w_kills = curr_w - base_w
+                season_w_kills = max(0, curr_w - base_w)  # Prevent negative
+
+                if season_w_kills > 0:
+                    season_weapons[w] = season_w_kills
+
                 if season_w_kills > max_season_kills:
                     max_season_kills = season_w_kills
                     fav_weapon_name = w.upper()
@@ -300,6 +306,7 @@ def main():
 
             season_stats["fav_weapon"] = fav_weapon_name
             season_stats["fav_weapon_kills"] = max_season_kills
+            season_stats["weapons"] = season_weapons
 
             # Favori Harita (Map)
             fav_map_name = "-"

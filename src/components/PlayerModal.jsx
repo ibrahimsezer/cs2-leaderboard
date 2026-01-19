@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import html2canvas from 'html2canvas';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import { X, Target, MapPin, Zap, Shield, Trophy, Activity, Ghost, UserX, LayoutGrid } from 'lucide-react';
+import { X, Target, MapPin, Zap, Shield, Trophy, Activity, Ghost, UserX, LayoutGrid, Download, Loader } from 'lucide-react';
 
 function PlayerModal({ player, onClose }) {
+    const modalRef = useRef(null);
+    const [isSharing, setIsSharing] = useState(false);
+
     if (!player) return null;
+
+    const handleShare = async () => {
+        if (!modalRef.current) return;
+        setIsSharing(true);
+        try {
+            const canvas = await html2canvas(modalRef.current, {
+                backgroundColor: '#171717',
+                scale: 2,
+                logging: false,
+                useCORS: true
+            });
+            const image = canvas.toDataURL("image/png");
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = `CS2_Leaderboard_${player.name}_Card.png`;
+            link.click();
+        } catch (err) {
+            console.error("Failed to generate share card", err);
+        }
+        setIsSharing(false);
+    };
 
     // --- STAT CALCULATIONS ---
     const kpr = player.rounds > 0 ? (player.kills / player.rounds) : 0;
@@ -38,15 +63,28 @@ function PlayerModal({ player, onClose }) {
             ></div>
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-4xl bg-neutral-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-fade-in-up flex flex-col md:flex-row max-h-[90vh] md:max-h-auto overflow-y-auto md:overflow-hidden">
+            <div ref={modalRef} className="relative w-full max-w-4xl bg-neutral-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-fade-in-up flex flex-col md:flex-row max-h-[90vh] md:max-h-auto overflow-y-auto md:overflow-hidden">
 
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors z-50"
+                {/* Actions: Share & Close */}
+                <div
+                    className="absolute top-4 right-4 flex gap-3 z-50"
+                    data-html2canvas-ignore="true"
                 >
-                    <X className="w-6 h-6" />
-                </button>
+                    <button
+                        onClick={handleShare}
+                        disabled={isSharing}
+                        className="p-2 rounded-full bg-black/50 hover:bg-cyan-500/20 text-neutral-400 hover:text-cyan-400 transition-colors disabled:opacity-50"
+                        title="Download Player Card"
+                    >
+                        {isSharing ? <Loader className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5" />}
+                    </button>
+                    <button
+                        onClick={onClose}
+                        className="p-2 rounded-full bg-black/50 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
+                </div>
 
                 {/* Left Column: Player Profile & Key Stats */}
                 <div className="w-full md:w-1/3 bg-black/40 p-8 flex flex-col items-center border-r border-white/5 relative overflow-hidden">

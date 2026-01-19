@@ -89,8 +89,8 @@ function Table({ players, onPlayerSelect }) {
                         className={`
                             flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all
                             ${isVersusMode
-                                ? 'bg-rose-500 text-white shadow-[0_0_15px_rgba(244,63,94,0.4)] animate-pulse'
-                                : 'bg-neutral-800 text-neutral-400 hover:bg-white/10 hover:text-white'}
+                                ? 'bg-rose-500 text-white animate-heartbeat'
+                                : 'bg-neutral-800 text-neutral-400 hover:bg-white/10 hover:text-white animate-heartbeat-gray'}
                         `}
                     >
                         <Swords className="w-4 h-4" />

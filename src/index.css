@@ -48,3 +48,57 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
 }
+
+@layer utilities {
+  .animate-heartbeat {
+    animation: heartbeat 1.5s infinite;
+  }
+
+  .animate-heartbeat-gray {
+    animation: heartbeat-gray 2s infinite;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7);
+  }
+
+  25% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 5px rgba(244, 63, 94, 0);
+  }
+
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+}
+
+@keyframes heartbeat-gray {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+
+  25% {
+    transform: scale(1.02);
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}

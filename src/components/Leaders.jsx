@@ -1,4 +1,3 @@
-import React from 'react';
 
 // --- SVG ICONS ---
 const TrophyIcon = ({ className }) => (
@@ -66,7 +65,7 @@ function PodiumStep({ player, rank, onClick }) {
         scoreClass = "text-neutral-200 text-4xl";
         avatarBorder = "border-orange-400 shadow-[0_0_20px_rgba(251,146,60,0.2)]";
         rankBadgeClass = "bg-orange-400 text-black font-bold";
-        statusText = "CONTENDER";
+        statusText = "MASTER";
         trophyColor = "text-orange-400";
     }
 

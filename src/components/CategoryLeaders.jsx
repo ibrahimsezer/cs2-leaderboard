@@ -1,4 +1,4 @@
-import React from 'react';
+import { Crosshair, SwordsIcon } from 'lucide-react';
 
 // --- SVG ICONS ---
 const FireIcon = ({ className }) => (
@@ -96,8 +96,8 @@ function CategoryLeaders({ players, onPlayerSelect }) {
                     onPlayerSelect={onPlayerSelect}
                 />
                 <MiniLeaderboardCard
-                    title="Sharpshooters"
-                    icon={<CrosshairIcon className="w-5 h-5" />}
+                    title="Headshooters"
+                    icon={<Crosshair className="w-5 h-5" />}
                     players={players}
                     statKey="hs_rate"
                     formatValue={(v) => `%${v}`}
@@ -105,7 +105,7 @@ function CategoryLeaders({ players, onPlayerSelect }) {
                 />
                 <MiniLeaderboardCard
                     title="Top Fraggers"
-                    icon={<SwordIcon className="w-5 h-5" />}
+                    icon={<SwordsIcon className="w-5 h-5" />}
                     players={players}
                     statKey="kills"
                     formatValue={(v) => v}

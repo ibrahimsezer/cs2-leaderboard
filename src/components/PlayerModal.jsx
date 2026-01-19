@@ -27,7 +27,7 @@ function PlayerModal({ player, onClose }) {
     if ((player.blind_kills || 0) > 5) badges.push({ icon: '🕶️', label: 'Flash King', desc: 'Blinded Enemies Eliminated' });
     if ((player.broken_windows || 0) > 0) badges.push({ icon: '🪟', label: 'Vandal', desc: 'Property Damage Expert' });
     if (player.score >= 200) badges.push({ icon: '🔥', label: 'MVP', desc: 'High Score Legend' });
-    if (player.hs_rate > 60) badges.push({ icon: '🎯', label: 'Deadeye', desc: 'Sharpshooter' });
+    if (player.hs_rate > 60) badges.push({ icon: '🎯', label: 'Deadeye', desc: 'Headshot Master' });
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">

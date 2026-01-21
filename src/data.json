@@ -184,7 +184,7 @@
             "rounds": 126,
             "shots_fired": 3238,
             "shots_hit": 0,
-            "bombs_planted": 0,
+            "bombs_planted": 2,
             "bombs_defused": 0,
             "knife_kills": 1,
             "blind_kills": 2,
@@ -919,6 +919,27 @@
                     "kda": 0,
                     "kills": 0,
                     "rounds": 0
+                },
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
+                },
+                {
+                    "date": "2026-01-20",
+                    "score": 0.0,
+                    "kda": 0.34,
+                    "kills": 13,
+                    "rounds": 1
+                },
+                {
+                    "date": "2026-01-21",
+                    "score": 0.0,
+                    "kda": 0.34,
+                    "kills": 13,
+                    "rounds": 1
                 }
             ]
         },

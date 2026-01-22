@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "22.01.2026 01:11",
+        "last_updated": "22.01.2026 06:22",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -593,6 +593,52 @@
             ]
         },
         {
+            "name": "X_X",
+            "nickname": "X_X",
+            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
+            "kills": 31,
+            "deaths": 31,
+            "wins": 2,
+            "mvps": 4,
+            "damage": 4330,
+            "headshots": 12,
+            "rounds": 42,
+            "shots_fired": 1084,
+            "shots_hit": 0,
+            "bombs_planted": 3,
+            "bombs_defused": 0,
+            "knife_kills": 0,
+            "blind_kills": 1,
+            "money_earned": 140450,
+            "broken_windows": 0,
+            "fav_weapon": "M4A1",
+            "fav_weapon_kills": 11,
+            "weapons": {
+                "hegrenade": 1,
+                "glock": 1,
+                "ump45": 1,
+                "ak47": 10,
+                "famas": 1,
+                "mp9": 2,
+                "tec9": 1,
+                "m4a1": 11,
+                "galilar": 3
+            },
+            "fav_map": "Dust2",
+            "kda": 1.0,
+            "hs_rate": 38.7,
+            "score": 63.6,
+            "history": [
+                {
+                    "date": "2026-01-22",
+                    "score": 63.6,
+                    "kda": 1.0,
+                    "kills": 31,
+                    "rounds": 42
+                }
+            ]
+        },
+        {
             "name": "Murhpy",
             "nickname": "Murhpy",
             "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
@@ -1153,42 +1199,6 @@
                     "kda": 0.09,
                     "kills": 15,
                     "rounds": 4
-                }
-            ]
-        },
-        {
-            "name": "X_X",
-            "nickname": "X_X",
-            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
-            "kills": 0,
-            "deaths": 0,
-            "wins": 0,
-            "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "shots_fired": 0,
-            "shots_hit": 0,
-            "bombs_planted": 0,
-            "bombs_defused": 0,
-            "knife_kills": 0,
-            "blind_kills": 0,
-            "money_earned": 0,
-            "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
-            "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
-            "score": 0.0,
-            "history": [
-                {
-                    "date": "2026-01-22",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
                 }
             ]
         }

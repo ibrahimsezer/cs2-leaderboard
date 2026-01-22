@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "22.01.2026 04:09",
+        "last_updated": "22.01.2026 01:11",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -360,93 +360,6 @@
                     "kda": 1.72,
                     "kills": 50,
                     "rounds": 43
-                }
-            ]
-        },
-        {
-            "name": "KDV",
-            "nickname": "KDV",
-            "avatar": "https://avatars.steamstatic.com/f57ee1cbedbd66d84806b3cfe0505709df8ded10_full.jpg",
-            "kills": 157,
-            "deaths": 145,
-            "wins": 4,
-            "mvps": 21,
-            "damage": 22677,
-            "headshots": 99,
-            "rounds": 116,
-            "shots_fired": 3059,
-            "shots_hit": 0,
-            "bombs_planted": 15,
-            "bombs_defused": 0,
-            "knife_kills": 0,
-            "blind_kills": 6,
-            "money_earned": 348050,
-            "broken_windows": 0,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 95,
-            "weapons": {
-                "hegrenade": 1,
-                "glock": 6,
-                "deagle": 5,
-                "xm1014": 3,
-                "p90": 2,
-                "awp": 11,
-                "ak47": 95,
-                "aug": 4,
-                "hkp2000": 3,
-                "sg556": 2,
-                "ssg08": 10,
-                "negev": 1,
-                "m4a1": 9,
-                "galilar": 4,
-                "molotov": 1
-            },
-            "fav_map": "Dust2",
-            "kda": 1.08,
-            "hs_rate": 63.1,
-            "score": 141.9,
-            "history": [
-                {
-                    "date": "2026-01-19",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-01-20",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-01-21",
-                    "score": 68.0,
-                    "kda": 0.91,
-                    "kills": 59,
-                    "rounds": 38
-                },
-                {
-                    "date": "2026-01-22",
-                    "score": 68.0,
-                    "kda": 0.91,
-                    "kills": 59,
-                    "rounds": 38
-                },
-                {
-                    "date": "2026-01-21",
-                    "score": 68.0,
-                    "kda": 0.91,
-                    "kills": 59,
-                    "rounds": 38
-                },
-                {
-                    "date": "2026-01-22",
-                    "score": 141.9,
-                    "kda": 1.08,
-                    "kills": 157,
-                    "rounds": 116
                 }
             ]
         },

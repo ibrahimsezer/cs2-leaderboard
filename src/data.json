@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "23.01.2026 01:04",
+        "last_updated": "23.01.2026 06:22",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -648,43 +648,45 @@
             "name": "X_X",
             "nickname": "X_X",
             "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
-            "kills": 97,
-            "deaths": 113,
-            "wins": 4,
-            "mvps": 11,
-            "damage": 14454,
-            "headshots": 39,
-            "rounds": 147,
-            "shots_fired": 3179,
+            "kills": 133,
+            "deaths": 138,
+            "wins": 5,
+            "mvps": 16,
+            "damage": 18703,
+            "headshots": 49,
+            "rounds": 180,
+            "shots_fired": 3810,
             "shots_hit": 0,
-            "bombs_planted": 11,
-            "bombs_defused": 0,
+            "bombs_planted": 12,
+            "bombs_defused": 1,
             "knife_kills": 0,
-            "blind_kills": 6,
-            "money_earned": 462600,
+            "blind_kills": 7,
+            "money_earned": 574300,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 34,
+            "fav_weapon_kills": 42,
             "weapons": {
                 "hegrenade": 1,
-                "glock": 5,
+                "glock": 6,
+                "deagle": 2,
                 "mac10": 2,
                 "ump45": 2,
                 "p90": 2,
-                "awp": 2,
-                "ak47": 34,
+                "awp": 7,
+                "ak47": 42,
                 "famas": 6,
-                "hkp2000": 2,
+                "hkp2000": 6,
                 "ssg08": 2,
                 "mp9": 4,
                 "tec9": 3,
-                "m4a1": 19,
-                "galilar": 13
+                "m4a1": 27,
+                "galilar": 20,
+                "molotov": 1
             },
             "fav_map": "Dust2",
-            "kda": 0.86,
-            "hs_rate": 40.2,
-            "score": 49.2,
+            "kda": 0.96,
+            "hs_rate": 36.8,
+            "score": 59.4,
             "history": [
                 {
                     "date": "2026-01-22",
@@ -695,92 +697,10 @@
                 },
                 {
                     "date": "2026-01-23",
-                    "score": 49.2,
-                    "kda": 0.86,
-                    "kills": 97,
-                    "rounds": 147
-                }
-            ]
-        },
-        {
-            "name": "Murhpy",
-            "nickname": "Murhpy",
-            "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
-            "kills": 234,
-            "deaths": 276,
-            "wins": 8,
-            "mvps": 20,
-            "damage": 29645,
-            "headshots": 104,
-            "rounds": 292,
-            "shots_fired": 8543,
-            "shots_hit": 0,
-            "bombs_planted": 8,
-            "bombs_defused": 5,
-            "knife_kills": 0,
-            "blind_kills": 20,
-            "money_earned": 919100,
-            "broken_windows": 0,
-            "fav_weapon": "P90",
-            "fav_weapon_kills": 81,
-            "weapons": {
-                "glock": 7,
-                "fiveseven": 1,
-                "xm1014": 1,
-                "mac10": 1,
-                "ump45": 1,
-                "p90": 81,
-                "awp": 1,
-                "ak47": 3,
-                "aug": 7,
-                "hkp2000": 8,
-                "sg556": 15,
-                "mp7": 56,
-                "mp9": 3,
-                "bizon": 34,
-                "tec9": 1,
-                "m4a1": 13,
-                "galilar": 1
-            },
-            "fav_map": "Dust2",
-            "kda": 0.85,
-            "hs_rate": 44.4,
-            "score": 34.7,
-            "history": [
-                {
-                    "date": "2026-01-19",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-01-20",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-01-21",
-                    "score": 42.0,
-                    "kda": 0.91,
-                    "kills": 70,
-                    "rounds": 99
-                },
-                {
-                    "date": "2026-01-22",
-                    "score": 45.2,
-                    "kda": 0.92,
-                    "kills": 132,
-                    "rounds": 186
-                },
-                {
-                    "date": "2026-01-23",
-                    "score": 34.7,
-                    "kda": 0.85,
-                    "kills": 234,
-                    "rounds": 292
+                    "score": 59.4,
+                    "kda": 0.96,
+                    "kills": 133,
+                    "rounds": 180
                 }
             ]
         },
@@ -873,6 +793,88 @@
                     "kda": 0.77,
                     "kills": 92,
                     "rounds": 100
+                }
+            ]
+        },
+        {
+            "name": "Murhpy",
+            "nickname": "Murhpy",
+            "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
+            "kills": 252,
+            "deaths": 307,
+            "wins": 9,
+            "mvps": 22,
+            "damage": 32504,
+            "headshots": 115,
+            "rounds": 325,
+            "shots_fired": 9323,
+            "shots_hit": 0,
+            "bombs_planted": 9,
+            "bombs_defused": 6,
+            "knife_kills": 0,
+            "blind_kills": 21,
+            "money_earned": 1026800,
+            "broken_windows": 0,
+            "fav_weapon": "P90",
+            "fav_weapon_kills": 91,
+            "weapons": {
+                "glock": 10,
+                "fiveseven": 1,
+                "xm1014": 1,
+                "mac10": 1,
+                "ump45": 1,
+                "p90": 91,
+                "awp": 1,
+                "ak47": 3,
+                "aug": 7,
+                "hkp2000": 9,
+                "sg556": 15,
+                "mp7": 56,
+                "mp9": 3,
+                "bizon": 38,
+                "tec9": 1,
+                "m4a1": 13,
+                "galilar": 1
+            },
+            "fav_map": "Dust2",
+            "kda": 0.82,
+            "hs_rate": 45.6,
+            "score": 32.9,
+            "history": [
+                {
+                    "date": "2026-01-19",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
+                },
+                {
+                    "date": "2026-01-20",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
+                },
+                {
+                    "date": "2026-01-21",
+                    "score": 42.0,
+                    "kda": 0.91,
+                    "kills": 70,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-01-22",
+                    "score": 45.2,
+                    "kda": 0.92,
+                    "kills": 132,
+                    "rounds": 186
+                },
+                {
+                    "date": "2026-01-23",
+                    "score": 32.9,
+                    "kda": 0.82,
+                    "kills": 252,
+                    "rounds": 325
                 }
             ]
         },

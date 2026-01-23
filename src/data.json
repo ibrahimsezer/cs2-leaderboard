@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "23.01.2026 16:41",
+        "last_updated": "23.01.2026 17:44",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -118,14 +118,14 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 1251,
-            "deaths": 1015,
+            "kills": 1325,
+            "deaths": 1017,
             "wins": 14,
             "mvps": 59,
-            "damage": 168664,
-            "headshots": 766,
+            "damage": 180616,
+            "headshots": 794,
             "rounds": 346,
-            "shots_fired": 21047,
+            "shots_fired": 21330,
             "shots_hit": 0,
             "bombs_planted": 26,
             "bombs_defused": 4,
@@ -134,7 +134,7 @@
             "money_earned": 800800,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 736,
+            "fav_weapon_kills": 762,
             "weapons": {
                 "knife": 2,
                 "hegrenade": 5,
@@ -144,8 +144,8 @@
                 "xm1014": 27,
                 "mac10": 2,
                 "p90": 25,
-                "awp": 137,
-                "ak47": 736,
+                "awp": 185,
+                "ak47": 762,
                 "famas": 51,
                 "m249": 1,
                 "hkp2000": 67,
@@ -162,9 +162,9 @@
                 "taser": 1
             },
             "fav_map": "Dust2",
-            "kda": 1.23,
-            "hs_rate": 61.2,
-            "score": 289.5,
+            "kda": 1.3,
+            "hs_rate": 59.9,
+            "score": 325.1,
             "history": [
                 {
                     "date": "2026-01-19",
@@ -196,9 +196,9 @@
                 },
                 {
                     "date": "2026-01-23",
-                    "score": 289.5,
-                    "kda": 1.23,
-                    "kills": 1251,
+                    "score": 325.1,
+                    "kda": 1.3,
+                    "kills": 1325,
                     "rounds": 346
                 }
             ]

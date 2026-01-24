@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "24.01.2026 06:20",
+        "last_updated": "24.01.2026 12:23",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -324,7 +324,7 @@
             "damage": 10895,
             "headshots": 33,
             "rounds": 78,
-            "shots_fired": 6078,
+            "shots_fired": 6613,
             "shots_hit": 0,
             "bombs_planted": 4,
             "bombs_defused": 1,

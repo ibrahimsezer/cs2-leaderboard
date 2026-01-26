@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "26.01.2026 13:44",
+        "last_updated": "26.01.2026 18:23",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -9,14 +9,14 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 1523,
-            "deaths": 1306,
+            "kills": 1621,
+            "deaths": 1481,
             "wins": 16,
             "mvps": 70,
-            "damage": 205298,
-            "headshots": 915,
-            "rounds": 444,
-            "shots_fired": 26474,
+            "damage": 218112,
+            "headshots": 983,
+            "rounds": 446,
+            "shots_fired": 29355,
             "shots_hit": 0,
             "bombs_planted": 43,
             "bombs_defused": 4,
@@ -25,24 +25,24 @@
             "money_earned": 1109000,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 886,
+            "fav_weapon_kills": 980,
             "weapons": {
                 "knife": 2,
                 "hegrenade": 6,
                 "glock": 66,
-                "deagle": 18,
+                "deagle": 21,
                 "elite": 12,
                 "xm1014": 27,
                 "mac10": 3,
                 "p90": 25,
                 "awp": 185,
-                "ak47": 886,
+                "ak47": 980,
                 "famas": 51,
                 "m249": 1,
                 "hkp2000": 88,
                 "p250": 1,
                 "sg556": 6,
-                "ssg08": 3,
+                "ssg08": 4,
                 "mp7": 5,
                 "mp9": 22,
                 "nova": 1,
@@ -56,9 +56,9 @@
                 "taser": 1
             },
             "fav_map": "Dust2",
-            "kda": 1.17,
-            "hs_rate": 60.1,
-            "score": 256.8,
+            "kda": 1.09,
+            "hs_rate": 60.6,
+            "score": 248.1,
             "history": [
                 {
                     "date": "2026-01-19",
@@ -111,10 +111,10 @@
                 },
                 {
                     "date": "2026-01-26",
-                    "score": 256.8,
-                    "kda": 1.17,
-                    "kills": 1523,
-                    "rounds": 444
+                    "score": 248.1,
+                    "kda": 1.09,
+                    "kills": 1621,
+                    "rounds": 446
                 }
             ]
         },

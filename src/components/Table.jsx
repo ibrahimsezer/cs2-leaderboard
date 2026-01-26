@@ -12,7 +12,10 @@ import {
     Search,
     Filter,
     ChevronDown,
-    Ghost
+    Ghost,
+    Flame,
+    Medal,
+    Minus
 } from 'lucide-react';
 import VersusModal from './VersusModal';
 
@@ -22,6 +25,24 @@ const SortIcon = ({ className }) => (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
     </svg>
 );
+
+// --- SCORE RATING COMPONENT ---
+const ScoreRating = ({ score }) => {
+    if (score > 200) return <div title="Legendary (>200)" className="flex items-center justify-center w-6 h-6 rounded-full bg-red-500/20 text-red-500 animate-pulse"><Flame size={14} fill="currentColor" /></div>;
+    if (score >= 150) return <div title="Master (150-200)" className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400"><Trophy size={14} /></div>;
+    if (score >= 100) return <div title="Pro (100-150)" className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400"><Medal size={14} /></div>;
+    if (score >= 50) return <div title="Rookie (50-100)" className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400"><Target size={14} /></div>;
+    return <div title="Newbie (0-50)" className="flex items-center justify-center w-6 h-6 rounded-full bg-neutral-500/20 text-neutral-500"><Minus size={14} /></div>;
+};
+
+// --- HELPER: Get Weapon Icon Path ---
+const getWeaponIcon = (weaponName) => {
+    if (!weaponName) return null;
+    // Normalize: "AK-47" -> "ak47", "Desert Eagle" -> "deagle" (if named that way), etc.
+    // Based on the file list provided: ak47.svg, m4a1.svg, awp.svg, deagle.svg, etc.
+    const normalized = weaponName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return `${import.meta.env.BASE_URL}equipments/${normalized}.svg`;
+};
 
 function Table({ players, onPlayerSelect }) {
     const [searchTerm, setSearchTerm] = useState("");
@@ -37,6 +58,31 @@ function Table({ players, onPlayerSelect }) {
     const uniqueWeapons = useMemo(() => {
         const weapons = players.map(p => p.fav_weapon).filter(Boolean);
         return ["All", ...new Set(weapons)];
+    }, [players]);
+
+    // Calculate Global Max Stats (for highlighting)
+    const maxStats = useMemo(() => {
+        const stats = {
+            kills: 0,
+            damage: 0,
+            hs_rate: 0,
+            wins: 0,
+            mvps: 0,
+            deaths: 0,
+            rounds: 0,
+            score: 0
+        };
+        players.forEach(p => {
+            if (p.kills > stats.kills) stats.kills = p.kills;
+            if (p.damage > stats.damage) stats.damage = p.damage;
+            if (p.hs_rate > stats.hs_rate) stats.hs_rate = p.hs_rate;
+            if (p.wins > stats.wins) stats.wins = p.wins;
+            if (p.mvps > stats.mvps) stats.mvps = p.mvps;
+            if (p.deaths > stats.deaths) stats.deaths = p.deaths;
+            if (p.rounds > stats.rounds) stats.rounds = p.rounds;
+            if (p.score > stats.score) stats.score = p.score;
+        });
+        return stats;
     }, [players]);
 
     // Filter
@@ -267,20 +313,39 @@ function Table({ players, onPlayerSelect }) {
 
                                     {/* Score */}
                                     <td className={`p-3 text-right font-black text-base tabular-nums ${scoreColor}`}>
-                                        {player.score}
+                                        <div className="flex items-center justify-end gap-2">
+                                            <span>{player.score}</span>
+                                            <ScoreRating score={player.score} />
+                                        </div>
                                     </td>
 
                                     {/* Other Stats */}
-                                    {columns.slice(2).map(col => (
-                                        <td key={col.key} className={`p-3 text-right font-mono text-sm tabular-nums text-neutral-400 group-hover:text-neutral-200 ${col.key === 'kills' ? 'font-bold' : ''}`}>
-                                            {col.key === 'damage' ? player[col.key].toLocaleString() : player[col.key]}
-                                            {col.key === 'hs_rate' && '%'}
-                                        </td>
-                                    ))}
+                                    {columns.slice(2).map(col => {
+                                        // Is this the max value for this column?
+                                        const isMax = maxStats[col.key] > 0 && player[col.key] === maxStats[col.key];
+                                        return (
+                                            <td key={col.key} className={`p-3 text-right font-mono text-sm tabular-nums text-neutral-400 group-hover:text-neutral-200`}>
+                                                <div className={`flex items-center justify-end gap-1.5 ${isMax ? 'text-yellow-400 font-bold drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]' : ''}`}>
+                                                    {isMax && <Trophy size={12} className="text-yellow-500 animate-pulse" />}
+                                                    {col.key === 'damage' ? player[col.key].toLocaleString() : player[col.key]}
+                                                    {col.key === 'hs_rate' && '%'}
+                                                </div>
+                                            </td>
+                                        );
+                                    })}
 
                                     <td className="p-3 text-center text-xs font-mono text-neutral-500 group-hover:text-white transition-colors rounded-r-lg uppercase">
-                                        <span className="px-2 py-1 rounded bg-white/5 border border-white/5">
-                                            {player.fav_weapon}
+                                        <span className="px-2 py-1 flex items-center justify-center rounded bg-white/5 border border-white/5 min-w-[80px]">
+                                            <img
+                                                src={getWeaponIcon(player.fav_weapon)}
+                                                alt={player.fav_weapon}
+                                                className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity drop-shadow-md"
+                                                onError={(e) => {
+                                                    e.target.style.display = 'none'; // Hide broken image
+                                                    e.target.nextSibling.style.display = 'block'; // Show fallback text
+                                                }}
+                                            />
+                                            <span style={{ display: 'none' }} className="text-[10px]">{player.fav_weapon}</span>
                                         </span>
                                     </td>
                                 </tr>

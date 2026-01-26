@@ -1,55 +1,48 @@
-import { Crosshair, SwordsIcon } from 'lucide-react';
 
-// --- SVG ICONS ---
-const FireIcon = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-        <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z" />
-    </svg>
-);
-
-const CrosshairIcon = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-2.48-.35-4.44-2.22-4.93-4.64l1.88-1.88-1.41-1.41-1.88 1.88c.35-2.49 2.22-4.45 4.64-4.93v-1.69h1.69v1.65c2.49.35 4.45 2.22 4.93 4.64l-1.88 1.88 1.41 1.41 1.88-1.88c-.35 2.48-2.22 4.44-4.64 4.93v1.69h-1.69v-1.65zm-.25-5.18l-1.41 1.41 1.41 1.41 1.41-1.41-1.41-1.41z" />
-    </svg>
-);
-
-const SwordIcon = ({ className }) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-        <path d="M3 3l18 18M21 3L3 21" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    </svg>
-);
+import { Crosshair, Skull, Flame, Trophy, Target } from 'lucide-react';
 
 // --- MINI LEADERBOARD CARD ---
-function MiniLeaderboardCard({ title, icon, players, statKey, formatValue, onPlayerSelect }) {
+function MiniLeaderboardCard({ title, icon, players, statKey, formatValue, onPlayerSelect, colorParams }) {
     const topThree = [...players].sort((a, b) => b[statKey] - a[statKey]).slice(0, 3);
+    const { bg, border, iconColor, textGradient, hoverBorder } = colorParams;
 
     return (
-        <div className="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 hover:bg-neutral-900/80 transition-colors group">
-            <div className="flex items-center gap-3 mb-4">
-                <div className={`p-2 rounded-lg bg-neutral-800 text-white group-hover:bg-white group-hover:text-black transition-colors`}>
+        <div className={`relative overflow-hidden bg-neutral-900/40 backdrop-blur-md border ${border} rounded-2xl p-6 transition-all duration-300 hover:bg-neutral-900/60 ${hoverBorder} group`}>
+            {/* Background Glow */}
+            <div className={`absolute -top-10 -right-10 w-32 h-32 ${bg} blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+
+            <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className={`p-2.5 rounded-xl bg-neutral-800/80 border border-white/5 shadow-inner ${iconColor}`}>
                     {icon}
                 </div>
-                <h4 className="text-sm font-bold text-neutral-200 uppercase tracking-widest">{title}</h4>
+                <h4 className={`text-sm font-black uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r ${textGradient}`}>
+                    {title}
+                </h4>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2 relative z-10">
                 {topThree.map((player, idx) => {
-                    const rankColor = idx === 0 ? 'text-cyan-400' : idx === 1 ? 'text-purple-400' : 'text-orange-400';
-                    const borderColor = idx === 0 ? 'border-cyan-400' : idx === 1 ? 'border-purple-400' : 'border-orange-400';
+                    const isTop = idx === 0;
 
                     return (
                         <div
                             key={player.name}
                             onClick={() => onPlayerSelect(player)}
-                            className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 transition-colors cursor-pointer active:scale-95 duration-150"
+                            className={`flex items-center justify-between p-3 rounded-xl transition-all duration-200 cursor-pointer border border-transparent 
+                                ${isTop ? 'bg-white/5 border-white/10 shadow-lg' : 'hover:bg-white/5 hover:border-white/5'}
+                                active:scale-[0.98] group/item
+                            `}
                         >
                             <div className="flex items-center gap-3">
-                                <span className={`text-xs font-black w-4 ${rankColor}`}>
+                                {/* Rank */}
+                                <div className={`w-6 h-6 flex items-center justify-center rounded font-black text-xs 
+                                    ${isTop ? 'bg-white/10 text-white' : 'text-neutral-500 bg-neutral-800/50'}
+                                `}>
                                     #{idx + 1}
-                                </span>
+                                </div>
 
                                 {/* Avatar Mini */}
-                                <div className={`w-8 h-8 rounded-full bg-neutral-800 overflow-hidden border ${borderColor}`}>
+                                <div className={`relative w-8 h-8 rounded-full bg-neutral-800 overflow-hidden border ${isTop ? 'border-white/30' : 'border-white/10'}`}>
                                     {player.avatar ? (
                                         <img src={player.avatar} alt={player.name} className="w-full h-full object-cover" />
                                     ) : (
@@ -59,12 +52,12 @@ function MiniLeaderboardCard({ title, icon, players, statKey, formatValue, onPla
                                     )}
                                 </div>
 
-                                <span className={`text-sm font-bold truncate w-24 ${idx === 0 ? 'text-white' : 'text-neutral-400'}`}>
-                                    {player.name}
+                                <span className={`text-sm font-bold truncate w-24 md:w-32 group-hover/item:text-white transition-colors ${isTop ? 'text-white' : 'text-neutral-400'}`}>
+                                    {player.nickname || player.name}
                                 </span>
                             </div>
 
-                            <span className={`font-mono font-bold text-sm ${rankColor}`}>
+                            <span className={`font-mono font-black text-sm tracking-wider ${isTop ? 'text-white' : 'text-neutral-400'}`}>
                                 {formatValue ? formatValue(player[statKey]) : player[statKey]}
                             </span>
                         </div>
@@ -81,35 +74,57 @@ function CategoryLeaders({ players, onPlayerSelect }) {
 
     return (
         <div className="w-full">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <span className="w-1 h-6 bg-white rounded-full"></span>
-                Category Leaders
-            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Damage Leaders - Red/Orange */}
                 <MiniLeaderboardCard
                     title="Damage Dealers"
-                    icon={<FireIcon className="w-5 h-5" />}
+                    icon={<Flame size={20} />}
                     players={players}
                     statKey="damage"
-                    formatValue={(v) => v.toLocaleString()}
+                    formatValue={(v) => `${(v / 1000).toFixed(1)}k`}
                     onPlayerSelect={onPlayerSelect}
+                    colorParams={{
+                        bg: "bg-red-500",
+                        border: "border-red-500/20",
+                        hoverBorder: "hover:border-red-500/40",
+                        iconColor: "text-red-500",
+                        textGradient: "from-red-200 to-red-500"
+                    }}
                 />
+
+                {/* Headshot Leaders - Cyan/Blue */}
                 <MiniLeaderboardCard
                     title="Headshooters"
-                    icon={<Crosshair className="w-5 h-5" />}
+                    icon={<Crosshair size={20} />}
                     players={players}
                     statKey="hs_rate"
                     formatValue={(v) => `%${v}`}
                     onPlayerSelect={onPlayerSelect}
+                    colorParams={{
+                        bg: "bg-cyan-500",
+                        border: "border-cyan-500/20",
+                        hoverBorder: "hover:border-cyan-500/40",
+                        iconColor: "text-cyan-500",
+                        textGradient: "from-cyan-200 to-cyan-500"
+                    }}
                 />
+
+                {/* Kill Leaders - Yellow/Gold */}
                 <MiniLeaderboardCard
                     title="Top Fraggers"
-                    icon={<SwordsIcon className="w-5 h-5" />}
+                    icon={<Skull size={20} />}
                     players={players}
                     statKey="kills"
-                    formatValue={(v) => v}
+                    formatValue={(v) => v.toLocaleString()}
                     onPlayerSelect={onPlayerSelect}
+                    colorParams={{
+                        bg: "bg-yellow-500",
+                        border: "border-yellow-500/20",
+                        hoverBorder: "hover:border-yellow-500/40",
+                        iconColor: "text-yellow-500",
+                        textGradient: "from-yellow-200 to-yellow-500"
+                    }}
                 />
             </div>
         </div>

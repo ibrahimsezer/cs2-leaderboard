@@ -5,6 +5,7 @@ import Leaders from './Leaders';
 import PlayerModal from './PlayerModal';
 import HomeHeader from './home/HomeHeader';
 import ServerStats from './home/ServerStats';
+import EquipmentMasters from './home/EquipmentMasters';
 import HomeFooter from './home/HomeFooter';
 
 function Home() {
@@ -46,8 +47,11 @@ function Home() {
                     <Leaders players={players} onPlayerSelect={setSelectedPlayer} />
                 </section>
 
-                {/* --- SERVER STATS BANNER (New Feature) --- */}
+                {/* --- SERVER STATS BANNER --- */}
                 <ServerStats serverStats={serverStats} />
+
+                {/* --- EQUIPMENT OF MASTERS (New Section) --- */}
+                <EquipmentMasters players={players} />
 
                 {/* --- TABLE COMPONENT --- */}
                 <main className="max-w-6xl mx-auto mb-20 animate-fade-in-up delay-200">

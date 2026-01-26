@@ -14,11 +14,9 @@ function HomeHeader({ meta }) {
             <div className="flex flex-col gap-4 relative">
                 {/* Title Area */}
                 <div className="group relative">
-                    <h1 className="text-6xl md:text-7xl font-black text-white tracking-tighter drop-shadow-2xl italic transform -skew-x-6">
-                        CS2 LEADERBOARD
-                    </h1>
-                    <h1 className="absolute top-0 left-0 text-6xl md:text-7xl font-black text-orange-500/10 tracking-tighter italic transform -skew-x-6 translate-x-1 translate-y-1 -z-10">
-                        CS2 LEADERBOARD
+                    <h1 className="text-6xl font-black italic tracking-tighter text-white uppercase flex items-center gap-2">
+                        <div className="w-2 h-8"></div>
+                        CS2 <span className="text-orange-500">Leaderboard</span>
                     </h1>
                     {/* Glitch/shine effect line */}
                     <div className="absolute -bottom-2 left-0 w-24 h-1 bg-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.8)]"></div>

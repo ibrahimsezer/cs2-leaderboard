@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "29.01.2026 06:35",
+        "last_updated": "29.01.2026 12:35",
         "season_start": "01.01.2026",
         "season_active": true
     },
@@ -143,14 +143,14 @@
             "name": "EL EX",
             "nickname": "EL EX v1",
             "avatar": "https://avatars.steamstatic.com/9b13e236241c60849077e6beaa4a54b96a33a122_full.jpg",
-            "kills": 213,
-            "deaths": 169,
+            "kills": 241,
+            "deaths": 218,
             "wins": 4,
             "mvps": 25,
-            "damage": 30106,
-            "headshots": 86,
-            "rounds": 145,
-            "shots_fired": 9555,
+            "damage": 33621,
+            "headshots": 100,
+            "rounds": 146,
+            "shots_fired": 10417,
             "shots_hit": 0,
             "bombs_planted": 6,
             "bombs_defused": 1,
@@ -159,7 +159,7 @@
             "money_earned": 453450,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 68,
+            "fav_weapon_kills": 94,
             "weapons": {
                 "knife": 1,
                 "glock": 10,
@@ -171,10 +171,10 @@
                 "ump45": 3,
                 "p90": 7,
                 "awp": 7,
-                "ak47": 68,
+                "ak47": 94,
                 "aug": 6,
                 "famas": 4,
-                "g3sg1": 2,
+                "g3sg1": 4,
                 "m249": 2,
                 "hkp2000": 6,
                 "sg556": 2,
@@ -192,9 +192,9 @@
                 "taser": 3
             },
             "fav_map": "Dust2",
-            "kda": 1.26,
-            "hs_rate": 40.4,
-            "score": 154.7,
+            "kda": 1.11,
+            "hs_rate": 41.5,
+            "score": 146.0,
             "history": [
                 {
                     "date": "2026-01-19",
@@ -282,10 +282,10 @@
                 },
                 {
                     "date": "2026-01-29",
-                    "score": 154.7,
-                    "kda": 1.26,
-                    "kills": 213,
-                    "rounds": 145
+                    "score": 146.0,
+                    "kda": 1.11,
+                    "kills": 241,
+                    "rounds": 146
                 }
             ]
         },

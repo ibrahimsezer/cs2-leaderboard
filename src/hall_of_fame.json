@@ -50,5 +50,31 @@
                 "value": "207"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-02",
+        "season_name": "February 2026",
+        "year": "2026",
+        "winner": {
+            "name": "Sezar",
+            "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
+            "stats": {
+                "rating": 190.9,
+                "kda": 1.1,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Ahmet",
+                "value": "1377"
+            },
+            {
+                "title": "AWP King",
+                "player": "Ahmet",
+                "value": "157"
+            }
+        ]
     }
 ]

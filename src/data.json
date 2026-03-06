@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "06.03.2026 12:34",
+        "last_updated": "06.03.2026 18:32",
         "season_start": "01.03.2026",
         "season_active": true
     },
@@ -1528,14 +1528,14 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 0,
-            "deaths": 0,
+            "kills": 35,
+            "deaths": 93,
             "wins": 0,
             "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
+            "damage": 5093,
+            "headshots": 29,
             "rounds": 0,
-            "shots_fired": 0,
+            "shots_fired": 866,
             "shots_hit": 0,
             "bombs_planted": 0,
             "bombs_defused": 0,
@@ -1543,12 +1543,17 @@
             "blind_kills": 0,
             "money_earned": 0,
             "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
+            "fav_weapon": "HKP2000",
+            "fav_weapon_kills": 19,
+            "weapons": {
+                "deagle": 3,
+                "ak47": 12,
+                "hkp2000": 19,
+                "ssg08": 1
+            },
             "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
+            "kda": 0.38,
+            "hs_rate": 82.9,
             "score": 0.0,
             "history": [
                 {
@@ -1589,8 +1594,8 @@
                 {
                     "date": "2026-03-06",
                     "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
+                    "kda": 0.38,
+                    "kills": 35,
                     "rounds": 0
                 }
             ]

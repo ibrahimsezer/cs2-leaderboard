@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "15.03.2026 06:44",
+        "last_updated": "15.03.2026 12:32",
         "season_start": "01.03.2026",
         "season_active": true
     },
@@ -2402,14 +2402,14 @@
             "name": "NightWish",
             "nickname": "NightWish",
             "avatar": "https://avatars.steamstatic.com/aff07965d2bb933dd072b3fc103a4c97feb07eba_full.jpg",
-            "kills": 0,
-            "deaths": 0,
+            "kills": 1,
+            "deaths": 1,
             "wins": 0,
             "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
+            "damage": 101,
+            "headshots": 1,
             "rounds": 0,
-            "shots_fired": 0,
+            "shots_fired": 24,
             "shots_hit": 0,
             "bombs_planted": 0,
             "bombs_defused": 0,
@@ -2417,12 +2417,14 @@
             "blind_kills": 0,
             "money_earned": 0,
             "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
+            "fav_weapon": "XM1014",
+            "fav_weapon_kills": 1,
+            "weapons": {
+                "xm1014": 1
+            },
             "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
+            "kda": 1.0,
+            "hs_rate": 100.0,
             "score": 0.0,
             "history": [
                 {
@@ -2631,8 +2633,8 @@
                 {
                     "date": "2026-03-15",
                     "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
+                    "kda": 1.0,
+                    "kills": 1,
                     "rounds": 0
                 }
             ]

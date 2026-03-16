@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "16.03.2026 07:06",
+        "last_updated": "16.03.2026 12:50",
         "season_start": "01.03.2026",
         "season_active": true
     },
@@ -1314,6 +1314,54 @@
                     "kda": 1.1,
                     "kills": 453,
                     "rounds": 531
+                }
+            ]
+        },
+        {
+            "name": "KDV",
+            "nickname": "KDV",
+            "avatar": "https://avatars.steamstatic.com/6755eeded1b460f3bb1e376df691dd570fc05bd2_full.jpg",
+            "kills": 71,
+            "deaths": 64,
+            "wins": 2,
+            "mvps": 6,
+            "damage": 11343,
+            "headshots": 33,
+            "rounds": 99,
+            "shots_fired": 942,
+            "shots_hit": 0,
+            "bombs_planted": 5,
+            "bombs_defused": 1,
+            "knife_kills": 0,
+            "blind_kills": 7,
+            "money_earned": 304600,
+            "broken_windows": 0,
+            "fav_weapon": "AWP",
+            "fav_weapon_kills": 20,
+            "weapons": {
+                "glock": 1,
+                "deagle": 2,
+                "elite": 1,
+                "awp": 20,
+                "ak47": 19,
+                "hkp2000": 5,
+                "p250": 1,
+                "ssg08": 6,
+                "tec9": 1,
+                "m4a1": 14,
+                "galilar": 1
+            },
+            "fav_map": "Dust2",
+            "kda": 1.11,
+            "hs_rate": 46.5,
+            "score": 74.8,
+            "history": [
+                {
+                    "date": "2026-03-16",
+                    "score": 74.8,
+                    "kda": 1.11,
+                    "kills": 71,
+                    "rounds": 99
                 }
             ]
         },
@@ -3124,42 +3172,6 @@
                     "kills": 0,
                     "rounds": 0
                 },
-                {
-                    "date": "2026-03-16",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                }
-            ]
-        },
-        {
-            "name": "KDV",
-            "nickname": "KDV",
-            "avatar": "https://avatars.steamstatic.com/6755eeded1b460f3bb1e376df691dd570fc05bd2_full.jpg",
-            "kills": 0,
-            "deaths": 0,
-            "wins": 0,
-            "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "shots_fired": 0,
-            "shots_hit": 0,
-            "bombs_planted": 0,
-            "bombs_defused": 0,
-            "knife_kills": 0,
-            "blind_kills": 0,
-            "money_earned": 0,
-            "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
-            "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
-            "score": 0.0,
-            "history": [
                 {
                     "date": "2026-03-16",
                     "score": 0.0,

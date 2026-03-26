@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "26.03.2026 01:24",
+        "last_updated": "26.03.2026 06:57",
         "season_start": "01.03.2026",
         "season_active": true
     },
@@ -1175,23 +1175,23 @@
             "name": "KDV",
             "nickname": "KDV",
             "avatar": "https://avatars.steamstatic.com/6755eeded1b460f3bb1e376df691dd570fc05bd2_full.jpg",
-            "kills": 405,
-            "deaths": 428,
-            "wins": 7,
+            "kills": 422,
+            "deaths": 442,
+            "wins": 8,
             "mvps": 34,
-            "damage": 59806,
-            "headshots": 224,
-            "rounds": 397,
-            "shots_fired": 7531,
+            "damage": 62191,
+            "headshots": 235,
+            "rounds": 415,
+            "shots_fired": 7899,
             "shots_hit": 0,
-            "bombs_planted": 20,
+            "bombs_planted": 22,
             "bombs_defused": 1,
             "knife_kills": 0,
             "blind_kills": 26,
-            "money_earned": 1222100,
+            "money_earned": 1270950,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 121,
+            "fav_weapon_kills": 137,
             "weapons": {
                 "glock": 4,
                 "deagle": 9,
@@ -1200,8 +1200,8 @@
                 "mac10": 4,
                 "ump45": 2,
                 "p90": 1,
-                "awp": 40,
-                "ak47": 121,
+                "awp": 41,
+                "ak47": 137,
                 "aug": 6,
                 "famas": 8,
                 "g3sg1": 4,
@@ -1223,8 +1223,8 @@
             },
             "fav_map": "Dust2",
             "kda": 0.95,
-            "hs_rate": 55.3,
-            "score": 79.8,
+            "hs_rate": 55.7,
+            "score": 79.3,
             "history": [
                 {
                     "date": "2026-03-16",
@@ -1298,10 +1298,10 @@
                 },
                 {
                     "date": "2026-03-26",
-                    "score": 79.8,
+                    "score": 79.3,
                     "kda": 0.95,
-                    "kills": 405,
-                    "rounds": 397
+                    "kills": 422,
+                    "rounds": 415
                 }
             ]
         },

@@ -1,282 +1,10 @@
 {
     "meta": {
-        "last_updated": "26.03.2026 06:57",
+        "last_updated": "26.03.2026 12:53",
         "season_start": "01.03.2026",
         "season_active": true
     },
     "players": [
-        {
-            "name": "Exselansis",
-            "nickname": "EL EX v3",
-            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
-            "kills": 786,
-            "deaths": 761,
-            "wins": 12,
-            "mvps": 57,
-            "damage": 106812,
-            "headshots": 360,
-            "rounds": 493,
-            "shots_fired": 16694,
-            "shots_hit": 0,
-            "bombs_planted": 17,
-            "bombs_defused": 7,
-            "knife_kills": 14,
-            "blind_kills": 24,
-            "money_earned": 1539050,
-            "broken_windows": 0,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 233,
-            "weapons": {
-                "knife": 14,
-                "hegrenade": 1,
-                "glock": 33,
-                "deagle": 19,
-                "elite": 12,
-                "fiveseven": 10,
-                "xm1014": 76,
-                "mac10": 11,
-                "ump45": 11,
-                "p90": 12,
-                "awp": 25,
-                "ak47": 233,
-                "aug": 14,
-                "famas": 12,
-                "g3sg1": 13,
-                "m249": 6,
-                "hkp2000": 24,
-                "p250": 8,
-                "sg556": 19,
-                "scar20": 12,
-                "ssg08": 17,
-                "mp7": 27,
-                "mp9": 19,
-                "nova": 4,
-                "negev": 17,
-                "sawedoff": 4,
-                "bizon": 12,
-                "tec9": 6,
-                "mag7": 4,
-                "m4a1": 89,
-                "galilar": 21,
-                "taser": 1
-            },
-            "fav_map": "Dust2",
-            "kda": 1.03,
-            "hs_rate": 45.8,
-            "score": 111.6,
-            "history": [
-                {
-                    "date": "2026-02-25",
-                    "score": 129.2,
-                    "kda": 1.02,
-                    "kills": 365,
-                    "rounds": 177
-                },
-                {
-                    "date": "2026-02-26",
-                    "score": 129.2,
-                    "kda": 1.02,
-                    "kills": 365,
-                    "rounds": 177
-                },
-                {
-                    "date": "2026-02-27",
-                    "score": 129.2,
-                    "kda": 1.02,
-                    "kills": 365,
-                    "rounds": 177
-                },
-                {
-                    "date": "2026-02-28",
-                    "score": 129.2,
-                    "kda": 1.02,
-                    "kills": 365,
-                    "rounds": 177
-                },
-                {
-                    "date": "2026-03-01",
-                    "score": 103.9,
-                    "kda": 1.07,
-                    "kills": 15,
-                    "rounds": 21
-                },
-                {
-                    "date": "2026-03-02",
-                    "score": 77.1,
-                    "kda": 0.82,
-                    "kills": 71,
-                    "rounds": 59
-                },
-                {
-                    "date": "2026-03-03",
-                    "score": 131.0,
-                    "kda": 0.96,
-                    "kills": 136,
-                    "rounds": 61
-                },
-                {
-                    "date": "2026-03-04",
-                    "score": 149.6,
-                    "kda": 0.99,
-                    "kills": 161,
-                    "rounds": 62
-                },
-                {
-                    "date": "2026-03-05",
-                    "score": 149.6,
-                    "kda": 0.99,
-                    "kills": 161,
-                    "rounds": 62
-                },
-                {
-                    "date": "2026-03-06",
-                    "score": 99.3,
-                    "kda": 0.87,
-                    "kills": 268,
-                    "rounds": 118
-                },
-                {
-                    "date": "2026-03-07",
-                    "score": 99.3,
-                    "kda": 0.87,
-                    "kills": 268,
-                    "rounds": 118
-                },
-                {
-                    "date": "2026-03-08",
-                    "score": 99.3,
-                    "kda": 0.87,
-                    "kills": 268,
-                    "rounds": 118
-                },
-                {
-                    "date": "2026-03-09",
-                    "score": 99.3,
-                    "kda": 0.87,
-                    "kills": 268,
-                    "rounds": 118
-                },
-                {
-                    "date": "2026-03-10",
-                    "score": 99.3,
-                    "kda": 0.87,
-                    "kills": 268,
-                    "rounds": 118
-                },
-                {
-                    "date": "2026-03-11",
-                    "score": 125.6,
-                    "kda": 0.88,
-                    "kills": 315,
-                    "rounds": 120
-                },
-                {
-                    "date": "2026-03-12",
-                    "score": 114.3,
-                    "kda": 0.89,
-                    "kills": 329,
-                    "rounds": 138
-                },
-                {
-                    "date": "2026-03-13",
-                    "score": 114.3,
-                    "kda": 0.89,
-                    "kills": 329,
-                    "rounds": 138
-                },
-                {
-                    "date": "2026-03-14",
-                    "score": 111.3,
-                    "kda": 0.96,
-                    "kills": 425,
-                    "rounds": 233
-                },
-                {
-                    "date": "2026-03-15",
-                    "score": 106.3,
-                    "kda": 0.97,
-                    "kills": 456,
-                    "rounds": 273
-                },
-                {
-                    "date": "2026-03-16",
-                    "score": 90.6,
-                    "kda": 0.95,
-                    "kills": 521,
-                    "rounds": 370
-                },
-                {
-                    "date": "2026-03-17",
-                    "score": 97.8,
-                    "kda": 0.99,
-                    "kills": 641,
-                    "rounds": 436
-                },
-                {
-                    "date": "2026-03-18",
-                    "score": 103.3,
-                    "kda": 1.01,
-                    "kills": 697,
-                    "rounds": 470
-                },
-                {
-                    "date": "2026-03-19",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-20",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-21",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-22",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-23",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-24",
-                    "score": 109.6,
-                    "kda": 1.02,
-                    "kills": 768,
-                    "rounds": 492
-                },
-                {
-                    "date": "2026-03-25",
-                    "score": 111.6,
-                    "kda": 1.03,
-                    "kills": 786,
-                    "rounds": 493
-                },
-                {
-                    "date": "2026-03-26",
-                    "score": 111.6,
-                    "kda": 1.03,
-                    "kills": 786,
-                    "rounds": 493
-                }
-            ]
-        },
         {
             "name": "EL EX",
             "nickname": "EL EX v1",
@@ -549,57 +277,163 @@
             ]
         },
         {
+            "name": "X_X",
+            "nickname": "X_X",
+            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
+            "kills": 84,
+            "deaths": 60,
+            "wins": 4,
+            "mvps": 13,
+            "damage": 12365,
+            "headshots": 28,
+            "rounds": 99,
+            "shots_fired": 2126,
+            "shots_hit": 0,
+            "bombs_planted": 2,
+            "bombs_defused": 3,
+            "knife_kills": 0,
+            "blind_kills": 7,
+            "money_earned": 311350,
+            "broken_windows": 0,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 32,
+            "weapons": {
+                "hegrenade": 2,
+                "glock": 2,
+                "deagle": 9,
+                "elite": 2,
+                "mac10": 2,
+                "p90": 3,
+                "awp": 1,
+                "ak47": 32,
+                "aug": 1,
+                "ssg08": 9,
+                "bizon": 1,
+                "m4a1": 15,
+                "galilar": 5
+            },
+            "fav_map": "Dust2",
+            "kda": 1.4,
+            "hs_rate": 33.3,
+            "score": 109.3,
+            "history": [
+                {
+                    "date": "2026-03-18",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-19",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-20",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-21",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-22",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-23",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-24",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-25",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                },
+                {
+                    "date": "2026-03-26",
+                    "score": 109.3,
+                    "kda": 1.4,
+                    "kills": 84,
+                    "rounds": 99
+                }
+            ]
+        },
+        {
             "name": "Ahmet",
             "nickname": "Ahmet",
             "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
-            "kills": 2304,
-            "deaths": 2162,
-            "wins": 44,
-            "mvps": 408,
-            "damage": 329307,
-            "headshots": 1258,
-            "rounds": 2369,
-            "shots_fired": 47938,
+            "kills": 2346,
+            "deaths": 2215,
+            "wins": 45,
+            "mvps": 414,
+            "damage": 337019,
+            "headshots": 1283,
+            "rounds": 2434,
+            "shots_fired": 48879,
             "shots_hit": 0,
-            "bombs_planted": 91,
+            "bombs_planted": 94,
             "bombs_defused": 14,
-            "knife_kills": 31,
-            "blind_kills": 218,
-            "money_earned": 7207650,
+            "knife_kills": 32,
+            "blind_kills": 226,
+            "money_earned": 7403050,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 1035,
+            "fav_weapon_kills": 1056,
             "weapons": {
-                "knife": 31,
+                "knife": 32,
                 "hegrenade": 6,
-                "glock": 91,
-                "deagle": 117,
+                "glock": 93,
+                "deagle": 122,
                 "elite": 64,
-                "xm1014": 55,
+                "xm1014": 56,
                 "mac10": 4,
                 "p90": 1,
                 "awp": 148,
-                "ak47": 1035,
+                "ak47": 1056,
                 "aug": 1,
                 "m249": 4,
-                "hkp2000": 143,
+                "hkp2000": 145,
                 "p250": 4,
                 "scar20": 5,
-                "ssg08": 41,
+                "ssg08": 42,
                 "mp7": 3,
                 "mp9": 5,
                 "nova": 1,
                 "negev": 3,
                 "sawedoff": 9,
                 "tec9": 2,
-                "m4a1": 452,
+                "m4a1": 461,
                 "galilar": 78,
                 "molotov": 1
             },
             "fav_map": "Dust2",
-            "kda": 1.07,
-            "hs_rate": 54.6,
-            "score": 110.0,
+            "kda": 1.06,
+            "hs_rate": 54.7,
+            "score": 109.0,
             "history": [
                 {
                     "date": "2026-02-25",
@@ -806,116 +640,282 @@
                 },
                 {
                     "date": "2026-03-26",
-                    "score": 110.0,
-                    "kda": 1.07,
-                    "kills": 2304,
-                    "rounds": 2369
+                    "score": 109.0,
+                    "kda": 1.06,
+                    "kills": 2346,
+                    "rounds": 2434
                 }
             ]
         },
         {
-            "name": "X_X",
-            "nickname": "X_X",
-            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
-            "kills": 84,
-            "deaths": 60,
-            "wins": 4,
-            "mvps": 13,
-            "damage": 12365,
-            "headshots": 28,
-            "rounds": 99,
-            "shots_fired": 2126,
+            "name": "Exselansis",
+            "nickname": "EL EX v3",
+            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
+            "kills": 837,
+            "deaths": 814,
+            "wins": 13,
+            "mvps": 65,
+            "damage": 114419,
+            "headshots": 385,
+            "rounds": 559,
+            "shots_fired": 17580,
             "shots_hit": 0,
-            "bombs_planted": 2,
-            "bombs_defused": 3,
-            "knife_kills": 0,
-            "blind_kills": 7,
-            "money_earned": 311350,
+            "bombs_planted": 21,
+            "bombs_defused": 7,
+            "knife_kills": 14,
+            "blind_kills": 29,
+            "money_earned": 1737950,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 32,
+            "fav_weapon_kills": 256,
             "weapons": {
-                "hegrenade": 2,
-                "glock": 2,
-                "deagle": 9,
-                "elite": 2,
-                "mac10": 2,
-                "p90": 3,
-                "awp": 1,
-                "ak47": 32,
-                "aug": 1,
-                "ssg08": 9,
-                "bizon": 1,
-                "m4a1": 15,
-                "galilar": 5
+                "knife": 14,
+                "hegrenade": 1,
+                "glock": 34,
+                "deagle": 23,
+                "elite": 12,
+                "fiveseven": 10,
+                "xm1014": 78,
+                "mac10": 11,
+                "ump45": 11,
+                "p90": 12,
+                "awp": 27,
+                "ak47": 256,
+                "aug": 14,
+                "famas": 12,
+                "g3sg1": 13,
+                "m249": 6,
+                "hkp2000": 25,
+                "p250": 11,
+                "sg556": 20,
+                "scar20": 12,
+                "ssg08": 17,
+                "mp7": 29,
+                "mp9": 19,
+                "nova": 4,
+                "negev": 17,
+                "sawedoff": 4,
+                "bizon": 12,
+                "tec9": 6,
+                "mag7": 4,
+                "m4a1": 97,
+                "galilar": 25,
+                "taser": 1
             },
             "fav_map": "Dust2",
-            "kda": 1.4,
-            "hs_rate": 33.3,
-            "score": 109.3,
+            "kda": 1.03,
+            "hs_rate": 46.0,
+            "score": 107.7,
             "history": [
                 {
+                    "date": "2026-02-25",
+                    "score": 129.2,
+                    "kda": 1.02,
+                    "kills": 365,
+                    "rounds": 177
+                },
+                {
+                    "date": "2026-02-26",
+                    "score": 129.2,
+                    "kda": 1.02,
+                    "kills": 365,
+                    "rounds": 177
+                },
+                {
+                    "date": "2026-02-27",
+                    "score": 129.2,
+                    "kda": 1.02,
+                    "kills": 365,
+                    "rounds": 177
+                },
+                {
+                    "date": "2026-02-28",
+                    "score": 129.2,
+                    "kda": 1.02,
+                    "kills": 365,
+                    "rounds": 177
+                },
+                {
+                    "date": "2026-03-01",
+                    "score": 103.9,
+                    "kda": 1.07,
+                    "kills": 15,
+                    "rounds": 21
+                },
+                {
+                    "date": "2026-03-02",
+                    "score": 77.1,
+                    "kda": 0.82,
+                    "kills": 71,
+                    "rounds": 59
+                },
+                {
+                    "date": "2026-03-03",
+                    "score": 131.0,
+                    "kda": 0.96,
+                    "kills": 136,
+                    "rounds": 61
+                },
+                {
+                    "date": "2026-03-04",
+                    "score": 149.6,
+                    "kda": 0.99,
+                    "kills": 161,
+                    "rounds": 62
+                },
+                {
+                    "date": "2026-03-05",
+                    "score": 149.6,
+                    "kda": 0.99,
+                    "kills": 161,
+                    "rounds": 62
+                },
+                {
+                    "date": "2026-03-06",
+                    "score": 99.3,
+                    "kda": 0.87,
+                    "kills": 268,
+                    "rounds": 118
+                },
+                {
+                    "date": "2026-03-07",
+                    "score": 99.3,
+                    "kda": 0.87,
+                    "kills": 268,
+                    "rounds": 118
+                },
+                {
+                    "date": "2026-03-08",
+                    "score": 99.3,
+                    "kda": 0.87,
+                    "kills": 268,
+                    "rounds": 118
+                },
+                {
+                    "date": "2026-03-09",
+                    "score": 99.3,
+                    "kda": 0.87,
+                    "kills": 268,
+                    "rounds": 118
+                },
+                {
+                    "date": "2026-03-10",
+                    "score": 99.3,
+                    "kda": 0.87,
+                    "kills": 268,
+                    "rounds": 118
+                },
+                {
+                    "date": "2026-03-11",
+                    "score": 125.6,
+                    "kda": 0.88,
+                    "kills": 315,
+                    "rounds": 120
+                },
+                {
+                    "date": "2026-03-12",
+                    "score": 114.3,
+                    "kda": 0.89,
+                    "kills": 329,
+                    "rounds": 138
+                },
+                {
+                    "date": "2026-03-13",
+                    "score": 114.3,
+                    "kda": 0.89,
+                    "kills": 329,
+                    "rounds": 138
+                },
+                {
+                    "date": "2026-03-14",
+                    "score": 111.3,
+                    "kda": 0.96,
+                    "kills": 425,
+                    "rounds": 233
+                },
+                {
+                    "date": "2026-03-15",
+                    "score": 106.3,
+                    "kda": 0.97,
+                    "kills": 456,
+                    "rounds": 273
+                },
+                {
+                    "date": "2026-03-16",
+                    "score": 90.6,
+                    "kda": 0.95,
+                    "kills": 521,
+                    "rounds": 370
+                },
+                {
+                    "date": "2026-03-17",
+                    "score": 97.8,
+                    "kda": 0.99,
+                    "kills": 641,
+                    "rounds": 436
+                },
+                {
                     "date": "2026-03-18",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 103.3,
+                    "kda": 1.01,
+                    "kills": 697,
+                    "rounds": 470
                 },
                 {
                     "date": "2026-03-19",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-20",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-21",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-22",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-23",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-24",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 109.6,
+                    "kda": 1.02,
+                    "kills": 768,
+                    "rounds": 492
                 },
                 {
                     "date": "2026-03-25",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 111.6,
+                    "kda": 1.03,
+                    "kills": 786,
+                    "rounds": 493
                 },
                 {
                     "date": "2026-03-26",
-                    "score": 109.3,
-                    "kda": 1.4,
-                    "kills": 84,
-                    "rounds": 99
+                    "score": 107.7,
+                    "kda": 1.03,
+                    "kills": 837,
+                    "rounds": 559
                 }
             ]
         },
@@ -2594,90 +2594,6 @@
                     "kda": 0.71,
                     "kills": 644,
                     "rounds": 1022
-                }
-            ]
-        },
-        {
-            "name": "iboRR",
-            "nickname": "iboRR",
-            "avatar": "https://avatars.steamstatic.com/27468c98ecbbf3371f4326d6fad5d5bf4e9b285d_full.jpg",
-            "kills": 567,
-            "deaths": 897,
-            "wins": 21,
-            "mvps": 78,
-            "damage": 86333,
-            "headshots": 198,
-            "rounds": 1100,
-            "shots_fired": 17631,
-            "shots_hit": 0,
-            "bombs_planted": 59,
-            "bombs_defused": 6,
-            "knife_kills": 3,
-            "blind_kills": 52,
-            "money_earned": 3355150,
-            "broken_windows": 0,
-            "fav_weapon": "AK47",
-            "fav_weapon_kills": 213,
-            "weapons": {
-                "knife": 3,
-                "hegrenade": 8,
-                "glock": 33,
-                "mac10": 3,
-                "p90": 57,
-                "awp": 10,
-                "ak47": 213,
-                "g3sg1": 2,
-                "hkp2000": 38,
-                "p250": 1,
-                "scar20": 6,
-                "ssg08": 21,
-                "mp7": 15,
-                "mp9": 5,
-                "nova": 12,
-                "negev": 1,
-                "m4a1": 121,
-                "galilar": 14,
-                "molotov": 4
-            },
-            "fav_map": "Dust2",
-            "kda": 0.63,
-            "hs_rate": 34.9,
-            "score": 21.8,
-            "history": [
-                {
-                    "date": "2026-03-22",
-                    "score": 21.8,
-                    "kda": 0.63,
-                    "kills": 567,
-                    "rounds": 1100
-                },
-                {
-                    "date": "2026-03-23",
-                    "score": 21.8,
-                    "kda": 0.63,
-                    "kills": 567,
-                    "rounds": 1100
-                },
-                {
-                    "date": "2026-03-24",
-                    "score": 21.8,
-                    "kda": 0.63,
-                    "kills": 567,
-                    "rounds": 1100
-                },
-                {
-                    "date": "2026-03-25",
-                    "score": 21.8,
-                    "kda": 0.63,
-                    "kills": 567,
-                    "rounds": 1100
-                },
-                {
-                    "date": "2026-03-26",
-                    "score": 21.8,
-                    "kda": 0.63,
-                    "kills": 567,
-                    "rounds": 1100
                 }
             ]
         },

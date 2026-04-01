@@ -76,5 +76,31 @@
                 "value": "157"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-03",
+        "season_name": "March 2026",
+        "year": "2026",
+        "winner": {
+            "name": "Exselansis",
+            "avatar": "https://avatars.steamstatic.com/86c75d70e19299113f284b922a5bcd3aeb978b91_full.jpg",
+            "stats": {
+                "rating": 127.7,
+                "kda": 1.09,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Ahmet",
+                "value": "3050"
+            },
+            {
+                "title": "AWP King",
+                "player": "Ahmet",
+                "value": "169"
+            }
+        ]
     }
 ]

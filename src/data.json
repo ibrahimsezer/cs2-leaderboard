@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "07.04.2026 12:59",
+        "last_updated": "07.04.2026 18:50",
         "season_start": "01.04.2026",
         "season_active": true
     },
@@ -2452,63 +2452,6 @@
                     "kills": 0,
                     "rounds": 0
                 },
-                {
-                    "date": "2026-04-04",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-04-05",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-04-06",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
-                {
-                    "date": "2026-04-07",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                }
-            ]
-        },
-        {
-            "name": "iboRR",
-            "nickname": "iboRR",
-            "avatar": "https://avatars.steamstatic.com/27468c98ecbbf3371f4326d6fad5d5bf4e9b285d_full.jpg",
-            "kills": 0,
-            "deaths": 0,
-            "wins": 0,
-            "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "shots_fired": 0,
-            "shots_hit": 0,
-            "bombs_planted": 0,
-            "bombs_defused": 0,
-            "knife_kills": 0,
-            "blind_kills": 0,
-            "money_earned": 0,
-            "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
-            "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
-            "score": 0.0,
-            "history": [
                 {
                     "date": "2026-04-04",
                     "score": 0.0,

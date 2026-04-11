@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "11.04.2026 12:36",
+        "last_updated": "11.04.2026 18:30",
         "season_start": "01.04.2026",
         "season_active": true
     },
@@ -1031,26 +1031,26 @@
             "name": "EL EX",
             "nickname": "EL EX v1",
             "avatar": "https://avatars.steamstatic.com/9b13e236241c60849077e6beaa4a54b96a33a122_full.jpg",
-            "kills": 268,
-            "deaths": 235,
+            "kills": 283,
+            "deaths": 261,
             "wins": 5,
-            "mvps": 26,
-            "damage": 37322,
-            "headshots": 147,
-            "rounds": 212,
-            "shots_fired": 5204,
+            "mvps": 28,
+            "damage": 39238,
+            "headshots": 153,
+            "rounds": 216,
+            "shots_fired": 5427,
             "shots_hit": 0,
             "bombs_planted": 4,
             "bombs_defused": 0,
-            "knife_kills": 1,
+            "knife_kills": 6,
             "blind_kills": 7,
             "money_earned": 674650,
             "broken_windows": 0,
-            "fav_weapon": "XM1014",
-            "fav_weapon_kills": 65,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 70,
             "weapons": {
-                "knife": 1,
-                "glock": 11,
+                "knife": 6,
+                "glock": 14,
                 "deagle": 10,
                 "elite": 2,
                 "fiveseven": 2,
@@ -1059,7 +1059,7 @@
                 "ump45": 2,
                 "p90": 4,
                 "awp": 6,
-                "ak47": 64,
+                "ak47": 70,
                 "aug": 2,
                 "famas": 2,
                 "g3sg1": 4,
@@ -1073,13 +1073,13 @@
                 "mp9": 8,
                 "bizon": 5,
                 "tec9": 1,
-                "m4a1": 36,
+                "m4a1": 37,
                 "galilar": 11
             },
             "fav_map": "Dust2",
-            "kda": 1.14,
-            "hs_rate": 54.9,
-            "score": 115.9,
+            "kda": 1.08,
+            "hs_rate": 54.1,
+            "score": 113.9,
             "history": [
                 {
                     "date": "2026-03-13",
@@ -1286,10 +1286,10 @@
                 },
                 {
                     "date": "2026-04-11",
-                    "score": 115.9,
-                    "kda": 1.14,
-                    "kills": 268,
-                    "rounds": 212
+                    "score": 113.9,
+                    "kda": 1.08,
+                    "kills": 283,
+                    "rounds": 216
                 }
             ]
         },

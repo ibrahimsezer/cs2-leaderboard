@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "14.04.2026 13:03",
+        "last_updated": "14.04.2026 18:59",
         "season_start": "01.04.2026",
         "season_active": true
     },
@@ -1319,23 +1319,23 @@
             "name": "Ahmet",
             "nickname": "Ahmet",
             "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
-            "kills": 401,
-            "deaths": 457,
+            "kills": 404,
+            "deaths": 459,
             "wins": 6,
             "mvps": 48,
-            "damage": 55939,
-            "headshots": 257,
-            "rounds": 378,
-            "shots_fired": 8388,
+            "damage": 56218,
+            "headshots": 258,
+            "rounds": 379,
+            "shots_fired": 8454,
             "shots_hit": 0,
             "bombs_planted": 19,
             "bombs_defused": 4,
             "knife_kills": 0,
             "blind_kills": 26,
-            "money_earned": 1172700,
+            "money_earned": 1175550,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 202,
+            "fav_weapon_kills": 205,
             "weapons": {
                 "glock": 11,
                 "deagle": 14,
@@ -1343,7 +1343,7 @@
                 "xm1014": 15,
                 "p90": 3,
                 "awp": 12,
-                "ak47": 202,
+                "ak47": 205,
                 "m249": 6,
                 "hkp2000": 27,
                 "ssg08": 2,
@@ -1355,7 +1355,7 @@
             },
             "fav_map": "Dust2",
             "kda": 0.88,
-            "hs_rate": 64.1,
+            "hs_rate": 63.9,
             "score": 78.8,
             "history": [
                 {
@@ -1565,8 +1565,8 @@
                     "date": "2026-04-14",
                     "score": 78.8,
                     "kda": 0.88,
-                    "kills": 401,
-                    "rounds": 378
+                    "kills": 404,
+                    "rounds": 379
                 }
             ]
         },

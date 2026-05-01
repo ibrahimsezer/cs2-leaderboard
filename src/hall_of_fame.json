@@ -102,5 +102,31 @@
                 "value": "169"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-04",
+        "season_name": "April 2026",
+        "year": "2026",
+        "winner": {
+            "name": "★★★★★",
+            "avatar": "https://avatars.steamstatic.com/28828f57302336b7834992a9d150cdd8d1fa7ea0_full.jpg",
+            "stats": {
+                "rating": 326.6,
+                "kda": 1.26,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "EL EX",
+                "value": "824"
+            },
+            {
+                "title": "AWP King",
+                "player": "Exselansis",
+                "value": "36"
+            }
+        ]
     }
 ]

@@ -128,5 +128,31 @@
                 "value": "36"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-05",
+        "season_name": "May 2026",
+        "year": "2026",
+        "winner": {
+            "name": "Ahmet",
+            "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
+            "stats": {
+                "rating": 104.5,
+                "kda": 1.17,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Ahmet",
+                "value": "777"
+            },
+            {
+                "title": "AWP King",
+                "player": "Ahmet",
+                "value": "50"
+            }
+        ]
     }
 ]

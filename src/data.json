@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "10.06.2026 14:54",
+        "last_updated": "10.06.2026 20:12",
         "season_start": "01.06.2026",
         "season_active": true
     },
@@ -533,14 +533,14 @@
             "name": "Murhpy",
             "nickname": "Murhpy",
             "avatar": "https://avatars.steamstatic.com/12fa274e9e6acc43158418f271ff24cd76474bf5_full.jpg",
-            "kills": 236,
-            "deaths": 270,
+            "kills": 259,
+            "deaths": 328,
             "wins": 10,
             "mvps": 29,
-            "damage": 32630,
-            "headshots": 100,
-            "rounds": 323,
-            "shots_fired": 7252,
+            "damage": 35584,
+            "headshots": 107,
+            "rounds": 324,
+            "shots_fired": 7935,
             "shots_hit": 0,
             "bombs_planted": 13,
             "bombs_defused": 1,
@@ -549,14 +549,15 @@
             "money_earned": 1026600,
             "broken_windows": 0,
             "fav_weapon": "P90",
-            "fav_weapon_kills": 93,
+            "fav_weapon_kills": 95,
             "weapons": {
-                "glock": 16,
+                "glock": 17,
                 "fiveseven": 1,
                 "mac10": 2,
-                "p90": 93,
-                "awp": 1,
-                "ak47": 41,
+                "ump45": 1,
+                "p90": 95,
+                "awp": 6,
+                "ak47": 46,
                 "m249": 3,
                 "hkp2000": 11,
                 "p250": 2,
@@ -564,16 +565,16 @@
                 "mp7": 5,
                 "mp9": 8,
                 "nova": 1,
-                "negev": 1,
-                "bizon": 8,
+                "negev": 2,
+                "bizon": 13,
                 "tec9": 3,
-                "m4a1": 32,
+                "m4a1": 35,
                 "galilar": 7
             },
             "fav_map": "Dust2",
-            "kda": 0.87,
-            "hs_rate": 42.4,
-            "score": 50.6,
+            "kda": 0.79,
+            "hs_rate": 41.3,
+            "score": 42.0,
             "history": [
                 {
                     "date": "2026-05-12",
@@ -780,10 +781,10 @@
                 },
                 {
                     "date": "2026-06-10",
-                    "score": 50.6,
-                    "kda": 0.87,
-                    "kills": 236,
-                    "rounds": 323
+                    "score": 42.0,
+                    "kda": 0.79,
+                    "kills": 259,
+                    "rounds": 324
                 }
             ]
         },

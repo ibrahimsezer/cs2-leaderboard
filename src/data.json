@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "22.06.2026 20:34",
+        "last_updated": "23.06.2026 02:15",
         "season_start": "01.06.2026",
         "season_active": true
     },
@@ -53,13 +53,6 @@
             "hs_rate": 44.4,
             "score": 117.9,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
                 {
                     "date": "2026-05-25",
                     "score": 0.0,
@@ -262,6 +255,13 @@
                     "kda": 1.15,
                     "kills": 124,
                     "rounds": 81
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 117.9,
+                    "kda": 1.15,
+                    "kills": 124,
+                    "rounds": 81
                 }
             ]
         },
@@ -320,13 +320,6 @@
             "hs_rate": 47.1,
             "score": 116.6,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 95.9,
-                    "kda": 1.1,
-                    "kills": 448,
-                    "rounds": 498
-                },
                 {
                     "date": "2026-05-25",
                     "score": 96.1,
@@ -529,6 +522,13 @@
                     "kda": 1.29,
                     "kills": 612,
                     "rounds": 624
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 116.6,
+                    "kda": 1.29,
+                    "kills": 612,
+                    "rounds": 624
                 }
             ]
         },
@@ -583,13 +583,6 @@
             "hs_rate": 42.6,
             "score": 38.7,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 5.3,
-                    "kda": 0.55,
-                    "kills": 12,
-                    "rounds": 22
-                },
                 {
                     "date": "2026-05-25",
                     "score": 5.3,
@@ -792,6 +785,13 @@
                     "kda": 0.79,
                     "kills": 366,
                     "rounds": 488
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 38.7,
+                    "kda": 0.79,
+                    "kills": 366,
+                    "rounds": 488
                 }
             ]
         },
@@ -826,13 +826,6 @@
             "hs_rate": 25.0,
             "score": 0.1,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 3.9,
-                    "kda": 0.58,
-                    "kills": 215,
-                    "rounds": 233
-                },
                 {
                     "date": "2026-05-25",
                     "score": 3.9,
@@ -1035,6 +1028,13 @@
                     "kda": 0.21,
                     "kills": 4,
                     "rounds": 23
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 0.1,
+                    "kda": 0.21,
+                    "kills": 4,
+                    "rounds": 23
                 }
             ]
         },
@@ -1065,13 +1065,6 @@
             "hs_rate": 0,
             "score": 0.0,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
                 {
                     "date": "2026-05-25",
                     "score": 0.0,
@@ -1270,6 +1263,13 @@
                 },
                 {
                     "date": "2026-06-22",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
+                },
+                {
+                    "date": "2026-06-23",
                     "score": 0.0,
                     "kda": 0,
                     "kills": 0,
@@ -1305,13 +1305,6 @@
             "score": 0.0,
             "history": [
                 {
-                    "date": "2026-05-24",
-                    "score": 1.4,
-                    "kda": 0.61,
-                    "kills": 31,
-                    "rounds": 60
-                },
-                {
                     "date": "2026-05-25",
                     "score": 1.4,
                     "kda": 0.61,
@@ -1513,6 +1506,13 @@
                     "kda": 0,
                     "kills": 0,
                     "rounds": 0
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -1543,13 +1543,6 @@
             "hs_rate": 0,
             "score": 0.0,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 77.4,
-                    "kda": 0.87,
-                    "kills": 41,
-                    "rounds": 59
-                },
                 {
                     "date": "2026-05-25",
                     "score": 77.4,
@@ -1752,6 +1745,13 @@
                     "kda": 0,
                     "kills": 0,
                     "rounds": 0
+                },
+                {
+                    "date": "2026-06-23",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
                 }
             ]
         },
@@ -1782,13 +1782,6 @@
             "hs_rate": 0,
             "score": 0.0,
             "history": [
-                {
-                    "date": "2026-05-24",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
-                },
                 {
                     "date": "2026-05-25",
                     "score": 0.0,
@@ -1987,6 +1980,13 @@
                 },
                 {
                     "date": "2026-06-22",
+                    "score": 0.0,
+                    "kda": 0,
+                    "kills": 0,
+                    "rounds": 0
+                },
+                {
+                    "date": "2026-06-23",
                     "score": 0.0,
                     "kda": 0,
                     "kills": 0,

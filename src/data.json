@@ -1,14 +1,14 @@
 {
     "meta": {
-        "last_updated": "24.06.2026 02:26",
+        "last_updated": "24.06.2026 08:53",
         "season_start": "01.06.2026",
         "season_active": true
     },
     "players": [
         {
-            "name": "DJKavun v4",
+            "name": "DJkavun v4",
             "nickname": "DJKavun v4",
-            "avatar": "",
+            "avatar": "https://avatars.steamstatic.com/de3101aa5b584686b9045297c1632942146bb30d_full.jpg",
             "kills": 62,
             "deaths": 76,
             "wins": 2,
@@ -259,9 +259,66 @@
             ]
         },
         {
+            "name": "X_X",
+            "nickname": "X_X",
+            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
+            "kills": 124,
+            "deaths": 108,
+            "wins": 1,
+            "mvps": 6,
+            "damage": 17453,
+            "headshots": 55,
+            "rounds": 81,
+            "shots_fired": 2597,
+            "shots_hit": 0,
+            "bombs_planted": 3,
+            "bombs_defused": 0,
+            "knife_kills": 1,
+            "blind_kills": 4,
+            "money_earned": 254300,
+            "broken_windows": 0,
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 34,
+            "weapons": {
+                "knife": 1,
+                "glock": 4,
+                "deagle": 4,
+                "fiveseven": 2,
+                "mac10": 1,
+                "ump45": 6,
+                "p90": 2,
+                "awp": 9,
+                "ak47": 34,
+                "aug": 18,
+                "famas": 1,
+                "hkp2000": 1,
+                "sg556": 13,
+                "ssg08": 6,
+                "mp9": 2,
+                "nova": 1,
+                "bizon": 2,
+                "mag7": 3,
+                "m4a1": 7,
+                "galilar": 7
+            },
+            "fav_map": "Dust2",
+            "kda": 1.15,
+            "hs_rate": 44.4,
+            "score": 117.9,
+            "history": [
+                {
+                    "date": "2026-06-24",
+                    "score": 117.9,
+                    "kda": 1.15,
+                    "kills": 124,
+                    "rounds": 81
+                }
+            ]
+        },
+        {
             "name": "Ahmet",
             "nickname": "Ahmet",
-            "avatar": "",
+            "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
             "kills": 645,
             "deaths": 505,
             "wins": 19,
@@ -1034,7 +1091,7 @@
         {
             "name": "Asmork",
             "nickname": "Asmork",
-            "avatar": "",
+            "avatar": "https://avatars.steamstatic.com/b1c3b906f1ce4ac8e37c24e477d9734b6614bcc7_full.jpg",
             "kills": 0,
             "deaths": 0,
             "wins": 0,

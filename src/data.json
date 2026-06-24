@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "24.06.2026 14:07",
+        "last_updated": "24.06.2026 19:26",
         "season_start": "01.06.2026",
         "season_active": true
     },
@@ -849,31 +849,35 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 4,
-            "deaths": 19,
+            "kills": 19,
+            "deaths": 52,
             "wins": 1,
-            "mvps": 0,
-            "damage": 927,
-            "headshots": 1,
-            "rounds": 23,
-            "shots_fired": 315,
+            "mvps": 2,
+            "damage": 3095,
+            "headshots": 11,
+            "rounds": 61,
+            "shots_fired": 979,
             "shots_hit": 0,
-            "bombs_planted": 0,
-            "bombs_defused": 0,
+            "bombs_planted": 3,
+            "bombs_defused": 1,
             "knife_kills": 0,
-            "blind_kills": 2,
-            "money_earned": 65050,
+            "blind_kills": 5,
+            "money_earned": 176900,
             "broken_windows": 0,
             "fav_weapon": "MAG7",
-            "fav_weapon_kills": 2,
+            "fav_weapon_kills": 8,
             "weapons": {
+                "glock": 2,
+                "ak47": 4,
+                "hkp2000": 1,
+                "ssg08": 2,
                 "tec9": 1,
-                "mag7": 2,
+                "mag7": 8,
                 "galilar": 1
             },
             "fav_map": "Dust2",
-            "kda": 0.21,
-            "hs_rate": 25.0,
+            "kda": 0.37,
+            "hs_rate": 57.9,
             "score": 0.1,
             "history": [
                 {
@@ -1082,9 +1086,9 @@
                 {
                     "date": "2026-06-24",
                     "score": 0.1,
-                    "kda": 0.21,
-                    "kills": 4,
-                    "rounds": 23
+                    "kda": 0.37,
+                    "kills": 19,
+                    "rounds": 61
                 }
             ]
         },

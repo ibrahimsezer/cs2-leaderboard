@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "07.07.2026 09:24",
+        "last_updated": "07.07.2026 14:08",
         "season_start": "01.07.2026",
         "season_active": true
     },
@@ -519,41 +519,41 @@
             "name": "Dixe ⭕⃤",
             "nickname": "Dixe",
             "avatar": "https://avatars.steamstatic.com/5c77178bc823239ac7ef6eb7b5a3d50ad49af9d8_full.jpg",
-            "kills": 193,
-            "deaths": 197,
+            "kills": 222,
+            "deaths": 226,
             "wins": 3,
-            "mvps": 53,
-            "damage": 26808,
-            "headshots": 143,
-            "rounds": 268,
-            "shots_fired": 2889,
+            "mvps": 55,
+            "damage": 31292,
+            "headshots": 163,
+            "rounds": 301,
+            "shots_fired": 3302,
             "shots_hit": 0,
-            "bombs_planted": 8,
+            "bombs_planted": 9,
             "bombs_defused": 0,
             "knife_kills": 0,
-            "blind_kills": 7,
-            "money_earned": 501750,
+            "blind_kills": 8,
+            "money_earned": 604950,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 108,
+            "fav_weapon_kills": 123,
             "weapons": {
                 "hegrenade": 3,
                 "glock": 5,
-                "deagle": 12,
+                "deagle": 18,
                 "elite": 3,
-                "mac10": 2,
-                "awp": 6,
-                "ak47": 108,
-                "hkp2000": 4,
+                "mac10": 3,
+                "awp": 8,
+                "ak47": 123,
+                "hkp2000": 5,
                 "ssg08": 6,
                 "mp7": 1,
                 "mp9": 3,
-                "m4a1": 40
+                "m4a1": 44
             },
             "fav_map": "Dust2",
             "kda": 0.98,
-            "hs_rate": 74.1,
-            "score": 96.5,
+            "hs_rate": 73.4,
+            "score": 94.5,
             "history": [
                 {
                     "date": "2026-06-08",
@@ -760,10 +760,10 @@
                 },
                 {
                     "date": "2026-07-07",
-                    "score": 96.5,
+                    "score": 94.5,
                     "kda": 0.98,
-                    "kills": 193,
-                    "rounds": 268
+                    "kills": 222,
+                    "rounds": 301
                 }
             ]
         },

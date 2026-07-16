@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "16.07.2026 07:56",
+        "last_updated": "16.07.2026 13:20",
         "season_start": "01.07.2026",
         "season_active": true
     },
@@ -10,13 +10,13 @@
             "nickname": "Ahmet",
             "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
             "kills": 1071,
-            "deaths": 842,
+            "deaths": 847,
             "wins": 23,
             "mvps": 184,
-            "damage": 154618,
+            "damage": 154829,
             "headshots": 594,
-            "rounds": 1176,
-            "shots_fired": 19022,
+            "rounds": 1180,
+            "shots_fired": 19062,
             "shots_hit": 0,
             "bombs_planted": 40,
             "bombs_defused": 9,
@@ -52,9 +52,9 @@
                 "molotov": 2
             },
             "fav_map": "Dust2",
-            "kda": 1.27,
+            "kda": 1.26,
             "hs_rate": 55.5,
-            "score": 116.9,
+            "score": 116.3,
             "history": [
                 {
                     "date": "2026-06-17",
@@ -261,10 +261,10 @@
                 },
                 {
                     "date": "2026-07-16",
-                    "score": 116.9,
-                    "kda": 1.27,
+                    "score": 116.3,
+                    "kda": 1.26,
                     "kills": 1071,
-                    "rounds": 1176
+                    "rounds": 1180
                 }
             ]
         },

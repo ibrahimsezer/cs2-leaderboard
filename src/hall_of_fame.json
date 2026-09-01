@@ -206,5 +206,31 @@
                 "value": "142"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-08",
+        "season_name": "August 2026",
+        "year": "2026",
+        "winner": {
+            "name": "Dixe ⭕⃤",
+            "avatar": "https://avatars.steamstatic.com/5c77178bc823239ac7ef6eb7b5a3d50ad49af9d8_full.jpg",
+            "stats": {
+                "rating": 119.8,
+                "kda": 1.5,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Ahmet",
+                "value": "2830"
+            },
+            {
+                "title": "AWP King",
+                "player": "Ahmet",
+                "value": "113"
+            }
+        ]
     }
 ]

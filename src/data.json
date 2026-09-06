@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "06.09.2026 14:38",
+        "last_updated": "06.09.2026 19:46",
         "season_start": "01.09.2026",
         "season_active": true
     },
@@ -272,28 +272,35 @@
             "name": "Sezar",
             "nickname": "Sezar",
             "avatar": "https://avatars.steamstatic.com/bb0b7ad0cea657021ae012c206b835782d63efc2_full.jpg",
-            "kills": 0,
-            "deaths": 0,
+            "kills": 11,
+            "deaths": 16,
             "wins": 0,
             "mvps": 0,
-            "damage": 0,
-            "headshots": 0,
-            "rounds": 0,
-            "shots_fired": 0,
+            "damage": 1337,
+            "headshots": 3,
+            "rounds": 20,
+            "shots_fired": 332,
             "shots_hit": 0,
-            "bombs_planted": 0,
+            "bombs_planted": 1,
             "bombs_defused": 0,
             "knife_kills": 0,
             "blind_kills": 0,
-            "money_earned": 0,
+            "money_earned": 59200,
             "broken_windows": 0,
-            "fav_weapon": "-",
-            "fav_weapon_kills": 0,
-            "weapons": {},
+            "fav_weapon": "AK47",
+            "fav_weapon_kills": 5,
+            "weapons": {
+                "hegrenade": 1,
+                "xm1014": 1,
+                "ak47": 5,
+                "hkp2000": 1,
+                "tec9": 1,
+                "mag7": 2
+            },
             "fav_map": "-",
-            "kda": 0,
-            "hs_rate": 0,
-            "score": 0.0,
+            "kda": 0.69,
+            "hs_rate": 27.3,
+            "score": 0.1,
             "history": [
                 {
                     "date": "2026-08-08",
@@ -500,10 +507,10 @@
                 },
                 {
                     "date": "2026-09-06",
-                    "score": 0.0,
-                    "kda": 0,
-                    "kills": 0,
-                    "rounds": 0
+                    "score": 0.1,
+                    "kda": 0.69,
+                    "kills": 11,
+                    "rounds": 20
                 }
             ]
         },

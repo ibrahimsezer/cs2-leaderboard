@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "07.09.2026 01:56",
+        "last_updated": "07.09.2026 11:03",
         "season_start": "01.09.2026",
         "season_active": true
     },
@@ -9,33 +9,33 @@
             "name": "Ahmet",
             "nickname": "Ahmet",
             "avatar": "https://avatars.steamstatic.com/2772c1dc1f40e539b955c2d988ece7f77b95fc2e_full.jpg",
-            "kills": 787,
-            "deaths": 715,
+            "kills": 794,
+            "deaths": 716,
             "wins": 30,
-            "mvps": 115,
-            "damage": 117831,
-            "headshots": 440,
-            "rounds": 953,
-            "shots_fired": 14977,
+            "mvps": 117,
+            "damage": 119139,
+            "headshots": 447,
+            "rounds": 955,
+            "shots_fired": 14996,
             "shots_hit": 0,
             "bombs_planted": 54,
             "bombs_defused": 8,
             "knife_kills": 14,
             "blind_kills": 80,
-            "money_earned": 2824800,
+            "money_earned": 2834000,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 286,
+            "fav_weapon_kills": 288,
             "weapons": {
                 "knife": 14,
                 "hegrenade": 4,
                 "glock": 32,
-                "deagle": 148,
+                "deagle": 153,
                 "elite": 3,
                 "xm1014": 24,
                 "mac10": 10,
                 "awp": 50,
-                "ak47": 286,
+                "ak47": 288,
                 "aug": 25,
                 "famas": 12,
                 "m249": 3,
@@ -52,9 +52,9 @@
                 "molotov": 1
             },
             "fav_map": "Dust2",
-            "kda": 1.1,
-            "hs_rate": 55.9,
-            "score": 94.1,
+            "kda": 1.11,
+            "hs_rate": 56.3,
+            "score": 95.9,
             "history": [
                 {
                     "date": "2026-08-09",
@@ -261,10 +261,10 @@
                 },
                 {
                     "date": "2026-09-07",
-                    "score": 94.1,
-                    "kda": 1.1,
-                    "kills": 787,
-                    "rounds": 953
+                    "score": 95.9,
+                    "kda": 1.11,
+                    "kills": 794,
+                    "rounds": 955
                 }
             ]
         },

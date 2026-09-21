@@ -1,6 +1,6 @@
 {
     "meta": {
-        "last_updated": "21.09.2026 17:26",
+        "last_updated": "21.09.2026 21:25",
         "season_start": "01.09.2026",
         "season_active": true
     },
@@ -1484,14 +1484,14 @@
             "name": "X_X",
             "nickname": "X_X",
             "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
-            "kills": 51,
-            "deaths": 7,
+            "kills": 137,
+            "deaths": 22,
             "wins": 0,
-            "mvps": 1,
-            "damage": 6549,
-            "headshots": 25,
-            "rounds": 1,
-            "shots_fired": 735,
+            "mvps": 3,
+            "damage": 17881,
+            "headshots": 52,
+            "rounds": 3,
+            "shots_fired": 1960,
             "shots_hit": 0,
             "bombs_planted": 0,
             "bombs_defused": 0,
@@ -1500,18 +1500,26 @@
             "money_earned": 0,
             "broken_windows": 0,
             "fav_weapon": "AK47",
-            "fav_weapon_kills": 27,
+            "fav_weapon_kills": 38,
             "weapons": {
                 "glock": 2,
-                "deagle": 15,
-                "p90": 2,
-                "ak47": 27,
+                "deagle": 33,
+                "elite": 1,
+                "fiveseven": 8,
+                "mac10": 2,
+                "ump45": 3,
+                "p90": 4,
+                "awp": 17,
+                "ak47": 38,
+                "aug": 3,
                 "famas": 4,
-                "ssg08": 1
+                "g3sg1": 14,
+                "ssg08": 1,
+                "m4a1": 7
             },
             "fav_map": "Dust2",
-            "kda": 7.29,
-            "hs_rate": 49.0,
+            "kda": 6.23,
+            "hs_rate": 38.0,
             "score": 0.0,
             "history": [
                 {
@@ -1720,9 +1728,9 @@
                 {
                     "date": "2026-09-21",
                     "score": 0.0,
-                    "kda": 7.29,
-                    "kills": 51,
-                    "rounds": 1
+                    "kda": 6.23,
+                    "kills": 137,
+                    "rounds": 3
                 }
             ]
         }

@@ -258,5 +258,31 @@
                 "value": "199"
             }
         ]
+    },
+    {
+        "season_id": "season-2026-10",
+        "season_name": "October 2026",
+        "year": "2026",
+        "winner": {
+            "name": "X_X",
+            "avatar": "https://avatars.steamstatic.com/2b8743633708d6726394483ccfd4c856d0600955_full.jpg",
+            "stats": {
+                "rating": 109.9,
+                "kda": 1.24,
+                "impact": 100
+            }
+        },
+        "highlights": [
+            {
+                "title": "Most Kills",
+                "player": "Dixe",
+                "value": "360"
+            },
+            {
+                "title": "AWP King",
+                "player": "Dixe",
+                "value": "24"
+            }
+        ]
     }
 ]
